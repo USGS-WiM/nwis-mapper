@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<!--The viewport meta tag is used to improve the presentation and behavior of the samples on iOS devices-->
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+		<meta name="publisher" content="USGS - U.S. Geological Survey, Water Resources">
+		<meta name="expires" content="never">
+		<title>Water Resources of the United States&mdash;National Water Information System (NWIS) Mapper</title>
+		<link rel="stylesheet" href="https://js.arcgis.com/3.13/dijit/themes/claro/claro.css">
+		<link rel="stylesheet" href="https://js.arcgis.com/3.13/esri/dijit/css/Popup.css">
+		<link rel="stylesheet" href="https://js.arcgis.com/3.13/dojox/layout/resources/ExpandoPane.css">
+		<link rel="stylesheet" href="https://js.arcgis.com/3.13/dojox/grid/resources/claroGrid.css">
+		<link rel="stylesheet" href="https://js.arcgis.com/3.13/dijit/themes/claro/document.css">
+		<!-- EJSAPIv3.x -->
+		<link rel="stylesheet" href="https://js.arcgis.com/3.13/esri/css/esri.css">
+		<link href="./style/msie.css" rel="stylesheet" type="text/css">
+		<link href="./style/common.css" rel="stylesheet" type="text/css">
+		<link href="./style/custom.css" rel="stylesheet" type="text/css">
+		<link href="./style/leftnav.css" rel="stylesheet" type="text/css">
+		<link href="./style/water.css" rel="stylesheet" type="text/css">
+		<link href="./style/topnav.css" rel="stylesheet" type="text/css">
+		<!-- <link href="https://water.usgs.gov/style/media.css" rel="stylesheet" type="text/css" media="print"> -->
+
+		<style type="text/css">
+			html, body {height:100%;width:100%;margin:0;padding:0;}
+			body {background-color:white;overflow:hidden;font-family: Verdana, Arial, Helvetica, sans-serif;}
+			#mainWindow {width:100%;height:100%;}
+			#mapWindow {width:100%;height:100%;border:solid 1px #416AB1;padding:0;margin:0;}
+			#header {-moz-border-radius:5px;border-radius:5px;margin:2px;padding-top:4px;padding-right:15px;background-color:#929761;color:#421b14;font-size:16pt;text-align:right;font-weight:bold;border:solid 2px #3A0095;height:55px;}
+			#subheader {font-size:small;color:#cfcfcf;text-align:right;padding-right:20px;}
+			#footer {margin:2px;padding:2px;background-color:white;color:#2a3537;border:solid 2px #416AB1;font-size:10pt;text-align:left;height:15%;}
+			#mapBottomPane {margin:1px;padding:1px;background-color:white;color:#2a3537;border-style:none;font-size:8pt;text-align:left;height:200px;}
+			#rightPane {margin:2px;padding:1px;background-color:white;color:#421b14;border-style:none;width:40px;}
+			#leftPane {margin:0px;padding:0px;width:320px;color:black;background-color:white;border:solid 2px #416AB1;}
+			#map {margin:0px;padding:0px;border-style:none;}
+			#mapLayout {margin:0px;padding:0px;border-style:none;}
+			#mapGrid {height:100%;width:100%;}
+			.footerimage {border-style:none;float:right;}
+			.shadow {-o-border-radius:6px;-moz-border-radius:6px;-webkit-border-radius:6px;box-shadow:8px 8px 16px #323834;-webkit-box-shadow:8px 8px 16px #323834;-moz-box-shadow:8px 8px 16px #323834;-o-box-shadow:8px 8px 16px #323834;}
+			.TitleMenu_0 {background-color:white;visibility:hidden;display:none;position:absolute;left:0px;top:0px;}
+			.TitleMenu_1 {color:white;font-size:8pt;font-weight:bold;text-decoration:none;}
+			.TitleMenu_2 {color:white;background-color:transparent;font-size:8pt;font-weight:bold;}
+			.treeLevel1 {position:relative;left:2px;}
+			.treeLevel2 {position:relative;left:4px;}
+			.treeLevel3 {position:relative;left:8px;}
+			.treeLevel3dis {position:relative;left:8px;color:#D3D3D3;}
+			.claro .dijitAccordionText {margin-left:12px;margin-right:4px;color:#416AB1;}
+			.claro .dijitAccordianTitle {background-image:url(images/HelpSystem16.png);width:16px;height:16px;position:absolute;right:5px;}
+			.claro .dijitButtonText {padding:0;}
+			.dojoxGrid .gridMasterHeader {font-size:6pt;}
+			.dojoxGrid th{border-bottom:#416AB1 solid thin !important;border-top:#416AB1 solid thin !important;border-left:none!important;border-right:none!important;font-size:smaller!important;}
+			.dojoxGrid td{border-left:none!important;border-right:none!important;font-size:smaller!important;}
+			.legendIcon {background-image:url(images/nav_zoomin.png);width:16px;height:16px;position:absolute;left:80%;}
+			.zoominIcon {background-image:url(images/nav_zoomin_box.png);width:16px;height:16px;}
+			.zoomoutIcon {background-image:url(images/nav_zoomout_box.png);	width:16px;height:16px;}
+			.zoomfullextIcon {background-image:url(images/nav_fullextent.png);width:16px;height:16px;}
+			.zoomprevIcon {background-image:url(images/nav_previous.png);width:16px;height:16px;}
+			.zoomnextIcon {background-image:url(images/nav_next.png);width:16px;height:16px;}
+			.panIcon {background-image:url(images/nav_pan.png);width:16px;height:16px;}
+			.refreshIcon {background-image:url(images/GenericRefresh_B_16.png);width:16px;height:16px;}
+			.deactivateIcon {background-image:url(images/nav_decline.png);width:16px;height:16px;}
+			.basemap_icon {background-image:url(images/Map16.png);width:16px;height:16px;position:absolute;left:5px;}
+			.maplayers_icon {background-image:url(images/Basemap16.png);width:16px;height:16px;position:absolute;left:5px;}
+			.status_icon {background-image:url(images/IdentifyWindowShow16.png);width:16px;height:16px;position:absolute;left:2px;}
+			.maptools_icon {background-image:url(images/nav_zoomin.png);width:16px;height:16px;position:absolute;left:5px;}
+			.resources_icon {background-image:url(images/HyperlinkTool16.png);width:16px;height:16px;position:absolute;left:2px;}
+			.search_icon {background-image:url(images/GenericGreenRightArrow16.png);width:16px;height:16px;}
+			.datatools_icon {background-image:url(images/TableQuery16.png);width:16px;height:16px;position:absolute;left:5px;}
+			.ovmap_icon {background-image:url(images/ScreenPositionBottomRight16.png);width:16px;height:16px;position:absolute;left:5px;}
+			.sw_acc_icon {background-image:url(images/panes/sw_pane.png);width:16px;height:16px;position:absolute;left:5px;}
+			.gw_acc_icon {background-image:url(images/panes/gw_pane.png);width:16px;height:16px;position:absolute;left:5px;}
+			.sp_acc_icon {background-image:url(images/panes/sp_pane.png);width:19px;height:16px;position:absolute;left:5px;}
+			.at_acc_icon {background-image:url(images/panes/at_pane.png);width:16px;height:16px;position:absolute;left:5px;}
+			.ot_acc_icon {background-image:url(images/panes/ot_pane.png);width:16px;height:16px;position:absolute;left:5px;}
+			.about_icon {background-image:url(images/HelpSystem_B_16.png);width:16px;height:16px;position:absolute;left:5px;}
+			.siteInfoIcon {background-image:url(images/GenericGreenRightArrow16.png);width:16px;height:16px;}
+			.esriLargeSlider {left:10px;}
+			#zoomLevelIcon {background-image:url(images/zoomlevels/zoom0.png);width:16px;height:16px;position:absolute;top:13px;left:9px;z-index:99;}
+
+			.tabStatus {background-image:url(images/IdentifyWindowShow16.png);width:16px;height:16px;}
+			.tabSites {background-image:url(images/LocationsSymbolized_A16.png);width:16px;height:16px;}
+			.tabMapTools {background-image:url(images/MapAnalyze16.png);width:16px;height:16px;}
+			.tabDataTools {background-image:url(images/TableQuery16.png);width:16px;height:16px;}
+
+			.tabSWGrid {background-image:url(images/grids/sw_grid_tab.png);width:16px;height:16px;}
+			.tabSWActGrid {background-image:url(images/grids/sw_grid_act_tab.png);width:16px;height:16px;}
+			.tabSWInaGrid {background-image:url(images/grids/sw_grid_ina_tab.png);width:16px;height:16px;}
+			.tabGWGrid {background-image:url(images/grids/gw_grid_tab.png);width:16px;height:16px;}
+			.tabGWActGrid {background-image:url(images/grids/gw_grid_act_tab.png);width:16px;height:16px;}
+			.tabGWInaGrid {background-image:url(images/grids/gw_grid_ina_tab.png);width:16px;height:16px;}
+			.tabSPGrid {background-image:url(images/grids/sp_grid_tab.png);width:16px;height:16px;}
+			.tabSPActGrid {background-image:url(images/grids/sp_grid_act_tab.png);width:16px;height:16px;}
+			.tabSPInaGrid {background-image:url(images/grids/sp_grid_ina_tab.png);width:16px;height:16px;}
+			.tabATGrid {background-image:url(images/grids/at_grid_tab.png);width:16px;height:16px;}
+			.tabATActGrid {background-image:url(images/grids/at_grid_act_tab.png);width:16px;height:16px;}
+			.tabATInaGrid {background-image:url(images/grids/at_grid_ina_tab.png);width:16px;height:16px;}
+			.tabOTGrid {background-image:url(images/grids/ot_grid_tab.png);width:16px;height:16px;}
+			.tabOTActGrid {background-image:url(images/grids/ot_grid_act_tab.png);width:16px;height:16px;}
+			.tabOTInaGrid {background-image:url(images/grids/ot_grid_ina_tab.png);width:16px;height:16px;}
+
+			.srchBox {margin:0px;padding-bottom:12px;color:black;background-color:white;}
+			.srchBar {width:150px;height:12px;}
+			.srchBoxText {color:black;font-size:8pt;border-color:transparent;margin:0;padding:0;}
+			.srchBoxTextDis {color:#9FADBF;font-size:8pt;font-style:italic;border-color:transparent;margin:0;padding:0;}
+
+			#swActLoader {position:absolute; right:30px;top:60px;width:150px;height:12px;}
+			#swInaLoader {position:absolute; right:30px;top:71px;width:150px;height:12px;}
+			#gwActLoader {position:absolute; right:30px;top:82px;width:150px;height:12px;}
+			#gwInaLoader {position:absolute; right:30px;top:93px;width:150px;height:12px;}
+			#spActLoader {position:absolute; right:30px;top:104px;width:150px;height:12px;}
+			#spInaLoader {position:absolute; right:30px;top:115px;width:150px;height:12px;}
+			#atActLoader {position:absolute; right:30px;top:126px;width:150px;height:12px;}
+			#atInaLoader {position:absolute; right:30px;top:137px;width:150px;height:12px;}
+			#otActLoader {position:absolute; right:30px;top:148px;width:150px;height:12px;}
+			#otInaLoader {position:absolute; right:30px;top:159px;width:150px;height:12px;}
+
+			#footerExtDialog {width:700px;height:300px;}
+			#swExtDialog {position:absolute; left:5px;top:30px;width:700px;height:300px;overflow:auto;}
+			#gwExtDialog {position:absolute; left:5px;top:30px;width:700px;height:300px;overflow:auto;}
+			#spExtDialog {position:absolute; left:5px;top:30px;width:700px;height:300px;overflow:auto;}
+			#atExtDialog {position:absolute; left:5px;top:30px;width:700px;height:300px;overflow:auto;}
+			#otExtDialog {position:absolute; left:5px;top:30px;width:700px;height:300px;overflow:auto;}
+			#aqExtDialog {position:absolute; left:5px;top:30px;width:700px;height:300px;overflow:auto;}		
+			#wbdExtDialog {position:absolute; left:5px;top:30px;width:700px;height:300px;overflow:auto;}
+			#wscExtDialog {position:absolute; left:5px;top:30px;width:700px;;overflow:auto;}	
+			#exportDialog_underlay {background-color:blue;}
+
+			.helpbutton {width:16px;height:16px;position:absolute;right:5px;}
+			.action.zoomTo {display: none;}
+			
+			#navToolbar {
+				-mozt-box-shadow: 0px 5px 10px #adadad;
+				-webkit-box-shadow: 0px 5px 10px #adadad;
+				box-shadow: 0px 5px 10px #adadad;
+				opacity:0.8;
+				position: absolute;
+				top: 20px; 
+				right: 20px; 
+				z-index: 99;
+				border-bottom: 0px;
+				background-color: white;
+				padding: 3px;
+            }
+			
+		</style>
+
+		<script type="text/javascript">
+			var dojoConfig = {
+				parseOnLoad:false
+			};
+		</script>
+
+		<!-- load the ESRI toolkit -->
+		<script src="https://js.arcgis.com/3.13/"></script>
+		
+		<script type="text/javascript">
+			dojo.addOnLoad( function() {
+				dojo.parser.parse();
+				init();
+			});
+		</script>
+		
+		<!-- many of the markup items are dojo replacements - so need to load dojo -->
+		<script type="text/javascript">
+
+		dojo.require("dijit.dijit");
+		dojo.require("dijit.Menu");
+		dojo.require("dijit.Tooltip");
+		dojo.require("dijit.Dialog");
+		dojo.require("dijit.form.Button");
+		dojo.require("dijit.form.CheckBox");
+		dojo.require("dijit.form.ToggleButton");
+		dojo.require("dijit.form.TextBox");
+		dojo.require("dijit.form.ComboBox");
+		dojo.require("dijit.form.Select");
+		dojo.require("dijit.form.FilteringSelect");
+		dojo.require("dijit.layout.BorderContainer");
+		dojo.require("dijit.layout.ContentPane");
+		dojo.require("dijit.layout.AccordionContainer");
+		dojo.require("dijit.layout.TabContainer");
+
+		dojo.require("esri.map");
+		dojo.require("esri.tasks.locator");
+		dojo.require("esri.toolbars.navigation");
+		dojo.require("esri.virtualearth.VETiledLayer");
+		dojo.require("esri.layers.graphics");
+		dojo.require("esri.layers.agstiled");
+		dojo.require("esri.layers.tiled");
+		dojo.require("esri.dijit.Scalebar");
+		dojo.require("esri.dijit.OverviewMap");
+		dojo.require("esri.dijit.BasemapGallery");
+		dojo.require("esri.dijit.Popup");
+		dojo.require("dijit.Toolbar");
+
+		dojo.require("dojox.xml.parser");
+		dojo.require("dojox.xml.DomParser");
+		dojo.require("dojox.layout.ExpandoPane");
+		dojo.require("dojox.widget.DialogSimple");
+		dojo.require("dojox.grid.DataGrid");
+		dojo.require("dojox.widget.Standby");
+		dojo.require("dojox.json.query");
+		dojo.require("dojo._base.json");
+
+		dojo.require("dojo.data.ItemFileWriteStore");
+
+		</script>
+		
+		<script type="text/javascript">
+
+		//config variables
+		var waterdataURL = 'https://waterdata.usgs.gov';
+
+		// global variables
+		var map;
+		var navToolBar;
+		var popup;
+		var veTileLayer;
+		
+		// testing....	
+		var siteTemplate;
+			
+		//get url for footerdialog
+		var footerURL = window.location.href.toLowerCase();
+	
+		//sites mapper globals
+		var sitesMapperStandby;
+		var sitesNWISwebStore;
+		var sitesNWISwebGrid;
+		var siteData;
+		var siteCount;
+		var nwisWebURL;
+
+		// huc searches
+		var hucsRegStore;
+		var hucsRegSelect;
+
+		// USGS offices
+		var usgsStore;
+		
+		function init() {
+
+			// sliderbar
+			esri.config.defaults.map.slider = {position:"absolute", left:"10px", top:"30px", height:"200px"};
+		
+			// set default map extent
+			var initialExtent = new esri.geometry.Extent({
+				"xmin":-14353065.00,
+				"ymin":2251027.00,
+				"xmax":-7179935.00,
+				"ymax":6580283.00,
+				"spatialReference":{
+					"wkid":102100
+				}
+			});
+		
+
+			// create popup instance
+			popup = new esri.dijit.Popup({}, dojo.create("div"));
+		
+			// create map instance
+			map = new esri.Map("map", {
+				extent:initialExtent,
+				wrapAround180:true,
+				fadeOnZoom:false,
+				sliderStyle: "large",
+				infoWindow:popup
+			});
+		
+			//create basemap gallery
+			createBasemapGallery();
+		
+			// toolbar
+			navToolBar = new esri.toolbars.Navigation(map);
+			dojo.connect(navToolBar, "onExtentHistoryChange", extentHistoryChangeHandler);
+		
+			// scalebar
+			var scalebar = new esri.dijit.Scalebar({
+				map:map,
+				scalebarUnit:'english'
+			});
+			
+			siteTemplate = new esri.InfoTemplate("Site Information",
+			"<b>Site Number: </b>${site_no}<br /><b>Site Name: </b> ${site_name}<br /><b>Agency: </b>${agency}<br /><a href=" + waterdataURL + "/nwis/inventory?agency_code=${agency}&site_no=${site_no} target='_blank'>Access Data</a>");
+		
+			// ============================================================
+			// Listeners and overview map
+			// ============================================================
+			// standard ESRI listener for resizing map
+			dojo.connect(map, 'onLoad', function() {
+				dojo.connect(dijit.byId('map'), 'resize', map, map.resize);
+				//var overviewMap = new esri.dijit.OverviewMap({map:map,attachTo:"bottom-right",color:"#0000FF",visible:true,opacity:0.30});
+				//overviewMap.startup();
+			});
+			
+			// ============================================================
+			// define and add basemap
+			// ============================================================
+			var url = "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer";
+			var tiledLayer = new esri.layers.ArcGISTiledMapServiceLayer(url);
+			map.addLayer(tiledLayer);
+
+			// ============================================================
+			// Tile and Graphics Overlays
+			// ============================================================
+			
+			// define NWIS graphics overlay layers
+			defineGraphicLayer("swNWISweb_act_glayer", 1.0);defineGraphicLayer("swNWISweb_ina_glayer", 0.9);
+			defineGraphicLayer("gwNWISweb_act_glayer", 1.0);defineGraphicLayer("gwNWISweb_ina_glayer", 1.0);
+			defineGraphicLayer("spNWISweb_act_glayer", 1.0);defineGraphicLayer("spNWISweb_ina_glayer", 1.0);
+			defineGraphicLayer("atNWISweb_act_glayer", 1.0);defineGraphicLayer("atNWISweb_ina_glayer", 1.0);
+			defineGraphicLayer("otNWISweb_act_glayer", 1.0);defineGraphicLayer("otNWISweb_ina_glayer", 1.0);
+			defineGraphicLayer("NWISquery_extent", 1.0);
+
+			// add the additional thematic layers
+			defineTileLayer2("hucs", "hucs", 0.3);
+			map.addLayer(new hucs());
+			drawTLayer("chkHUC", "hucs");
+
+			// define a selection layer overlay
+			defineGraphicLayer("sel_glayer", 1.0);
+			
+			// define USGS water offices layer
+			defineGraphicLayer("wsc_glayer", 1.0);
+			makeUSGSLayer();
+
+			// listener for extra map themes
+			dojo.connect(dojo.byId("chkHUC"), 'click', function() {HUCLayer();});
+			dojo.connect(dojo.byId("chkWSC"), 'click', function() {showUSGSOffices();});
+						
+			// ============================================================
+			// run sites mapper checker
+			// ============================================================
+			makeSiteGrids_NWISweb();
+			makeSitesMapperStandby();
+			startSM();
+		}
+		</script>
+		
+		<!--  Sites Mapper Functions.  Updated to include all of the needed NWIS mapper functions	-->
+		<script type="text/javascript" src="scripts/sitesmapper.js"></script>
+		<script type="application/javascript" src="https://www2.usgs.gov/scripts/analytics/usgs-analytics.js"></script>
+		
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-61219868-8', 'auto');
+			ga('send', 'pageview');
+		</script>
+	</head>
+
+	<body class="claro">
+		<div id="mainWindow" data-dojo-type="dijit.layout.BorderContainer" data-dojo-props="design:'headline', gutters:'false'">
+			<div class="siteTitle" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'top'" >
+				<!-- BEGIN USGS Header Template -->
+				<div id="usgscolorband">
+					<div id="usgsbanner">
+						<div id="usgsidentifier">
+							<a href="https://www.usgs.gov/"> <img src="./images/header_graphic_usgsIdentifier_white.jpg" alt="USGS - science for a changing world" title="U.S. Geological Survey Home Page" width="178" height="72" /> </a>
+						</div>
+						<div id="usgsccsabox">
+							<div id="usgsccsa">
+								<br />
+								<a href="https://www.usgs.gov/">USGS Home</a>
+								<br />
+								<a href="https://www.usgs.gov/ask/">Contact USGS</a>
+								<br />
+								<a href="https://search.usgs.gov/">Search USGS</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="usgstitle" style="padding-top:5px;padding-bottom:5px;">
+					<p style="display:inline;">
+						National Water Information System: Map View
+					</p>
+					<span style="vertical-align:middle;float:right;padding-right:5px;font-size:9px;">
+						<div data-dojo-type="dijit.form.Button" id="help" data-dojo-props="label:'Help', onClick:function(){window.open('instructions_sm.html','Help');}"></div>
+						<div data-dojo-type="dijit.form.Button" id="info" data-dojo-props="label:'Info', onClick:function(){dijit.byId('footerExtDialog').show();}"></div>
+					</span>
+				</div>
+				<!-- END USGS Header Template -->
+				
+			</div>
+			
+			<!-- Legend and Site Type Selections -->
+			<div id="leftPane" data-dojo-type="dojox.layout.ExpandoPane" data-dojo-props="region:'left', startExpanded:true, splitter:false">
+				<div id="sitesTabContainer" data-dojo-type="dijit.layout.TabContainer" data-dojo-props="tabStrip:true, style:'width:100%; height:100%;'">
+				
+					<!-- new tab for NWIS Sites Mapper -->
+					<div id="sitesPane" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="title:'&nbsp;Sites', iconClass:'tabSites', selected:true">
+						<div id="acc1" data-dojo-type="dijit.layout.AccordionContainer">
+						
+							<div id="sitesmapper" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="title:'Search Results', iconClass:'searchResults'" >
+								<div data-dojo-type="dijit.form.Button" id="expSWCmd" data-dojo-props="style:'padding-bottom:4px;', label:'Export Sites', onClick:function(){setExport();}"></div>
+								<div id="sitesNWISwebGrid"></div>
+								<div id="siteCountHull" style="color:red"></div>
+								
+							</div>   
+							<div id="sitesmapper2" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="title:'Search Parameters', iconClass:'datatools_icon'">
+								<br/>Summary of query
+								<hr />						
+								<div id="siteCount" style="color:red"></div>
+								<br/><br/>NWIS query arguments
+								<hr />
+								<div id="queryArgs" style="color:red"></div><br/>
+							</div>
+							
+							<div id="legend" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="title:'Explanation of Symbols', iconClass:'basemap_icon'">
+								<table class="legendtable">
+									<tr>
+										<th align="left">Site Type</th><th align="center">Active</th><th align="center">Inactive</th>
+									</tr>
+									<tr>
+										<td>Surface-Water</td>
+										<td align="center"><img src="./images/act/sw_act_30.png"/></td>
+										<td align="center"><img src="./images/ina/sw_ina_30.png"/></td>
+									</tr>
+									<tr>
+										<td>Groundwater</td>
+										<td align="center"><img src="./images/act/gw_act_30.png"/></td>
+										<td align="center"><img src="./images/ina/gw_ina_30.png"/></td>
+									</tr>
+									<tr>
+										<td>Spring</td>
+										<td align="center"><img src="./images/act/sp_act_30.png"/></td>
+										<td align="center"><img src="./images/ina/sp_ina_30.png"/></td>
+									</tr>
+									<tr>
+										<td>Atmospheric</td>
+										<td align="center"><img src="./images/act/at_act_30.png"/></td>
+										<td align="center"><img src="./images/ina/at_ina_30.png"/></td>
+									</tr>
+									<tr>
+										<td>Other</td>
+										<td align="center"><img src="./images/act/ot_act_30.png"/></td>
+										<td align="center"><img src="./images/ina/ot_ina_30.png"/></td>
+									</tr>
+								</table>
+							</div>	
+						</div> 
+					</div>
+					
+					<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="title:'&nbsp;Map Layers', iconClass:'tabMapTools'" >
+						<div data-dojo-type="dijit.layout.AccordionContainer" >
+							<div data-dojo-type="dijit.layout.ContentPane"  data-dojo-props="title:'Basemaps', iconClass:'maplayers_icon'">
+								<div id="basemapGallery"></div>
+							</div>
+							<div data-dojo-type="dijit.layout.ContentPane"  data-dojo-props="title:'Other Map Layers', iconClass:'basemap_icon'">
+								<span class="treeLevel2">
+									<input name="chkHUC" id="chkHUC" data-dojo-type="dijit.form.CheckBox" data-dojo-props="checked:false"/>
+									<label for="chkHUC">Watershed Boundary Dataset<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./images/WBD.png" alt="Watershed Boundary Dataset line symbol" /> USGS National Hydrography <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dataset (NHD)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://nhd.usgs.gov/" target="_blank">NHD Home Page</a></label>
+								</span><br /><br />
+								<span class="treeLevel2">
+									<input name="chkWSC" id="chkWSC" data-dojo-type="dijit.form.CheckBox" /><label for="chkWSC">USGS Offices<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./images/usgs16green.png" alt="USGS Water Scence Center Office" /> Water Science Center <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./images/usgs16black.png" alt="USGS Water Field Office" /> Field Office </label>
+								</span><br /><br />
+							</div>
+						</div>
+					</div>
+				</div> <!-- tab container -->
+			</div>
+
+			<div id="mapWindow" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'center'">
+				<div id="id_dialog" data-dojo-id="id_dialog2" dojoType="dijit.Dialog" title="fidget">
+					<div style="width:300px; height:80px">
+						<div id="id_dialog_text"></div>
+					</div>
+					<div class="dijitDialogPaneActionBar">
+						<button dojoType="dijit.form.Button" type="button" data-dojo-props="onClick:function(){draw_NWISweb_hull(); id_dialog2.hide();}">Draw bounding box</button>
+					</div>
+				</div>
+				<div id="mapLayout" data-dojo-type="dijit.layout.BorderContainer" data-dojo-props="design:'headline', gutters:'false'">
+
+					<div id="map" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'center'">
+						<!-- FLOATING TOOLBAR -->
+						<div id="navToolbar" data-dojo-type="dijit.Toolbar">
+							<div title="Click Map and Drag Box to Zoom In" data-dojo-type="dijit.form.Button" id="zoomin" data-dojo-props="iconClass:'zoominIcon', onClick:function(){zoomInTool();}"></div>
+							<div title="Click Map and Drag Box to Zoom Out" data-dojo-type="dijit.form.Button" id="zoomout" data-dojo-props="iconClass:'zoomoutIcon', onClick:function(){zoomOutTool();}"></div>
+							<div title="Map and Drag to Pan" data-dojo-type="dijit.form.Button" id="pan" data-dojo-props="iconClass:'panIcon', onClick:function(){navToolBar.activate(esri.toolbars.Navigation.PAN);}"></div>
+							<div title="Click Button to Zoom to Previous Map Extent" data-dojo-type="dijit.form.Button" id="zoomprev" data-dojo-props="iconClass:'zoomprevIcon', onClick:function(){navToolBar.zoomToPrevExtent();}"></div>
+							<div title="Click Button to Zoom to Initial Map Extent" data-dojo-type="dijit.form.Button" id="zoomfullext" data-dojo-props="iconClass:'zoomfullextIcon', onClick:function(){zoomToFirstExtent();}"></div>
+							<div title="Click Button to Zoom to Next Map Extent" data-dojo-type="dijit.form.Button" id="zoomnext" data-dojo-props="iconClass:'zoomnextIcon', onClick:function(){navToolBar.zoomToNextExtent();}"></div>
+							<!--<div title="Refresh Map" data-dojo-type="dijit.form.Button" id="refresh"     data-dojo-props="iconClass:'refreshIcon',     onClick:function(){ZoomManager(0);}"></div>-->
+						</div>	
+						
+						<div id="footerExtDialog" data-dojo-type="dojox.widget.DialogSimple" data-dojo-props="title:'NWIS Mapper Page Information', href:'footerdialog.html'"></div>
+
+						<div id="exportDialog" data-dojo-type="dijit.Dialog" data-dojo-props="title:'Export Sites'">
+							Export Format:<br /><br />
+							<div class="treeLevel3" id="exportButtons">
+								<input id="expFmtTable" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:true, name:'export_radio'" /><label for="expFmtTable">&nbsp;&nbsp;Table of Sites (.html)</label><br />
+								<input id="expFmtSiteNums" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'export_radio'" /><label for="expFmtSiteNums">&nbsp;&nbsp;List of Site Numbers (.txt)</label><br />
+								<input id="expFmtExcel" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'export_radio'" /><label for="expFmtExcel">&nbsp;&nbsp;Microsoft Excel (.xls)</label><br />
+								<input id="expFmtCSV" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'export_radio'" /><label for="expFmtCSV">&nbsp;&nbsp;Comma Separated (.csv)</label><br />
+								<input id="expFmtRDB" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'export_radio'" /><label for="expFmtRDB">&nbsp;&nbsp;Tab Separated (.rdb)</label><br />
+								<input id="expFmtKML" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'export_radio'" /><label for="expFmtKML">&nbsp;&nbsp;Keyhole Markup Language (.kml)&nbsp;&nbsp;&nbsp;&nbsp;</label><br />
+								<input id="expFmtShapeFile" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'export_radio'" /><label for="expFmtShapeFile">&nbsp;&nbsp;ESRI ShapeFile (.shp)</label><br /><br />
+								<div data-dojo-type="dijit.form.Button" id="expCmd" data-dojo-props="label:'Export', onClick:function(){makeExportFile();}"></div>
+							</div>
+						</div>
+
+						<div id="errExpDialog" data-dojo-type="dijit.Dialog" data-dojo-props="title:'Error'">
+						 	<img src="./images/GenericWarning16.png">&nbsp;No Sites to Export&nbsp;&nbsp;
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>

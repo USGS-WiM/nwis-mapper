@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+		<meta http-equiv="X-UA-Compatible" content="IE=8, IE=9">
+		<!--The viewport meta tag is used to improve the presentation and behavior of the samples on iOS devices-->
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+		<meta name="publisher" content="USGS - U.S. Geological Survey, Water Resources">
+		<meta name="expires" content="never">
+		<title>Water Resources of the United States&mdash;National Water Information System (NWIS) Mapper</title>
+		<link rel="stylesheet" href="https://js.arcgis.com/3.13/dijit/themes/claro/claro.css">
+		<link rel="stylesheet" href="https://js.arcgis.com/3.13/esri/dijit/css/Popup.css">
+		<link rel="stylesheet" href="https://js.arcgis.com/3.13/dojox/layout/resources/ExpandoPane.css">
+		<link rel="stylesheet" href="https://js.arcgis.com/3.13/dojox/grid/resources/claroGrid.css">
+		<link rel="stylesheet" href="https://js.arcgis.com/3.13/dijit/themes/claro/document.css">
+		<!-- EJSAPIv3.x -->
+		<link rel="stylesheet" href="https://js.arcgis.com/3.13/esri/css/esri.css">
+		<link href="./style/msie.css" rel="stylesheet" type="text/css">
+		<link href="./style/common.css" rel="stylesheet" type="text/css">
+		<link href="./style/custom.css" rel="stylesheet" type="text/css">
+		<link href="./style/leftnav.css" rel="stylesheet" type="text/css">
+		<link href="./style/water.css" rel="stylesheet" type="text/css">
+		<link href="./style/topnav.css" rel="stylesheet" type="text/css">
+		<link href="./style/main.css" rel="stylesheet" type="text/css">
+		<!-- <link href="https://water.usgs.gov/style/media.css" rel="stylesheet" type="text/css" media="print"> -->
+
+		<script type="text/javascript">
+			var dojoConfig = {
+				parseOnLoad:true
+			};
+		</script>
+
+		<!-- load the ESRI toolkit -->
+		<script src="https://js.arcgis.com/3.13/"></script>
+
+		<!-- many of the markup items are dojo replacements - so need to load dojo -->
+		<script type="text/javascript">
+
+			dojo.require("dijit.dijit");
+			dojo.require("dijit.Menu");
+			dojo.require("dijit.Tooltip");
+			dojo.require("dijit.Dialog");
+			dojo.require("dijit.form.Button");
+			dojo.require("dijit.form.CheckBox");
+			dojo.require("dijit.form.ToggleButton");
+			dojo.require("dijit.form.TextBox");
+			dojo.require("dijit.form.ComboBox");
+			dojo.require("dijit.form.Select");
+			dojo.require("dijit.form.FilteringSelect");
+			dojo.require("dijit.layout.BorderContainer");
+			dojo.require("dijit.layout.ContentPane");
+			dojo.require("dijit.layout.AccordionContainer");
+			dojo.require("dijit.layout.TabContainer");
+			dojo.require("dijit.Toolbar");
+
+			dojo.require("esri.map");
+			dojo.require("esri.request");
+			dojo.require("esri.tasks.locator");
+			dojo.require("esri.toolbars.navigation");
+			dojo.require("esri.virtualearth.VETiledLayer");
+			dojo.require("esri.layers.graphics");
+			dojo.require("esri.layers.agstiled");
+			dojo.require("esri.layers.tiled");
+			dojo.require("esri.layers.KMLLayer");
+			dojo.require("esri.dijit.Scalebar");
+			dojo.require("esri.dijit.OverviewMap");
+			dojo.require("esri.dijit.BasemapGallery");
+			dojo.require("esri.dijit.Popup");
+			dojo.require("esri.dijit.InfoWindowLite");
+			dojo.require("esri.layers.WebTiledLayer");
+			
+			dojo.require("dojox.xml.parser");
+			dojo.require("dojox.xml.DomParser");
+			dojo.require("dojox.layout.ExpandoPane");
+			dojo.require("dojox.widget.DialogSimple");
+			dojo.require("dojox.grid.DataGrid");
+			dojo.require("dojox.widget.Standby");
+			dojo.require("dojox.json.query");
+			dojo.require("dojo._base.json");
+
+			dojo.require("dojo.data.ItemFileWriteStore");
+
+		</script>
+
+	<script type="text/javascript">
+
+		//config variables
+		var waterdataURL = 'https://waterdata.usgs.gov';
+
+		// global variables
+		var map;
+		var navToolBar;
+		var popup;
+		var ovMap;
+
+		//get url for footerdialog
+		var footerURL = window.location.href;
+
+		// testing....
+		//var siteTemplate;
+
+		// page information
+		// var docLocation = location.href;
+		// var docUpdated = document.lastModified;
+
+		// global standbys
+		var swActStandby, swInaStandby;
+		var gwActStandby, gwInaStandby;
+		var spActStandby, spInaStandby;
+		var atActStandby, atInaStandby;
+		var otActStandby, otInaStandby;
+
+		// search standbys
+		var srchAddressStandby, srchPlacesStandby, srchSitesStandby;
+
+		// global stores
+		var statusStore;
+		var sitesSWActStore, sitesSWInaStore;
+		var sitesGWActStore, sitesGWInaStore;
+		var sitesSPActStore, sitesSPInaStore;
+		var sitesATActStore, sitesATInaStore;
+		var sitesOTActStore, sitesOTInaStore;
+
+		// global grids
+		var statusGrid;
+		var sitesSWActGrid, sitesSWInaGrid;
+		var sitesGWActGrid, sitesGWInaGrid;
+		var sitesSPActGrid, sitesSPInaGrid;
+		var sitesATActGrid, sitesATInaGrid;
+		var sitesOTActGrid, sitesOTInaGrid;
+
+		// huc searches
+		var hucsRegStore;
+		var hucsRegSelect;
+
+		// Aquifers
+		var aqMapX;
+		var aqMapY;
+		
+		// USGS offices
+		var usgsStore;
+
+		// Places for zooming and selecting
+		var placesStore;
+		var placesSelect;
+		var stateZoomStore;
+		var searchZoomDef;
+
+		// URL parameters
+		var MapX, MapY, MapZoom;
+		var MapZoomConnect;
+		var MapShowOv;
+		var MapZoomPlace;
+		var siteGroups;
+
+		// global variables for working with zoom levels
+		var ZoomStart, ZoomEnd;
+
+		// set discrete clickable levels for each sitetype
+		// [sw,gw,sp,at,ot]
+		var ClickLevelMin = [4,4,4,4,4];
+		var ClickLevelMax = [8,10,8,8,8];
+
+		// variable for export format
+		var exportCodes = "";
+
+		// global variables and constants for icon sizes
+		var icon_width = 22;
+		var icon_height = 30;
+		var icon_postfix = "_30";
+
+		function init() {
+		
+			var layersRequest = esri.request({
+			  url: './s3bucket.json',
+			  headers: {
+				'X-Requested-With': null
+			  },
+			  content: { f: "json" },
+			  handleAs: "json",
+			  callbackParamName: "callback"
+			});
+			layersRequest.then(
+			  function(response) {
+				addS3layers(response.s3bucket);
+				console.log("Success: ", response);
+			}, function(error) {
+				console.log("There was a problem requesting the bucket name: ", error);
+			});
+
+			// set default map extent
+			var initialExtent = new esri.geometry.Extent({
+				"xmin":-14353065.00,
+				"ymin":2251027.00,
+				"xmax":-7179935.00,
+				"ymax":6580283.00,
+				"spatialReference":{
+					"wkid":102100
+				}
+			});
+
+			// create popup instance
+			popup = new esri.dijit.Popup({}, dojo.create("div"));
+
+			// create map instance
+			map = new esri.Map("map", {
+				extent:initialExtent,
+				wrapAround180:true,
+				fadeOnZoom:false,
+				sliderStyle:"large",
+				basemap: "streets",
+				infoWindow: popup
+			});
+
+			//create basemap gallery
+			createBasemapGallery();
+
+			// toolbar
+			navToolBar = new esri.toolbars.Navigation(map);
+			dojo.connect(navToolBar, "onExtentHistoryChange", extentHistoryChangeHandler);
+			
+			// show lat lon coordiantes
+			dojo.connect(map, "onLoad", function () {
+				dojo.connect(map, "onMouseMove", showCoordinates);
+				dojo.connect(map, "onMouseDrag", showCoordinates);
+				createOvMap();
+			});
+
+			// scalebar
+			var scalebar = new esri.dijit.Scalebar({
+				map:map,
+				scalebarUnit:'english'
+			});
+
+			// listens for the inital map extent change and zooms to the URL parameter level
+			MapZoomConnect = dojo.connect(map, 'onExtentChange', function() {
+				zoomToLevel();
+			});
+
+			// ZoomStart holds the previous zoom level
+			dojo.connect(map, 'onZoomStart', function(extent, zoomFactor, anchor, level) {
+				ZoomStart = level;
+			});
+
+			// ZoomEnd holds the current zoom level
+			dojo.connect(map, 'onZoomEnd', function(extent, zoomFactor, anchor, level) {
+				ZoomEnd = level;
+				ZoomManager(1);
+				navToolBar.deactivate();
+				map.setMapCursor('default');
+			});
+
+			// pan events are same as clickbox essentially
+			dojo.connect(map, 'onPanEnd', function() {
+				ZoomManager(0);
+			});
+
+			// resizing the grids causes a different number of sites to be shown
+			dojo.connect(dijit.byId("mapBottomPane"), "resize", function() {
+				setTimeout( function() { ZoomManager(0); }, 1000);
+				popup.hide();
+			});
+			
+			// get aquifer name
+			dojo.connect(map, 'onClick', function(evt) {
+				getAquifer(evt.mapPoint);
+			});
+			
+			// ============================================================
+			// Site Type Checkbox Listeners
+			// ============================================================
+			dojo.connect(dojo.byId("chkSWAct"), 'click', function() {ZoomManager(0);});
+			dojo.connect(dojo.byId("chkSWIna"), 'click', function() {ZoomManager(0);});
+			dojo.connect(dojo.byId("chkGWAct"), 'click', function() {ZoomManager(0);});
+			dojo.connect(dojo.byId("chkGWIna"), 'click', function() {ZoomManager(0);});
+			dojo.connect(dojo.byId("chkSPAct"), 'click', function() {ZoomManager(0);});
+			dojo.connect(dojo.byId("chkSPIna"), 'click', function() {ZoomManager(0);});
+			dojo.connect(dojo.byId("chkATAct"), 'click', function() {ZoomManager(0);});
+			dojo.connect(dojo.byId("chkATIna"), 'click', function() {ZoomManager(0);});
+			dojo.connect(dojo.byId("chkOTAct"), 'click', function() {ZoomManager(0);});
+			dojo.connect(dojo.byId("chkOTIna"), 'click', function() {ZoomManager(0);});
+
+			// listener for radio groups
+			dojo.connect(dojo.byId("sp_sw_act"), 'click', function() {ZoomManager(0);});
+			dojo.connect(dojo.byId("sp_sw_ina"), 'click', function() {ZoomManager(0);});
+			dojo.connect(dojo.byId("sp_gw_act"), 'click', function() {ZoomManager(0);});
+			dojo.connect(dojo.byId("sp_gw_ina"), 'click', function() {ZoomManager(0);});
+			dojo.connect(dojo.byId("sp_sp_act"), 'click', function() {ZoomManager(0);});
+			dojo.connect(dojo.byId("sp_sp_ina"), 'click', function() {ZoomManager(0);});
+			dojo.connect(dojo.byId("sp_at_act"), 'click', function() {ZoomManager(0);});
+			dojo.connect(dojo.byId("sp_at_ina"), 'click', function() {ZoomManager(0);});
+			dojo.connect(dojo.byId("sp_ot_act"), 'click', function() {ZoomManager(0);});
+			dojo.connect(dojo.byId("sp_ot_ina"), 'click', function() {ZoomManager(0);});
+			
+			// add listener for Search boxes
+			dojo.connect(dojo.byId("srchBoxPlace"), 'keydown', function(evt) {
+				var keyCode = evt ? (evt.which ? evt.which : evt.keyCode) : event.keyCode;
+				if (keyCode == 13) { 
+					doSearchName(1);
+				}
+				else
+					return true;
+			});
+
+			dojo.connect(dojo.byId("srchBoxStreet"), 'keydown', function(evt) {
+				var keyCode = evt ? (evt.which ? evt.which : evt.keyCode) : event.keyCode;
+				if (keyCode == 13) { 
+					doSearchName(2);
+				}
+				else
+					return true;
+			});
+			
+			dojo.connect(dojo.byId("srchBoxSites"), 'keydown', function(evt) {
+				var keyCode = evt ? (evt.which ? evt.which : evt.keyCode) : event.keyCode;
+				if (keyCode == 13) { 
+					doSearchSites('site_num');
+				}
+				else
+					return true;
+			});
+
+			// ============================================================
+			// get URL parameters
+			// ============================================================
+			getURLParameters();
+			// after call to URL parameters set the map zoom variables
+			ZoomEnd = MapZoom;
+			ZoomStart = ZoomEnd;
+
+			// ============================================================
+			// Tile and Graphics Overlays
+			// ============================================================
+
+			// add the s3 layers
+			function addS3layers(s3bucket) {
+				// hucs
+				var hucs = new esri.layers.WebTiledLayer("https://" + s3bucket + ".s3.amazonaws.com/hucs/${level}/${row}/${col}.png", {"id": "hucs", opacity: 0.3, visible: false});  
+				map.addLayer(hucs);
+				
+				// aquifers
+				var pr_aq = new esri.layers.WebTiledLayer("https://" + s3bucket + ".s3.amazonaws.com/pr_aq/${level}/${row}/${col}.png", {"id": "pr_aq", visible: false}); 
+				map.addLayer(pr_aq);
+				
+				// define NWIS tile cache overlay layers
+				var sw_act = new esri.layers.WebTiledLayer("https://" + s3bucket + ".s3.amazonaws.com/sw_act/${level}/${row}/${col}.png", {"id": "sw_act", visible: false});
+				var sw_ina = new esri.layers.WebTiledLayer("https://" + s3bucket + ".s3.amazonaws.com/sw_ina/${level}/${row}/${col}.png", {"id": "sw_ina", visible: false}); 
+				var sp_act = new esri.layers.WebTiledLayer("https://" + s3bucket + ".s3.amazonaws.com/sp_act/${level}/${row}/${col}.png", {"id": "sp_act", visible: false});
+				var sp_ina = new esri.layers.WebTiledLayer("https://" + s3bucket + ".s3.amazonaws.com/sp_ina/${level}/${row}/${col}.png", {"id": "sp_ina", visible: false});
+				var at_act = new esri.layers.WebTiledLayer("https://" + s3bucket + ".s3.amazonaws.com/at_act/${level}/${row}/${col}.png", {"id": "at_act", visible: false});
+				var at_ina = new esri.layers.WebTiledLayer("https://" + s3bucket + ".s3.amazonaws.com/at_ina/${level}/${row}/${col}.png", {"id": "at_ina", visible: false});
+				var ot_act = new esri.layers.WebTiledLayer("https://" + s3bucket + ".s3.amazonaws.com/ot_act/${level}/${row}/${col}.png", {"id": "ot_act", visible: false});
+				var ot_ina = new esri.layers.WebTiledLayer("https://" + s3bucket + ".s3.amazonaws.com/ot_ina/${level}/${row}/${col}.png", {"id": "ot_ina", visible: false});		
+				var gw_act = new esri.layers.WebTiledLayer("https://" + s3bucket + ".s3.amazonaws.com/gw_act/${level}/${row}/${col}.png", {"id": "gw_act", visible: false});
+				var gw_ina = new esri.layers.WebTiledLayer("https://" + s3bucket + ".s3.amazonaws.com/gw_ina/${level}/${row}/${col}.png", {"id": "gw_ina", visible: false});
+
+				// add the overlays to the map, but invisible
+				map.addLayer(gw_ina);
+				map.addLayer(ot_ina);
+				map.addLayer(at_ina);
+				map.addLayer(sp_ina);
+				map.addLayer(sw_ina);
+				map.addLayer(gw_act);
+				map.addLayer(ot_act);
+				map.addLayer(at_act);
+				map.addLayer(sp_act);
+				map.addLayer(sw_act);
+			}
+
+			// define a selection layer overlay
+			defineGraphicLayer("sel_glayer", 1.0);
+			defineGraphicLayer("zoom_sel_glayer", 1.0);
+
+			// define NWIS graphics overlay layers
+			// inactive layers first
+			defineGraphicLayer("ot_ina_glayer", 1.0);
+			defineGraphicLayer("at_ina_glayer", 1.0);
+			defineGraphicLayer("sp_ina_glayer", 1.0);
+			defineGraphicLayer("gw_ina_glayer", 1.0);
+			defineGraphicLayer("sw_ina_glayer", 1.0);
+
+			// active graphics layers
+			defineGraphicLayer("ot_act_glayer", 1.0);
+			defineGraphicLayer("at_act_glayer", 1.0);
+			defineGraphicLayer("sp_act_glayer", 1.0);
+			defineGraphicLayer("gw_act_glayer", 1.0);
+			defineGraphicLayer("sw_act_glayer", 1.0);
+
+			// define USGS water offices layer
+			defineGraphicLayer("wsc_glayer", 1.0);
+			makeUSGSLayer();
+			
+			// listener for extra map themes
+			dojo.connect(dojo.byId("chkHUC"), 'click', function() {HUCLayer();});
+			dojo.connect(dojo.byId("chkAQ"), 'click', function() {AQLayer();});			
+			dojo.connect(dojo.byId("chkWSC"), 'click', function() {showUSGSOffices();});
+			dojo.connect(dojo.byId("chkCONG"), 'click', function() {CONGLayer();});
+
+			// data grids
+			makeStatusGrid();
+			makeSiteGrids();
+
+			// search selections
+			makeHucSearch();
+			makePlacesSearch();
+
+			// URL Zoom to State - this should probably only be called when a state
+			// is requested in the URL parameters, but we might need it later
+			makeStateZoomStore();
+
+			// standbys
+			makeStandbys();
+
+			// center map if URL parameters are given, or place if state or territory
+			// is selected. Note:the map level  cannot be changed here because the map
+			// has not loaded yet. An event handler zooms to the URL map level after the initial extent changes
+			if (MapZoomPlace == "" ) {
+				var geometry = new esri.geometry.Point(parseFloat(MapX), parseFloat(MapY));
+				geometry = esri.geometry.geographicToWebMercator(geometry);
+				map.centerAt(geometry);
+			} else {
+				zoomURLState(MapZoomPlace);
+				ZoomManager(0);
+			}
+
+			setLayersFromURL();
+	
+		}
+
+		dojo.addOnLoad(init);
+
+	</script>
+	<script type="text/javascript" src="scripts/mapper.js"></script>
+	<script type="application/javascript" src="https://www2.usgs.gov/scripts/analytics/usgs-analytics.js"></script>
+	
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-61219868-8', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+</head>
+
+	<body class="claro">
+		<div id="mainWindow" data-dojo-type="dijit.layout.BorderContainer" data-dojo-props="design:'headline', gutters:'false'">
+			<div class="siteTitle" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'top'" >
+				<!-- BEGIN USGS Header Template -->
+				<div id="usgscolorband">
+					<div id="usgsbanner">
+						<div id="usgsidentifier">
+							<a href="https://www.usgs.gov/"> <img src="./images/header_graphic_usgsIdentifier_white.jpg" alt="USGS - science for a changing world" title="U.S. Geological Survey Home Page" width="178" height="72" /> </a>
+						</div>
+						<div id="usgsccsabox">
+							<div id="usgsccsa">
+								<br />
+								<a href="https://www.usgs.gov/">USGS Home</a>
+								<br />
+								<a href="https://www.usgs.gov/ask/">Contact USGS</a>
+								<br />
+								<a href="https://search.usgs.gov/">Search USGS</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="usgstitle" style="padding-top:5px;padding-bottom:5px;">
+					<p style="display:inline;">National Water Information System: Mapper</p>
+					
+					<span style="vertical-align:middle;float:right;padding-right:5px;font-size:9px;">
+						<div data-dojo-type="dijit.form.Button" id="help" data-dojo-props="label:'Help', onClick:function(){window.open('instructions.html','Help');}"></div>
+						<div data-dojo-type="dijit.form.Button" id="info" data-dojo-props="label:'Info', onClick:function(){dijit.byId('footerExtDialog').show();}"></div>
+					</span>
+				</div>
+				<!-- END USGS Header Template -->
+</div>
+<!-- Legend and Site Type Selections -->
+<div id="leftPane" data-dojo-type="dojox.layout.ExpandoPane" data-dojo-props="region:'left', startExpanded:true, splitter:false">
+	<div id="sitesTabContainer" data-dojo-type="dijit.layout.TabContainer" data-dojo-props="tabStrip:true, style:'width:100%; height:100%;'">
+		<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="title:'&nbsp;Sites', iconClass:'tabSites'">
+			<div data-dojo-type="dijit.layout.AccordionContainer">
+				<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="title:'Search', iconClass:'maptools_icon'">
+					<div id="pMapSearch">
+						<div class="srchBox">
+							Search by Street Address:<br />
+						<input id="srchBoxStreet" data-dojo-type="dijit.form.TextBox" data-dojo-props="value:'Enter Street Address', style:'color:#9FADBF;font-style:italic;font-size:8pt', onClick:function() {resetLocSearch(2);}">
+							<div data-dojo-type="dijit.form.Button" id="srchGoStreet" data-dojo-props="iconClass:'search_icon', onClick:function() {doSearchName(2);}"></div>
+							<div id="srchAddressBar" class="srchBar"></div>
+						</div>
+						<div class="srchBox">
+							Search by Place Name:<br />
+							<input id="srchBoxPlace" data-dojo-type="dijit.form.TextBox" data-dojo-props="value:'Enter Place Name', style:'color:#9FADBF;font-style:italic;font-size:8pt', onClick:function() {resetLocSearch(1);}">
+							<div data-dojo-type="dijit.form.Button" id="srchGoPlace" data-dojo-props="iconClass:'search_icon', onClick:function() {doSearchName(1);}"></div>
+							<div id="srchPlacesBar" class="srchBar"></div>
+						</div>
+						<div class="srchBox">
+							Search by Site Number(s):<br />
+							<input id="srchBoxSites" data-dojo-type="dijit.form.TextBox" data-dojo-props="value:'Enter Site Number(s)', style:'color:#9FADBF;font-style:italic;font-size:8pt', onClick:function() {resetLocSearch(3);}" >
+							<div data-dojo-type="dijit.form.Button" id="srchGoSites" data-dojo-props="iconClass:'search_icon', onClick:function() {doSearchSites('site_num');} "></div>
+							<div id="srchSitesBar" class="srchBar"></div>
+						</div>
+						<div class="srchBox">
+							Search by State/Territory:<br />
+							<div id="placesSelect"></div>
+						</div>
+						<div class="srchBox">
+							Search by Watershed Region:<br />
+							<div id="hucsRegSelect"></div>
+						</div>
+					</div>
+				</div>
+				<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="iconClass:'sw_acc_icon', title:'&nbsp;&nbsp;Surface-Water Sites'">
+					<span class="treeLevel2">
+						<input name="chkSWAct" id="chkSWAct" data-dojo-type="dijit.form.CheckBox" />
+						<img src="./images/act/sw_act_30.png" alt="Surface-water icon" />
+						<label for="chkSWAct">Active Sites</label>
+					</span>
+
+	<div style="position:absolute;top:5px;right:5px;">
+		<input type="image" src="images/question.png" title="About Surface-Water Sites" onclick="dijit.byId('swExtDialog').show();">
+	</div>
+
+	<div id="sp_sw_act" class="treeLevel3">
+		<input id="sw_act_all" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:true, name:'sw_act_radio'" /><label for="sw_act_all">Any data</label><br />
+		<input id="sw_act_iv" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'sw_act_radio'"/><label for="sw_act_iv">Instantaneous data</label><br />
+		<input id="sw_act_dv" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'sw_act_radio'"/><label for="sw_act_dv">Daily data</label><br />
+		<input id="sw_act_qw" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'sw_act_radio'"/><label for="sw_act_qw">Water-quality data</label><br />
+		<input id="sw_act_pk" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'sw_act_radio'"/><label for="sw_act_pk">Peak data</label><br />
+		<input id="sw_act_sv" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'sw_act_radio'"/><label for="sw_act_sv">Measurements</label><br />
+		<input id="sw_act_ad" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'sw_act_radio'"/><label for="sw_act_ad">Annual Report</label><br />
+	</div><br />
+	<span class="treeLevel2">
+		<input name="chkSWIna" id="chkSWIna" data-dojo-type="dijit.form.CheckBox" />
+		<img src="./images/ina/sw_ina_30.png" alt="Surface-water icon" />
+		<label for="chkSWIna">Inactive Sites</label>&nbsp;&nbsp;
+	</span><br />
+	<div id="sp_sw_ina" class="treeLevel3">
+		<input   id="sw_ina_all" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:true, name:'sw_ina_radio'" /><label for="sw_ina_all">Any data</label><br />
+		<input   id="sw_ina_iv" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'sw_ina_radio'"/><label for="sw_ina_iv">Instantaneous data</label><br />
+		<input   id="sw_ina_dv" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'sw_ina_radio'"/><label for="sw_ina_dv">Daily data</label><br />
+		<input   id="sw_ina_qw" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'sw_ina_radio'"/><label for="sw_ina_qw">Water-quality data</label><br />
+		<input   id="sw_ina_pk" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'sw_ina_radio'"/><label for="sw_ina_pk">Peak data</label><br />
+		<input   id="sw_ina_sv" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'sw_ina_radio'"/><label for="sw_ina_sv">Measurements</label><br />
+		<input   id="sw_ina_ad" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'sw_ina_radio'"/><label for="sw_ina_ad">Annual Report</label><br />
+	</div><br />
+</div>
+<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="title:'&nbsp;&nbsp;Groundwater Sites', iconClass:'gw_acc_icon'">
+	<span class="treeLevel2">
+		<input name="chkGWAct" id="chkGWAct" data-dojo-type="dijit.form.CheckBox" />
+		<img src="./images/act/gw_act_30.png" alt="Groundwater icon" />
+		<label for="chkGWAct">Active Sites</label>
+	</span>
+
+	<div style="position:absolute;top:5px;right:5px;">
+		<input type="image" src="images/question.png" title="About Groundwater Sites" onclick="dijit.byId('gwExtDialog').show();">
+	</div>
+
+	<div id="sp_gw_act" class="treeLevel3">
+		<input  id="gw_act_all" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:true, name:'gw_act_radio'" /><label for="gw_act_all">Any data</label><br />
+		<input  id="gw_act_iv" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'gw_act_radio'"/><label for="gw_act_iv">Instantaneous data</label><br />
+		<input  id="gw_act_dv" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'gw_act_radio'"/><label for="gw_act_dv">Daily data</label><br />
+		<input  id="gw_act_qw" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'gw_act_radio'"/><label for="gw_act_qw">Water-quality data</label><br />
+		<input  id="gw_act_gw" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'gw_act_radio'"/><label for="gw_act_gw">Measurements</label><br />
+		<input  id="gw_act_ad" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'gw_act_radio'"/><label for="gw_act_ad">Annual Report</label><br />
+	</div><br />
+	<span class="treeLevel2">
+		<input name="chkGWIna" id="chkGWIna" data-dojo-type="dijit.form.CheckBox" />
+		<img src="./images/ina/gw_ina_30.png" alt="Groundwater icon" />
+		<label for="chkGWIna">Inactive Sites</label>
+	</span><br />
+	<div id="sp_gw_ina" class="treeLevel3">
+		<input id="gw_ina_all" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:true, name:'gw_ina_radio'" /><label for="gw_ina_all">Any data</label><br />
+		<input id="gw_ina_iv" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'gw_ina_radio'"/><label for="gw_ina_iv">Instantaneous data</label><br />
+		<input id="gw_ina_dv" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'gw_ina_radio'"/><label for="gw_ina_dv">Daily data</label><br />
+		<input id="gw_ina_qw" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'gw_ina_radio'"/><label for="gw_ina_qw">Water-quality data</label><br />
+		<input id="gw_ina_gw" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'gw_ina_radio'"/><label for="gw_ina_gw">Measurements</label><br />
+		<input id="gw_ina_ad" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'gw_ina_radio'"/><label for="gw_ina_ad">Annual Report</label><br />
+	</div><br />
+</div>
+<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="title:'&nbsp;&nbsp;Springs', iconClass:'sp_acc_icon'">
+	<span class="treeLevel2">
+		<input name="chkSPAct" id="chkSPAct" data-dojo-type="dijit.form.CheckBox"  />
+		<img src="./images/act/sp_act_30.png" alt="Springs icon" />
+		<label for="chkSPAct">Active Sites</label>
+	</span>
+
+	<div style="position:absolute;top:5px;right:5px;">
+		<input type="image" src="images/question.png" title="About Springs" onclick="dijit.byId('spExtDialog').show();">
+	</div>
+
+	<div id="sp_sp_act" class="treeLevel3">
+		<input id="sp_act_all" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:true, name:'sp_act_radio'" /><label for="sp_act_all">Any data</label><br />
+		<input id="sp_act_iv" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'sp_act_radio'"/><label for="sp_act_iv">Instantaneous data</label><br />
+		<input id="sp_act_dv" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'sp_act_radio'"/><label for="sp_act_dv">Daily data</label><br />
+		<input id="sp_act_qw" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'sp_act_radio'"/><label for="sp_act_qw">Water-quality data</label><br />
+		<input id="sp_act_pk" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'sp_act_radio'"/><label for="sp_act_pk">Peak data</label><br />
+		<input id="sp_act_sv" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'sp_act_radio'"/><label for="sp_act_sv">Measurements</label><br />
+	</div><br />
+	<span class="treeLevel2">
+		<input name="chkSPIna" id="chkSPIna" data-dojo-type="dijit.form.CheckBox"  />
+		<img src="./images/ina/sp_ina_30.png" alt="Springs icon" />
+		<label for="chkSPIna">Inactive Sites</label>
+	</span><br />
+	<div id="sp_sp_ina" class="treeLevel3">
+		<input id="sp_ina_all" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:true, name:'sp_ina_radio'" /><label for="sp_ina_all">Any data</label><br />
+		<input id="sp_ina_iv" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'sp_ina_radio'"/><label for="sp_ina_iv">Instantaneous data</label><br />
+		<input id="sp_ina_dv" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'sp_ina_radio'"/><label for="sp_ina_dv">Daily data</label><br />
+		<input id="sp_ina_qw" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'sp_ina_radio'"/><label for="sp_ina_qw">Water-quality data</label><br />
+		<input id="sp_ina_pk" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'sp_ina_radio'"/><label for="sp_ina_pk">Peak data</label><br />
+		<input id="sp_ina_sv" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'sp_ina_radio'"/><label for="sp_ina_sv">Measurements</label><br />
+	</div><br />
+</div>
+<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="title:'&nbsp;&nbsp;Atmospheric Sites', iconClass:'at_acc_icon'">
+	<span class="treeLevel2">
+		<input name="chkATAct" id="chkATAct" data-dojo-type="dijit.form.CheckBox" />
+		<img src="./images/act/at_act_30.png" alt="Atmospheric Sites icon" />
+		<label for="chkATAct">Active Sites</label>
+	</span>
+
+	<div style="position:absolute;top:5px;right:5px;">
+		<input type="image" src="images/question.png" title="About Atmospheric Sites" onclick="dijit.byId('atExtDialog').show();">
+	</div>
+
+	<div id="sp_at_act" class="treeLevel3">
+		<input  id="at_act_all" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:true, name:'at_act_radio'"/><label for="at_act_all">Any data</label><br />
+		<input  id="at_act_iv" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'at_act_radio'"/><label for="at_act_iv">Instantaneous data</label><br />
+		<input  id="at_act_dv" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'at_act_radio'"/><label for="at_act_dv">Daily data</label><br />
+		<input  id="at_act_qw" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'at_act_radio'"/><label for="at_act_qw">Water-quality data</label><br />
+		<input  id="at_act_ad" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'at_act_radio'"/><label for="at_act_ad">Annual Report</label><br />
+	</div><br />
+	<span class="treeLevel2">
+		<input name="chkATIna" id="chkATIna" data-dojo-type="dijit.form.CheckBox"  />
+		<img src="./images/ina/at_ina_30.png" alt="Atmospheric Sites icon" />
+		<label for="chkATIna">Inactive Sites</label>
+	</span><br />
+	<div id="sp_at_ina" class="treeLevel3">
+		<input id="at_ina_all" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:true, name:'at_ina_radio'" /><label for="at_ina_all">Any data</label><br />
+		<input id="at_ina_iv" data-dojo-type="dijit.form.RadioButton"  data-dojo-props="checked:false, name:'at_ina_radio'" /><label for="at_ina_iv">Instantaneous data</label><br />
+		<input id="at_ina_dv" data-dojo-type="dijit.form.RadioButton"  data-dojo-props="checked:false, name:'at_ina_radio'" /><label for="at_ina_dv">Daily data</label><br />
+		<input id="at_ina_qw" data-dojo-type="dijit.form.RadioButton"  data-dojo-props="checked:false, name:'at_ina_radio'" /><label for="at_ina_qw">Water-quality data</label><br />
+		<input id="at_ina_ad" data-dojo-type="dijit.form.RadioButton"  data-dojo-props="checked:false, name:'at_ina_radio'" /><label for="at_ina_ad">Annual Report</label><br />
+	</div><br />
+</div>
+<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="title:'&nbsp;&nbsp;Other Sites', iconClass:'ot_acc_icon'">
+	<span class="treeLevel2">
+		<input name="chkOTAct" id="chkOTAct" data-dojo-type="dijit.form.CheckBox"  />
+		<img src="./images/act/ot_act_30.png" alt="Other Sites icon" />
+		<label for="chkOTAct">Active Sites</label>
+	</span>
+
+	<div style="position:absolute;top:5px;right:5px;">
+		<input type="image" src="images/question.png" title="About Other Sites" onclick="dijit.byId('otExtDialog').show();">
+	</div>
+
+	<div id="sp_ot_act" class="treeLevel3">
+		<input id="ot_act_all" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:true, name:'ot_act_radio'" /><label for="ot_act_all">Any data</label><br />
+		<input id="ot_act_iv" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'ot_act_radio'"/><label for="ot_act_iv">Instantaneous data</label><br />
+		<input id="ot_act_dv" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'ot_act_radio'"/><label for="ot_act_dv">Daily data</label><br />
+		<input id="ot_act_qw" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'ot_act_radio'"/><label for="ot_act_qw">Water-quality data</label><br />
+		<input id="ot_act_pk" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'ot_act_radio'"/><label for="ot_act_pk">Peak data</label><br />
+		<input id="ot_act_sv" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'ot_act_radio'"/><label for="ot_act_sv">Measurements</label><br />
+	</div><br />
+	<span class="treeLevel2">
+		<input name="chkOTIna" id="chkOTIna" data-dojo-type="dijit.form.CheckBox"  />
+		<img src="./images/ina/ot_ina_30.png" alt="Other Site icon" />
+		<label for="chkOTIna">Inactive Sites</label>
+	</span><br />
+	<div id="sp_ot_ina" class="treeLevel3">
+		<input  id="ot_ina_all" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:true, name:'ot_ina_radio'" /><label for="ot_ina_all">Any data</label><br />
+		<input  id="ot_ina_iv" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'ot_ina_radio'"/><label for="ot_ina_iv">Instantaneous data</label><br />
+		<input  id="ot_ina_dv" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'ot_ina_radio'"/><label for="ot_ina_dv">Daily data</label><br />
+		<input  id="ot_ina_qw" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'ot_ina_radio'"/><label for="ot_ina_qw">Water-quality data</label><br />
+		<input  id="ot_ina_pk" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'ot_ina_radio'"/><label for="ot_ina_pk">Peak data</label><br />
+		<input  id="ot_ina_sv" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'ot_ina_radio'"/><label for="ot_ina_sv">Measurements</label><br />
+	</div><br />
+</div>
+</div>
+</div>
+<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="title:'&nbsp;Map', iconClass:'tabMapTools'" >
+	<div data-dojo-type="dijit.layout.AccordionContainer" >
+		<div data-dojo-type="dijit.layout.ContentPane"  data-dojo-props="title:'Map Layers', iconClass:'basemap_icon'">
+			<span class="treeLevel2">
+				<input name="chkHUC" id="chkHUC" data-dojo-type="dijit.form.CheckBox" data-dojo-props="checked:false"/>
+				<div style="position:absolute;top:0px;left:200px;">
+					<input type="image" src="images/question.png" title="About Watershed Boundary Dataset" onclick="dijit.byId('wbdExtDialog').show();">
+				</div>
+				<label for="chkHUC">Watershed Boundary Dataset<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./images/WBD.png" alt="Watershed Boundary Dataset line symbol" /> USGS National Hydrography <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dataset (NHD)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://nhd.usgs.gov/" target="_blank">NHD Home Page</a></label>
+			</span><br /><br />
+			<span class="treeLevel2">
+				<input name="chkAQ" id="chkAQ" data-dojo-type="dijit.form.CheckBox" data-dojo-props="checked:false"/>
+				<div style="position:absolute;top:0px;left:200px;">
+					<input type="image" src="images/question.png" title="About Principal Aquifers" onclick="dijit.byId('aqExtDialog').show();">
+				</div>
+				<label for="chkAQ">Principal Aquifers<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./images/aquifers_thumb.gif" alt="Principal Aquifers Polygons" /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;USGS National Atlas<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://nationalatlas.gov/" target="_blank">National Atlas Home Page</a> </label>
+			</span><br /><br />
+			<span class="treeLevel2">
+				<input name="chkWSC" id="chkWSC" data-dojo-type="dijit.form.CheckBox" />
+				<div style="position:absolute;top:0px;left:200px;">
+					<input type="image" src="images/question.png" title="About USGS offices" onclick="dijit.byId('wscExtDialog').show();">
+				</div>				
+				<label for="chkWSC">USGS Offices<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./images/usgs16green.png" alt="USGS Water Science Center Office" /> Water Science Center <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./images/usgs16black.png" alt="USGS Water Field Office" /> Field Office </label>
+			</span><br /><br />
+		</div>
+		<div data-dojo-type="dijit.layout.ContentPane"  data-dojo-props="title:'Base Map', iconClass:'maplayers_icon'">
+			<div id="basemapGallery"></div>
+		</div>
+	</div>
+</div>
+</div> <!-- tab container -->
+</div>
+
+	<div id="mapWindow" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'center'">
+	<!-- SPLASH SCREEN AREA
+			<div id="id_dialog" data-dojo-id="id_dialog2" dojoType="dijit.Dialog" title="fidget">
+				<div style="width:300px; height:50px">
+					<div id="id_dialog_text"></div>
+				</div>
+			</div>
+	-->
+		<div id="mapLayout" data-dojo-type="dijit.layout.BorderContainer" data-dojo-props="design:'headline', gutters:'false'">
+
+	<div id="map" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'center'">
+		<!-- FLOATING TOOLBAR -->
+		<div id="navToolbar" data-dojo-type="dijit.Toolbar">
+			<div title="Click Map and Drag Box to Zoom In" data-dojo-type="dijit.form.Button" id="zoomin" data-dojo-props="iconClass:'zoominIcon', onClick:function(){zoomInTool();}"></div>
+			<div title="Click Map and Drag Box to Zoom Out" data-dojo-type="dijit.form.Button" id="zoomout" data-dojo-props="iconClass:'zoomoutIcon', onClick:function(){zoomOutTool();}"></div>
+			<div title="Map and Drag to Pan" data-dojo-type="dijit.form.Button" id="pan" data-dojo-props="iconClass:'panIcon', onClick:function(){navToolBar.activate(esri.toolbars.Navigation.PAN);}"></div>
+			<div title="Click Button to Zoom to Previous Map Extent" data-dojo-type="dijit.form.Button" id="zoomprev" data-dojo-props="iconClass:'zoomprevIcon', onClick:function(){navToolBar.zoomToPrevExtent();}"></div>
+			<div title="Click Button to Zoom to Initial Map Extent" data-dojo-type="dijit.form.Button" id="zoomfullext" data-dojo-props="iconClass:'zoomfullextIcon', onClick:function(){zoomToFirstExtent();}"></div>
+			<div title="Click Button to Zoom to Next Map Extent" data-dojo-type="dijit.form.Button" id="zoomnext" data-dojo-props="iconClass:'zoomnextIcon', onClick:function(){navToolBar.zoomToNextExtent();}"></div>
+			<div title="Refresh Map" data-dojo-type="dijit.form.Button" id="refresh"     data-dojo-props="iconClass:'refreshIcon',     onClick:function(){ZoomManager(0);}"></div>
+		</div>	
+		<div id="zoomLevelIcon"></div>
+		<span id="latlong" style="font-size:10pt;color:white;font-family: Arial, Helvetica, sans-serif;position:absolute; left:27px; bottom:8px;z-index:50;text-shadow: 1px 1px #707070;font-weight:bold;"></span>	
+		<div id="footerExtDialog" data-dojo-type="dojox.widget.DialogSimple" data-dojo-props="title:'NWIS Mapper Page Information', href:'footerdialog.html'"></div>
+		
+		<div id="swExtDialog" data-dojo-type="dijit.Dialog" data-dojo-props="title:'About Surface-Water Sites', href:'help/swdialog.html'"></div>
+		<div id="gwExtDialog" data-dojo-type="dijit.Dialog" data-dojo-props="title:'About Groundwater Sites', href:'help/gwdialog.html'"></div>
+		<div id="spExtDialog" data-dojo-type="dijit.Dialog" data-dojo-props="title:'About Springs', href:'help/spdialog.html'"></div>
+		<div id="atExtDialog" data-dojo-type="dijit.Dialog" data-dojo-props="title:'About Atmospheric Sites', href:'help/atdialog.html'"></div>
+		<div id="otExtDialog" data-dojo-type="dijit.Dialog" data-dojo-props="title:'About Other Sites', href:'help/otdialog.html'"></div>
+		<div id="aqExtDialog" data-dojo-type="dijit.Dialog" data-dojo-props="title:'About Principal Aquifers', href:'help/aqdialog.html'"></div>		
+		<div id="wbdExtDialog" data-dojo-type="dijit.Dialog" data-dojo-props="title:'About Watershed Boundary Dataset', href:'help/wbddialog.html'"></div>
+	   <div id="wscExtDialog" data-dojo-type="dijit.Dialog" data-dojo-props="title:'About USGS offices', href:'help/wscdialog.html'"></div>		
+		<div id="swActLoader"></div><div id="swInaLoader"></div>
+		<div id="gwActLoader"></div><div id="gwInaLoader"></div>
+		<div id="spActLoader"></div><div id="spInaLoader"></div>
+		<div id="atActLoader"></div><div id="atInaLoader"></div>
+		<div id="otActLoader"></div><div id="otInaLoader"></div>
+
+	<div id="exportDialog" data-dojo-type="dijit.Dialog" data-dojo-props="title:'Export Sites'">
+		Export Format:<br /><br />
+		<div class="treeLevel3" id="exportButtons">
+			<input id="expFmtTable" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:true, name:'export_radio'" /><label for="expFmtTable">&nbsp;&nbsp;Table of Sites (.html)</label><br />
+			<input id="expFmtSiteNums" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'export_radio'" /><label for="expFmtSiteNums">&nbsp;&nbsp;List of Site Numbers (.txt)</label><br />
+			<input id="expFmtExcel" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'export_radio'" /><label for="expFmtExcel">&nbsp;&nbsp;Microsoft Excel (.xls)</label><br />
+			<input id="expFmtCSV" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'export_radio'" /><label for="expFmtCSV">&nbsp;&nbsp;Comma Separated (.csv)</label><br />
+			<input id="expFmtRDB" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'export_radio'" /><label for="expFmtRDB">&nbsp;&nbsp;Tab Separated (.rdb)</label><br />
+			<input id="expFmtKML" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'export_radio'" /><label for="expFmtKML">&nbsp;&nbsp;Keyhole Markup Language (.kml)&nbsp;&nbsp;&nbsp;&nbsp;</label><br />
+			<input id="expFmtShapeFile" data-dojo-type="dijit.form.RadioButton" data-dojo-props="checked:false, name:'export_radio'" /><label for="expFmtShapeFile">&nbsp;&nbsp;ESRI ShapeFile (.shp)</label><br /><br />
+			<div data-dojo-type="dijit.form.Button" id="expCmd" data-dojo-props="label:'Export', onClick:function(){makeExportFile();}"></div>
+		</div>
+	</div>
+
+	<div id="errExpDialog" data-dojo-type="dijit.Dialog">
+	</div>
+
+	</div>
+	<div id="mapBottomPane" data-dojo-type="dojox.layout.ExpandoPane" data-dojo-props="region:'bottom', splitter:true, startExpanded:false" title="Site Information">
+		<div id="mapTabContainer" data-dojo-type="dijit.layout.TabContainer" data-dojo-props="tabStrip:true, style:'width:100%; height:100%;'">
+			<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="title:'&nbsp;Status', iconClass:'tabStatus'" >
+				<div id="statusGrid">
+				</div>
+			</div>
+
+	<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="title:'&nbsp;Surface-Water', iconClass:'tabSWGrid'" >
+		<div data-dojo-type="dijit.form.Button" id="expSWCmd" data-dojo-props="style:'position:absolute;bottom:5px;z-index:99;', label:'Export...', onClick:function(){setExport(1);}"></div>
+		<div id="mapSWContainer" data-dojo-type="dijit.layout.TabContainer" data-dojo-props="tabStrip:true, tabPosition:'left-h', style:'width:100%; height:100%;'">
+			<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="title:'&nbsp;Active', iconClass:'tabSWActGrid'" >
+				<div id="sitesSWActGrid">
+				</div>
+			</div>
+			<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="title:'&nbsp;Inactive', iconClass:'tabSWInaGrid'" >
+				<div id="sitesSWInaGrid">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="title:'&nbsp;Groundwater', iconClass:'tabGWGrid'" >
+		<div data-dojo-type="dijit.form.Button" id="expGWCmd" data-dojo-props="style:'position:absolute;bottom:5px;z-index:99;', label:'Export...', onClick:function(){setExport(2);}"></div>
+		<div id="mapGWContainer" data-dojo-type="dijit.layout.TabContainer" data-dojo-props="tabStrip:true, tabPosition:'left-h', style:'width:100%; height:100%;'">
+			<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="title:'&nbsp;Active', iconClass:'tabGWActGrid'" >
+				<div id="sitesGWActGrid">
+				</div>
+			</div>
+			<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="title:'&nbsp;Inactive', iconClass:'tabGWInaGrid'" >
+				<div id="sitesGWInaGrid">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="title:'&nbsp;Springs', iconClass:'tabSPGrid'" >
+		<div data-dojo-type="dijit.form.Button" id="expSPCmd" data-dojo-props="style:'position:absolute;bottom:5px;z-index:99;', label:'Export...', onClick:function(){setExport(3);}"></div>
+		<div id="mapSPContainer" data-dojo-type="dijit.layout.TabContainer" data-dojo-props="tabStrip:true, tabPosition:'left-h', style:'width:100%; height:100%;'">
+			<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="title:'&nbsp;Active', iconClass:'tabSPActGrid'" >
+				<div id="sitesSPActGrid">
+				</div>
+			</div>
+			<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="title:'&nbsp;Inactive', iconClass:'tabSPInaGrid'" >
+				<div id="sitesSPInaGrid">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="title:'&nbsp;Atmospheric', iconClass:'tabATGrid'" >
+		<div data-dojo-type="dijit.form.Button" id="expATCmd" data-dojo-props="style:'position:absolute;bottom:5px;z-index:99;', label:'Export...', onClick:function(){setExport(4);}"></div>
+		<div id="mapATContainer" data-dojo-type="dijit.layout.TabContainer" data-dojo-props="tabStrip:true, tabPosition:'left-h', style:'width:100%; height:100%;'">
+			<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="title:'&nbsp;Active', iconClass:'tabATActGrid'" >
+				<div id="sitesATActGrid">
+				</div>
+			</div>
+			<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="title:'&nbsp;Inactive', iconClass:'tabATInaGrid'" >
+				<div id="sitesATInaGrid">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="title:'&nbsp;Other', iconClass:'tabOTGrid'" >
+		<div data-dojo-type="dijit.form.Button" id="expOTCmd" data-dojo-props="style:'position:absolute;bottom:5px;z-index:99;', label:'Export...', onClick:function(){setExport(5);}"></div>
+		<div id="mapOTContainer" data-dojo-type="dijit.layout.TabContainer" data-dojo-props="tabStrip:true, tabPosition:'left-h', style:'width:100%; height:100%;'">
+			<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="title:'&nbsp;Active', iconClass:'tabOTActGrid'" >
+				<div id="sitesOTActGrid">
+				</div>
+			</div>
+			<div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="title:'&nbsp;Inactive', iconClass:'tabOTInaGrid'" >
+				<div id="sitesOTInaGrid">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+	</body>
+</html>

@@ -1,0 +1,587 @@
+html,
+body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-color: white;
+	overflow: hidden;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+#mainWindow {
+	width: 100%;
+	height: 100%;
+}
+#mapWindow {
+	width: 100%;
+	height: 100%;
+	border: solid 1px #416AB1;
+	padding: 0;
+	margin: 0;
+}
+#header {
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	margin: 2px;
+	padding-top: 4px;
+	padding-right: 15px;
+	background-color: #929761;
+	color: #421b14;
+	font-size: 16pt;
+	text-align: right;
+	font-weight: bold;
+	border: solid 2px #3A0095;
+	height: 55px;
+}
+#subheader {
+	font-size: small;
+	color: #cfcfcf;
+	text-align: right;
+	padding-right: 20px;
+}
+#footer {
+	margin: 2px;
+	padding: 2px;
+	background-color: white;
+	color: #2a3537;
+	border: solid 2px #416AB1;
+	font-size: 10pt;
+	text-align: left;
+	height: 15%;
+}
+#mapBottomPane {
+	margin: 1px;
+	padding: 1px;
+	background-color: white;
+	color: #2a3537;
+	border-style: none;
+	font-size: 8pt;
+	text-align: left;
+	height: 200px;
+}
+#rightPane {
+	margin: 2px;
+	padding: 1px;
+	background-color: white;
+	color: #421b14;
+	border-style: none;
+	width: 40px;
+}
+#leftPane {
+	margin: 0px;
+	padding: 0px;
+	width: 260px;
+	color: black;
+	background-color: white;
+	border: solid 2px #416AB1;
+}
+#map {
+	margin: 0px;
+	padding: 0px;
+	border-style: none;
+}
+#mapLayout {
+	margin: 0px;
+	padding: 0px;
+	border-style: none;
+}
+#mapGrid {
+	height: 100%;
+	width: 100%;
+}
+.footerimage {
+	border-style: none;
+	float: right;
+}
+.shadow {
+	-o-border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	box-shadow: 8px 8px 16px #323834;
+	-webkit-box-shadow: 8px 8px 16px #323834;
+	-moz-box-shadow: 8px 8px 16px #323834;
+	-o-box-shadow: 8px 8px 16px #323834;
+}
+.TitleMenu_0 {
+	background-color: white;
+	visibility: hidden;
+	display: none;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+.TitleMenu_1 {
+	color: white;
+	font-size: 8pt;
+	font-weight: bold;
+	text-decoration: none;
+}
+.TitleMenu_2 {
+	color: white;
+	background-color: transparent;
+	font-size: 8pt;
+	font-weight: bold;
+}
+.treeLevel1 {
+	position: relative;
+	left: 2px;
+}
+.treeLevel2 {
+	position: relative;
+	left: 4px;
+}
+.treeLevel2off {
+	position: relative;
+	left: 4px;
+	display: none;
+}
+.treeLevel3 {
+	position: relative;
+	left: 8px;
+}
+.treeLevel3off {
+	position: relative;
+	left: 8px;
+	visibility: hidden;
+}
+.treeLevel3dis {
+	position: relative;
+	left: 8px;
+	color: #D3D3D3;
+}
+.claro .dijitAccordionText {
+	margin-left: 12px;
+	margin-right: 4px;
+	color: #416AB1;
+}
+.claro .dijitAccordianTitle {
+	background-image: url(../images/HelpSystem16.png);
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	right: 5px;
+}
+.claro .dijitButtonText {
+	padding: 0;
+}
+.dojoxGrid .gridMasterHeader {
+	font-size: 6pt;
+}
+.dojoxGrid th {
+	border-bottom: #416AB1 solid thin !important;
+	border-top: #416AB1 solid thin !important;
+	border-left: none!important;
+	border-right: none!important;
+	font-size: smaller!important;
+}
+.dojoxGrid td {
+	border-left: none!important;
+	border-right: none!important;
+	font-size: smaller!important;
+}
+.legendIcon {
+	background-image: url(../images/nav_zoomin.png);
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	left: 80%;
+}
+.zoominIcon {
+	background-image: url(../images/nav_zoomin_box.png);
+	width: 16px;
+	height: 16px;
+}
+.zoomoutIcon {
+	background-image: url(../images/nav_zoomout_box.png);
+	width: 16px;
+	height: 16px;
+}
+.zoomfullextIcon {
+	background-image: url(../images/nav_fullextent.png);
+	width: 16px;
+	height: 16px;
+}
+.zoomprevIcon {
+	background-image: url(../images/nav_previous.png);
+	width: 16px;
+	height: 16px;
+}
+.zoomnextIcon {
+	background-image: url(../images/nav_next.png);
+	width: 16px;
+	height: 16px;
+}
+.panIcon {
+	background-image: url(../images/nav_pan.png);
+	width: 16px;
+	height: 16px;
+}
+.refreshIcon {
+	background-image: url(../images/GenericRefresh_B_16.png);
+	width: 16px;
+	height: 16px;
+}
+.deactivateIcon {
+	background-image: url(../images/nav_decline.png);
+	width: 16px;
+	height: 16px;
+}
+.basemap_icon {
+	background-image: url(../images/Map16.png);
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	left: 5px;
+}
+.maplayers_icon {
+	background-image: url(../images/Basemap16.png);
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	left: 5px;
+}
+.status_icon {
+	background-image: url(../images/IdentifyWindowShow16.png);
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	left: 2px;
+}
+.maptools_icon {
+	background-image: url(../images/nav_zoomin.png);
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	left: 5px;
+}
+.resources_icon {
+	background-image: url(../images/HyperlinkTool16.png);
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	left: 2px;
+}
+.search_icon {
+	background-image: url(../images/GenericGreenRightArrow16.png);
+	width: 16px;
+	height: 16px;
+}
+.datatools_icon {
+	background-image: url(../images/TableQuery16.png);
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	left: 5px;
+}
+.ovmap_icon {
+	background-image: url(../images/ScreenPositionBottomRight16.png);
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	left: 5px;
+}
+.sw_acc_icon {
+	background-image: url(../images/panes/sw_pane.png);
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	left: 5px;
+}
+.gw_acc_icon {
+	background-image: url(../images/panes/gw_pane.png);
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	left: 5px;
+}
+.sp_acc_icon {
+	background-image: url(../images/panes/sp_pane.png);
+	width: 19px;
+	height: 16px;
+	position: absolute;
+	left: 5px;
+}
+.at_acc_icon {
+	background-image: url(../images/panes/at_pane.png);
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	left: 5px;
+}
+.ot_acc_icon {
+	background-image: url(../images/panes/ot_pane.png);
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	left: 5px;
+}
+.about_icon {
+	background-image: url(../images/HelpSystem_B_16.png);
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	left: 5px;
+}
+.warning_icon {
+	background-image: url(../images/GenericWarning16.png);
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	left: 5px;
+}
+.checkbox_icon {
+	background-image: url(../images/checkbox_yes.png);
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	left: 5px;
+}
+.siteInfoIcon {
+	background-image: url(../images/GenericGreenRightArrow16.png);
+	width: 16px;
+	height: 16px;
+}
+.esriLargeSlider {
+	left: 10px;
+}
+#zoomLevelIcon {
+	background-image: url(../images/zoomlevels/zoom0.png);
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	top: 13px;
+	left: 9px;
+	z-index: 99;
+}
+.tabStatus {
+	background-image: url(../images/IdentifyWindowShow16.png);
+	width: 16px;
+	height: 16px;
+}
+.tabSites {
+	background-image: url(../images/LocationsSymbolized_A16.png);
+	width: 16px;
+	height: 16px;
+}
+.tabMapTools {
+	background-image: url(../images/MapAnalyze16.png);
+	width: 16px;
+	height: 16px;
+}
+.tabDataTools {
+	background-image: url(../images/TableQuery16.png);
+	width: 16px;
+	height: 16px;
+}
+.srchBox {
+	margin: 0px;
+	padding-bottom: 12px;
+	color: black;
+	background-color: white;
+}
+.srchBar {
+	width: 150px;
+	height: 12px;
+}
+.srchBoxText {
+	color: black;
+	font-size: 8pt;
+	border-color: transparent;
+	margin: 0;
+	padding: 0;
+}
+.srchBoxTextDis {
+	color: #9FADBF;
+	font-size: 8pt;
+	font-style: italic;
+	border-color: transparent;
+	margin: 0;
+	padding: 0;
+}
+.numBox {
+	width: 30px;
+}
+#swActLoader {
+	position: absolute;
+	right: 30px;
+	top: 60px;
+	width: 150px;
+	height: 12px;
+}
+#swInaLoader {
+	position: absolute;
+	right: 30px;
+	top: 71px;
+	width: 150px;
+	height: 12px;
+}
+#gwActLoader {
+	position: absolute;
+	right: 30px;
+	top: 82px;
+	width: 150px;
+	height: 12px;
+}
+#gwInaLoader {
+	position: absolute;
+	right: 30px;
+	top: 93px;
+	width: 150px;
+	height: 12px;
+}
+#spActLoader {
+	position: absolute;
+	right: 30px;
+	top: 104px;
+	width: 150px;
+	height: 12px;
+}
+#spInaLoader {
+	position: absolute;
+	right: 30px;
+	top: 115px;
+	width: 150px;
+	height: 12px;
+}
+#atActLoader {
+	position: absolute;
+	right: 30px;
+	top: 126px;
+	width: 150px;
+	height: 12px;
+}
+#atInaLoader {
+	position: absolute;
+	right: 30px;
+	top: 137px;
+	width: 150px;
+	height: 12px;
+}
+#otActLoader {
+	position: absolute;
+	right: 30px;
+	top: 148px;
+	width: 150px;
+	height: 12px;
+}
+#otInaLoader {
+	position: absolute;
+	right: 30px;
+	top: 159px;
+	width: 150px;
+	height: 12px;
+}
+#newsExtDialog {
+	position: absolute;
+	left: 5px;
+	top: 30px;
+	width: 700px;
+	height: 300px;
+	overflow: auto;
+}
+#footerExtDialog {
+	width: 700px;
+	height: 300px;
+}
+#waExtDialog {
+	position: absolute;
+	left: 5px;
+	top: 30px;
+	width: 700px;
+	height: 300px;
+	overflow: auto;
+}
+#swExtDialog {
+	position: absolute;
+	left: 5px;
+	top: 30px;
+	width: 700px;
+	height: 300px;
+	overflow: auto;
+}
+#gwExtDialog {
+	position: absolute;
+	left: 5px;
+	top: 30px;
+	width: 700px;
+	height: 300px;
+	overflow: auto;
+}
+#spExtDialog {
+	position: absolute;
+	left: 5px;
+	top: 30px;
+	width: 700px;
+	height: 300px;
+	overflow: auto;
+}
+#atExtDialog {
+	position: absolute;
+	left: 5px;
+	top: 30px;
+	width: 700px;
+	height: 300px;
+	overflow: auto;
+}
+#otExtDialog {
+	position: absolute;
+	left: 5px;
+	top: 30px;
+	width: 700px;
+	height: 300px;
+	overflow: auto;
+}
+#aqExtDialog {
+	position: absolute;
+	left: 5px;
+	top: 30px;
+	width: 700px;
+	height: 300px;
+	overflow: auto;
+}
+#wbdExtDialog {
+	position: absolute;
+	left: 5px;
+	top: 30px;
+	width: 700px;
+	height: 300px;
+	overflow: auto;
+}
+#wscExtDialog {
+	position: absolute;
+	left: 5px;
+	top: 30px;
+	width: 700px;
+	;
+	overflow: auto;
+}
+#exportDialog_underlay {
+	background-color: blue;
+}
+.helpbutton {
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	right: 5px;
+}
+.action.zoomTo {
+	display: none;
+}
+#navToolbar {
+	-mozt-box-shadow: 0px 5px 10px #adadad;
+	-webkit-box-shadow: 0px 5px 10px #adadad;
+	box-shadow: 0px 5px 10px #adadad;
+	opacity: 0.8;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	z-index: 99;
+	border-bottom: 0px;
+	background-color: white;
+	padding: 3px;
+	//-moz-border-radius:4px;
+	//-webkit-border-radius: 4x;
+	//border-radius: 4px;
+}

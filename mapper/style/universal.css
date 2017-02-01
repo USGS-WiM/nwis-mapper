@@ -1,0 +1,130 @@
+/* =====================================================*/
+/* ======OFFICIAL USGS RECOMMENDED STYLE SHEET====== */
+/* This CSS has been apporved by all applicable parties and is subject 
+   to change...with prior notice. This CSS is meant to provide a common 
+   look and feel across all USGS webpages and can be used in 
+   conjunction with the custom CSS file.
+	 
+   DO NOT MODIFY ANY PART OF THIS FILE OTHER THAN THE 
+   CUSTOMIZEABLE AREA DEFINED BELOW. FOLLOW THOSE INSTRUCTIONS 
+   FOR MODIFYING THAT PORTION OF THE CSS. 
+	
+*/
+/* ================END DISCLAIMER NOTICE===============*/
+/* =====================================================*/
+
+/* =====================================================*/
+/* ================CUSTOMIZEABLE AREA=================*/
+/* =====================================================*/
+/* The banner and siteTitle classes can be used, as is, below. If you
+   would like to customize theses area, you can do so by downloading
+   the custom CSS file and modifying their properties in that file. 
+*/
+.banner {
+	background-image: url("https://www.usgs.gov/images/banners/hazards.gif");
+	background-repeat: no-repeat;
+	background-color: #006633;
+}
+
+.siteTitle {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: medium;
+	font-weight: bold;
+	padding: 5px;
+	background-color: #006633;
+	color: #ffffff;
+}
+/* =====================================================*/
+/* =============END CUSTOMIZEABLE AREA===============*/
+/* =====================================================*/
+
+
+/* =====================================================*/
+/* =========STANDARD CUSTOMER SERVICE AREA==========*/
+/* =====================================================*/
+
+.ccsa {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #FFFFFF;
+	margin-left: 4px;
+	text-decoration: none;
+	background-color: #000000;
+}
+a.ccsa:visited {
+	margin-left: 4px;
+	text-decoration: none;
+}
+a.ccsa:hover {
+	margin-left: 3px;
+	text-decoration: none;
+}
+a.ccsa:active {
+	margin-left: 4px;
+	text-decoration: none;
+}
+
+
+/* =====================================================*/
+/* =================STANDARD CONTENT=================*/
+/* =====================================================*/
+
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: small;
+	color: #000000;
+	background-color: #FFFFFF; 
+}
+
+
+/* =====================================================*/
+/* ==================STANDARD LINKS===================*/
+/* =====================================================*/
+
+
+a.link {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+color: #0000FF;
+}
+a:hover {
+text-decoration: none;
+}
+a.visited {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+color: #993366;
+}
+
+/* =====================================================*/
+/* =================STANDARD FOOTER==================*/
+/* =====================================================*/
+
+.footer {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	text-decoration: none;
+	/*/*/
+	padding: 4px;
+	padding-right: 40px
+	/*End hiding for this section in Netscape 4x*/
+}
+p.footer{
+	margin: 0px;
+}
+td.footer {
+	background-color:#666666;
+}
+a.footer:link {
+	color: #FFFFFF;
+}
+a.footer:visited {
+	color: #FFFFFF;
+}
+a.footer:hover {
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+a.footer:active {
+	color: #FFFFFF;
+	text-decoration: none;
+}

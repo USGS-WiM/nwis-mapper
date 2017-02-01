@@ -1,0 +1,42 @@
+<html>
+<body>
+
+<script type="text/javascript"> 
+// remove hash
+var url = location.href.replace(/\#/g, '');
+uri = url.split("?");
+var query = uri[1];
+var args = new Array();
+var optargs = query.split("&");
+var site_no, type_cd, parm;
+
+// go to FIM subscription form if selected
+if (query.indexOf('fim=1') >= 0) { 
+	location.replace('https://water.usgs.gov/wateralert/subscribe/subscribe_fim.html?'+query); 
+} else {
+	for (var i=0; i<optargs.length; i++) {
+		var args = optargs[i].split("=");
+		if (args[0] == "site_no") {
+			site_no = args[1];
+		}
+		else if (args[0] == "type_cd") {
+			type_cd = args[1].toLowerCase();
+			if (type_cd == 'pr') {type_cd = 'at';}
+			if (type_cd == 'st') {type_cd = 'sw';}
+		}
+		else if (args[0] == "parms") {
+			var pcode = args[1].split(":");
+			parm = pcode[0];
+		}
+	}
+}
+if (parm.length > 1) {
+	//location.replace('https://water.usgs.gov/wateralert/subscribe2/index.html?site_no='+site_no+'&type_cd='+type_cd+'&parm='+parm);
+	location.replace('https://water.usgs.gov/wateralert/subscribe2/index.html?site_no='+site_no+'&parm='+parm);
+} else {
+	location.replace('https://water.usgs.gov/wateralert/subscribe2/index.html?site_no='+site_no+'&type_cd='+type_cd);
+}
+</script>
+
+</body>
+</html>

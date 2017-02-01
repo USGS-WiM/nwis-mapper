@@ -1,0 +1,12 @@
+<!--[if IE 5]><style type="text/css"> 
+/* place css box model fixes for IE 5* in this conditional comment */
+#leftbar { width: 250px; }
+</style>
+<![endif]--><!--[if IE]>
+<style type="text/css"> 
+/* place css fixes for all versions of IE in this conditional comment */
+#leftbar { padding-top: 10px; }
+#mainbody { zoom: 1; }
+/* the above proprietary zoom property gives IE the hasLayout it needs to avoid several bugs */
+</style>
+<![endif]-->

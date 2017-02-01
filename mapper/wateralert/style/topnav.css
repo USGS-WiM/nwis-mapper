@@ -1,0 +1,145 @@
+@charset "utf-8";
+
+/*--------------------------------------------------------------------------------*/
+/*   topnav.css: CSS file for top navigation bars                                 */
+/*                       Version: 12/12/2008                                      */
+/*--------------------------------------------------------------------------------*/
+
+/* CLASSES */
+/*  "internal" link at end of black bar is always italic, as it is USGS only   */
+.internal {
+	font-style: italic;
+	}
+
+/* END CLASSES */
+
+/* BLACK TOP NAVIGATION BAR*/
+#topnav {
+	width: 100%;
+	margin: 0 0 20px 0;
+	background-color: #1b1b1b;
+	clear: left;
+	/*border-bottom: 1px solid #ffffff;  (Try to put white border below black bar when a subbar is shown, but how to take it off of the active topic (grey) box? */
+
+	}
+
+#navlist {
+	list-style: none;
+	margin: 0;
+	padding: 0;	
+	float: left; /* Added 12/22/08 to fix bar links shifting problem when browser text size increased */
+	}
+
+#navlist li {
+	font-size: .85em;
+	font-weight: bold;
+	color: #ffffff;
+	margin: 0;
+	float: left;
+	border-right: 1px solid #ffffff;
+	}
+
+#navlist a  {
+		color: white;
+		text-decoration: none;
+		padding: 6px 6px; /*adding the padding here made the gray go across each button*/
+		text-align: center;
+		display: block; 	
+	}
+
+	
+/* This makes the active link box have a grey background, with yellow text. It was commented out, not sure why. I think I wanted a more generic way of doing it, rather than hard code each link name. Maybe that never worked, so I'm turning this back on. 12/20/09  */
+#home #navlist .home a,
+#data #navlist .data a,
+#pubs #navlist .pubs a,
+#maps #navlist .maps a,
+#software #navlist .software a,
+#multimedia #navlist .multimedia a,
+#programs #navlist .programs a,
+#education #navlist .education a,
+#about #navlist .about a,
+#contact #navlist .contact a
+{
+	color: #ffe855;
+	font-weight: bold;
+	text-decoration: none;
+	background-color: #505050;	
+	} 
+
+#internal #navlist .internal a {
+	color: #ffe855;
+	font-weight: bold;
+	text-decoration: none;
+	background-color: #505050;	
+	font-style: italic;
+	}
+	
+#topnav a:hover, #topnav a:focus, #topnav a:active {
+	font-weight: bold;
+	color:  #fff;
+	text-decoration: underline;
+	background: #416ab1;
+	color:#ffe855;	
+	}
+	
+/* END TOP NAVIGATION BAR*/
+
+/*------    TOP SUB-NAVIGATION BAR STYLES    ------------*/
+#subnav {
+	width: 100%;
+	margin-top: -20px;
+	margin-bottom: 25px;
+	background: #505050;
+	}
+	
+#subnavlist {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	}
+	
+#subnavlist li {
+	font-size: .81em;
+	font-weight: bold;
+	color: #fff;
+	margin: 0;
+	float: left;
+	}
+			
+#subnavlist a  {
+	color: white;
+	text-decoration: none;
+	padding: 4px 0px;
+	text-align: center;
+	display: block; 
+	padding-left: .8em;
+	padding-right: .8em;
+	}
+	
+/*adds the yellow for the subnav onstate*/		
+/*.photos #subnavlist #pho a, 
+.videos #subnavlist #vid a,
+.podcast #subnavlist #pod a,
+.posters #subnavlist #pos a,
+ #subnavlist .alph a, 
+#subnavlist .gen a, 
+#subnavlist .qw a, 
+#subnavlist .gw a, 
+#subnavlist .stat a,
+#subnavlist .sw a
+{	color: #ffe855;
+	font-weight: bold;
+	text-decoration: none;
+	background-color: #505050;		
+	} */
+	
+#subnavlist a:hover, #subnavlist a:active {
+	font-weight: bold;
+	color: #ffe855;
+	text-decoration: underline;
+	}
+	
+/*------ END TOP SUB-NAVIGATION BAR STYLES ------------*/
+
+

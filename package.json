@@ -1,0 +1,10 @@
+{
+    "name": "nwis-mapper",
+    "version": "0.0.0",
+    "repository": "https://github.com/marsmith/nwis-mapper",
+    "authors": [
+        "Martyn Smith <marsmith@usgs.gov>"
+    ],
+    "license": "MIT",
+    "devDependencies": {}
+}

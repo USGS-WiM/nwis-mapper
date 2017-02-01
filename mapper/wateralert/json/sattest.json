@@ -1,0 +1,14 @@
+{
+"identifier":"site_no",
+"label":"station_nm",
+"items":[
+{"dcp_id": "D109A45E","site_no": "07227460","station_nm": "E Fk Cheyenne Ck Trib nr Channing, TX","satellite": "W","dec_lat_va": "35.6750972","dec_long_va": "-102.2807222"},
+{"dcp_id": "DD8B96C2","site_no": "09522850","station_nm": "ACRE-FEET,MONTHLY, GILA, GRAVITY CANAL AT P.P.,AZ","satellite": "W","dec_lat_va": "32.68305556","dec_long_va": "-114.47"},
+{"dcp_id": "DDF3A252","site_no": "09522500","station_nm": "GILA GRAVITY MAIN CANAL AT IMPERIAL DAM, AZ-CA","satellite": "W","dec_lat_va": "32.87615405","dec_long_va": "-114.455781"},
+{"dcp_id": "DD9A7054","site_no": "16264600","station_nm": "Kawainui Marsh nr levee sta 15+00, Oahu, HI","satellite": "W","dec_lat_va": "21.39416667","dec_long_va": "-157.749361"},
+{"dcp_id": "D1059058","site_no": "07227500","station_nm": "Canadian Rv nr Amarillo, TX","satellite": "W","dec_lat_va": "35.4703261","dec_long_va": "-101.879628"},
+{"dcp_id": "16384D46","site_no": "0214266000","station_nm": "MCDOWELL CREEK NR CHARLOTTE, NC (CSW10)","satellite": "E","dec_lat_va": "35.38971389","dec_long_va": "-80.921"},
+{"dcp_id": "DDAB845A","site_no": "07385700","station_nm": "BYU TECHE @ KEYSTONE LOCK NR ST. MARTINVILLE, LA","satellite": "E","dec_lat_va": "30.07103537","dec_long_va": "-91.8292836"},
+{"dcp_id": "17459294","site_no": "05331580","station_nm": "MISSISSIPPI RIVER BELOW L&D #2 AT HASTINGS, MN","satellite": "E","dec_lat_va": "44.7458333","dec_long_va": "-92.8477778"}
+]
+}

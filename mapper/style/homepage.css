@@ -1,0 +1,60 @@
+@charset "utf-8";
+
+/*---------------------------------------------------------------------------------*/
+/*   homepage.css: CSS file for parts only currently used in the home page                   */
+/*                       Version: 10/12/2009                                          */
+/*-------------------------------------------------------------------------------- */
+
+ .titles {
+	background-color: #000;
+	background-image: url('graphics/icons/gd_black_gray.gif');
+	background-repeat: repeat-x;
+	font-weight: bold;
+	color: #fff;
+	border: 1px solid #999;
+	padding-left: 15px;
+	display: block;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+ .features {
+	border: 1px solid #ccc;
+	margin-top: 0px;
+	padding-right: 5px;
+	padding-left: 5px;
+	background-color: #f5f5f5;
+	-moz-border-radius-bottomright: 8px;
+	-moz-border-radius-bottomleft: 8px;
+	margin-bottom: 10px;
+}
+
+.featurebox  ul li { list-style-image: url('/images/icons/dottricolor.gif');
+	padding: 45px;}
+
+#navlist .home a {
+	color: #ffe855;
+	background-color: #505050;	
+}	
+
+#mainbody h2 {
+	color: #004499;
+	font-size: 1.0em;
+	margin-bottom: 10px;
+	padding-top: 5px;
+}
+
+.clearlink { 
+	display: block; 
+	height: 48px; 
+	width: 160px;background-image: url('/graphics/homepageparts/picsforindexpage/forlinkclear.gif') no-repeat; 
+	position:absolute;
+	}
+	
+#learn  li { list-style-image: url('/images/icons/waveblueclear.gif');}
+
+
+#topicarea p {font-size: .85em;}
+.title {font-size: 1.0em; font-weight:bold; color: blue;margin-bottom: 10px;}
+
+

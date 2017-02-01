@@ -1,0 +1,366 @@
+/* This is "styles.css" - the style sheet to add additional styles.
+Author: Howard Perlman, Georgia WSC. Date: June 20, 2006 */ 
+
+/* Take off the border on all images. To add a 1 pixel border do: <img src="x" style="border-width:1px;"> */ 
+img {
+	border: none;
+	} 
+	
+/* Declaration for the H headings */	
+h1 {
+	color: #2d2e8f;
+	margin: 0;
+	font-size: 150%;
+}
+
+/* Use this h1onecolumn heading on pages where you don't have the left navigation pane. */
+.h1onecolumn {
+	margin-top: 20px;
+}
+
+h2 {
+	  font-size: 125%;
+	  color: #000000;
+	  margin-bottom: 0em;
+	  margin-top: 1em;
+	}
+
+h3 {
+	  font-size: 110%;
+}
+
+ul li {
+  	margin-top: 0.35em;
+}
+
+/* picleft and picright are the basic styles to include pictures in the paragraphs of text. 
+Use these if you don't need a caption. */
+.picleft {
+	float: left;
+	margin-right: 7px;
+}
+
+.picright {
+	float: right;
+	margin-left: 7px;
+}
+
+.piccenter {
+	float: left;
+	margin-left: 25px;
+}
+
+/* Use these pic captions to move pictures to left and right in paragraphs of text
+if you want a caption. The #773377 gives the caption a dark purple color; size is set 
+to 85% of the regular body text. In the HTML file, manually specify 
+the width to match the width of the actual picture you are showing. 
+Actually, I'm not even sure how this CSS works, but you need both pieces
+for a caption to show properly. */
+.picleftcaption {
+	float: left;
+	margin-right: 10px;
+}
+
+.picleftcaption p {
+    	color: #773377;
+		font-size: 85%;
+		margin-top: 5px;
+		margin-bottom:10px;
+}
+
+.picrightcaption {
+	float: right;
+	margin-left: 10px;
+}
+
+.picrightcaption p {
+    	color: #773377;
+		font-size: 85%;
+		margin-top: 5px;
+		margin-bottom:10px;
+}
+
+/* Styles the left side navigation vertical bar.  */
+.leftpane {
+	width: 200px; border-right-style: solid; border-right-width: 1px; border-right-color: #999999; padding-right: 10px; font-size:90%;
+}
+
+/* Sets the color for the site title bar. */
+DIV.bannerColorBand, DIV.banner { 
+        background-color: #004184; 
+} 
+
+/* Common set of styles to manage the link properties. It sets links (unvisited and visited) to distinguish between visited and unvisited links. It sets a mouse hover as an underlined orange type. */
+a:link {
+	color: #006699;
+
+
+     }
+
+a:visited {
+     color: #CC6633;
+
+     }
+
+a:hover {
+     color: #FF9900;
+
+     }
+
+a:active {
+     color: #3B84Ac;
+
+     }
+
+/* To center an object (i.e. <p class="center">) */
+.center {
+	text-align: center;
+	}
+	/* Class to make sure objects from below another object don't intrude. It forces the object below this one to start below the bottom of the object.  */
+.clearall {
+	clear: both;
+}
+
+/* a bit of padding for content to the right of the left-navigation */
+
+.content {
+	padding-left: 1em;
+}
+
+/* Property (class) to make text a bit smaller */
+.smaller {
+		font-size: 90%;
+}
+
+/* Colors used to set backgrounds, such as in a data table with rows alternating in light and darker grey colors. Used in the list of publications and data tables. The greydarker is often used in the table heading lines.  */
+.greylight {
+	background-color: #eaeaea;
+}
+
+.greydark {
+	background-color: #d6d6d6;
+}
+
+.greydarker {
+	background-color: #b6b6b6;
+}
+
+/* Property (class) to make text a bold reddish, then a blue bold, then a smaller size. */
+.redbold {
+   	color: #992255;
+	font-weight: bold;	}
+	
+.bluebold {
+   	color: #0033aa;
+	font-weight: bold;	}
+	
+.size90 {
+	font-size:90%;
+	}
+	
+.size110 {
+	font-size:110%;
+	}
+	
+.navmain a:link {
+ text-decoration: none;
+ color: white;
+}
+
+.linksleft a:link{
+ text-decoration: underline;
+  color: white;
+}
+
+.linksleft a:visited {
+ text-decoration: underline;
+ color: #ffffcc;
+}
+
+.linksleft a:hover {
+ text-decoration: none;
+	color : #ffcc66;
+}
+
+/* Class which can be used to create a left column, in this case 180 pixels wide) This one spaces out lines so would be used for a menu of some type. */
+.left {
+   position: absolute;
+   left: 10px;
+   height: auto;
+   width: 180px;
+   line-height: 110%;
+   background-color: #eee;
+}
+.right {
+    background: #FFFFFF;
+    margin-left: 200px;
+    padding: 15px;/*space to separate navigation and content*/
+    border: thin solid #FFFFFF; 
+   /*to insure that NN4.xx renders the background-color of the content area*/
+}
+	
+ #navmain {
+ 	font-weight: bold;
+	text-decoration: none;
+ 	background: #000000;
+	color: white;
+ 	padding: 5px;
+	}
+
+ #navwaterdata {
+ 	font-weight: bold;
+	text-decoration: none;
+ 	background: #666666;
+	color: white;
+ 	padding: 5px;
+	}
+	
+
+ /* Style the chosen topic in the main link bar (the black bar with the topics) right below the site title bar. So, if you are in a certain project page, you can use this class to turn the word "projects" orange in the topics bar, to show the user they are in the 'projects' topic area. It matches the orange triangle.. */
+.chosentopic, .chosentopic a {
+	color: orange !important; 
+}
+
+ /* Styles for the topics link words in the black bar of topics. Links are white, and underlines is removed (for visited links too, as you want them all to look the same). But, orange when you hover your mouse over a link.*/
+.navmain a {
+color: #ffffff;
+text-decoration: none; }
+
+.navmain a:visited {
+ text-decoration: none;
+ color: white;
+}
+
+.navmain a:hover {
+	color: orange;
+	text-decoration: underline; 
+}
+
+.navmain a#current {
+	color: orange;
+	text-decoration: none; 
+}
+
+	.navwaterdata a {
+color: #ffffff;
+text-decoration: none; }
+
+.navwaterdata a:visited {
+ text-decoration: none;
+ color: white;
+}
+
+.navwaterdata a:hover {
+	color: orange;
+	text-decoration: underline; }
+
+#navmain ul {
+	margin: 0;
+	padding: 0;
+	list-style: none; }
+	
+#navwaterdata ul {
+	margin: 0;
+	padding: 0;
+	list-style: none; }
+	
+#navmain  li {
+	display: inline;
+	padding-right: 16px; }
+	
+#navwaterdata  li {
+	display: inline;
+	padding-right: 16px; }
+ 
+ /* Styles for the left-side navigation section. "leftL1 li" is the 1st order list (LI) items. Note the bullet is taken out. Note also the margins are tricky and may not be done in the best way. "leftL2" is the 2nd order heading, with "leftL2 li" the list of links in the 2nd order. . */
+.leftL1 li {
+	margin-left: -3.0em;
+	margin-top: 1.0em;
+	list-style-type: none;
+	font-weight: bold;
+	font-size: 110%;
+}
+
+.leftL2 {
+	margin-top: -0.5em;
+	margin-bottom: 2.0em;
+}
+.leftL2 li {
+	margin-left: -2.0em;
+	margin-bottom: 0.0em;
+	margin-top: 0.50em;
+	list-style-type: square;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 90%;
+}
+.navCell {
+         width: 17em;
+         padding-left: 0.50em;
+         padding-right: 0.25em;
+         border-right-style: solid;
+         border-right-width: 1px;
+         border-right-color: #999999;
+         font-size:90%;
+		 background: #3B84AC;
+}
+.navWaterWatch {
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 110%;
+}
+.navSearchWater {
+        color: #FFFFFF;
+        font-weight: bold;
+}
+
+ /* Style the bullets that appear in the left pane navigation lists (to replace the default ones usually shown in lists.. */
+.bullet{
+	color: #4455aa; 
+	font-size: 80%;
+}
+
+.indent25 {
+	margin-left: 25px;
+	}
+
+.indent15 {
+	margin-left: 15px;
+	margin-right:15px;
+	}
+	
+.h2heading {background-color: #888888; width: 98%;  font-size: 110%;padding-left: 5px; padding-bottom: 3px; padding-top: 3px; font-weight: bold; color: #ffffff; margin-bottom:20px;  margin-top:30px; clear: both;}
+
+	
+.secondtablehead {
+color: #2D2E8F;
+text-align: left;
+background-color: #e7e7e7;
+padding-left: 8px;
+padding-top:6px;
+padding-bottom:7px;
+border-left: solid 4px #004184;
+clear: both;
+margin-top: 25px;
+margin-bottom: 15px;
+}
+
+.secondtabletext {
+padding-left: 13px;
+padding-top:10px;
+padding-bottom:5px;
+padding-right: 10px;
+vertical-align: top;
+}
+
+
+ /* Property (class) used to style lists of references, and could be for publications, used in projects, etc.. */	
+.references {
+	margin-left:20px;
+	font-size: 92%;
+}
+
+.margin0 {
+	margin: 0px;
+}
+

@@ -1,0 +1,43 @@
+.solidNav {
+	background-color: #3B84AC;
+	padding-left: 5px;
+	font-weight: bold;
+	padding-right: 5px;
+
+
+}
+.topwedge {
+	background-image: url(../images/format/wedge.gif);
+	background-repeat: no-repeat;
+}
+.sideWedge {
+	background-image: url(../images/format/table.gif);
+	background-repeat: repeat-y;
+}
+.bottomTable {
+	background-image: url(../images/format/bot_table.gif);
+	background-repeat: no-repeat;
+}
+.bottomTable2 {
+	background-image: url(../images/format/bot_table1.gif);
+	background-repeat: repeat-x;
+}
+.topShadow {
+	background-image: url(../images/format/shadow.gif);
+	background-repeat: repeat-x;
+}
+.topnav {
+	background-color: #3B84AC;
+	background-position: 5px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 90%;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-indent: 10pt;
+
+}
+
+
+.imgborder {
+	border: 1px solid #3B84AC;
+}

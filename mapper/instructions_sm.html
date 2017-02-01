@@ -1,0 +1,460 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "https://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+		<meta http-equiv="X-UA-Compatible" content="IE=7,IE=9">
+		<!--The viewport meta tag is used to improve the presentation and behavior of the samples on iOS devices-->
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+		<meta name="publisher" content="USGS - U.S. Geological Survey, Water Resources">
+		<meta name="expires" content="never">
+		<title>Water Resources of the United States&mdash;National Water Information System (NWIS) Mapper</title>
+		<link rel="stylesheet" type="text/css" href="https://serverapi.arcgisonline.com/jsapi/arcgis/2.7/js/dojo/dijit/themes/claro/claro.css">
+		<link href="./style/msie.css" rel="stylesheet" type="text/css">
+		<link href="./style/common.css" rel="stylesheet" type="text/css">
+		<link href="./style/custom.css" rel="stylesheet" type="text/css">
+		<link href="./style/water.css" rel="stylesheet" type="text/css">
+		
+		<style type="text/css">
+			html, body {
+				width:auto;
+				margin:3;
+				padding:0;
+			}
+			body {
+				background-color:white;
+				// overflow:hidden;
+				font-family:"Kimberley", sans-serif;
+			}
+			#mainWindow {width:100%;height:100%;}
+			#mapWindow {width:100%;height:100%;border:solid 2px #416AB1;padding:0;margin:0;}
+			#header {
+				-moz-border-radius:5px;
+				border-radius:5px;
+				margin:2px;
+				padding-top:4px;
+				padding-right:15px;
+				background-color:#929761;
+				color:#421b14;
+				font-size:16pt;
+				text-align:right;
+				font-weight:bold;
+				border:solid 2px #3A0095;
+				height:55px;
+			}
+			#subheader {font-size:small;color:#cfcfcf;text-align:right;padding-right:20px;}
+			#footer {
+				margin:2px;
+				padding:2px;
+				background-color:white;
+				color:#2a3537;
+				border:solid 2px #416AB1;
+				font-size:10pt;
+				text-align:left;
+				height:15%;
+			}
+			#rightPane {
+				margin:2px;
+				padding:1px;
+				background-color:white;
+				color:#421b14;
+				border-style:none;
+				width:36px;
+			}
+			.footerimage {
+				border-style:none;  
+				float:right;
+			}
+			.shadow {
+				-o-border-radius:6px;
+				-moz-border-radius:6px;
+				-webkit-border-radius:6px;
+				box-shadow:8px 8px 16px #323834;
+				-webkit-box-shadow:8px 8px 16px #323834;
+				-moz-box-shadow:8px 8px 16px #323834;
+				-o-box-shadow:8px 8px 16px #323834;
+			}
+			.TitleMenu_0 {background-color:white;visibility:hidden;display:none;position:absolute;left:0px;top:0px;}
+			.TitleMenu_1 {color:white;font-size:8pt;font-weight:bold;text-decoration:none;}
+			.TitleMenu_2 {color:white;background-color:transparent;font-size:8pt;font-weight:bold;}
+			.treeLevel1 {position:relative;left:2px;}
+			.treeLevel2 {position:relative;left:4px;}
+			.treeLevel3 {position:relative;left:8px;}
+			.treeLevel3dis {position:relative;left:8px;color:#D3D3D3;}
+
+			.helpbutton {width:16px;height:16px;position:absolute;right:5px;}							
+		</style>
+
+		<script type="text/javascript">
+
+			// ============================================================
+			// Footer as popup
+			// ============================================================
+
+			function makeFooterWindow() {
+		
+			footerWindow = window.open("","Footer","scrollbars=1,resizable=1,menubar=1,height=300,width=700");            
+
+			// delay writing until window exists in IE/Windows
+			setTimeout("buildFooter( )", 300);
+		
+				if (footerWindow.focus) {
+				// window is already open and focusable, so bring it to the front
+				footerWindow.focus();
+				}
+			}
+
+			function buildFooter() {
+			var newContent = '<html><head><title>Page Information</title>\n';
+				newContent += '<link href="./style/msie.css" rel="stylesheet" type="text/css">\n';
+				newContent += '<link href="./style/common.css" rel="stylesheet" type="text/css">\n';
+				newContent += '<link href="./style/custom.css" rel="stylesheet" type="text/css">\n';
+				newContent += '<link href="./style/water.css" rel="stylesheet" type="text/css">\n';
+				newContent += '</head><body>\n';
+				newContent += '<img src=images/80x22_green.jpg>\n';
+				newContent += '<h1>NWIS Mapper Instructions Page Information</h1>\n';
+				newContent += '<div id="usgsfooter">\n';
+				newContent += '<p id="usgsfooterbar"><a href="https://www.usgs.gov/accessibility.html" title="Accessibility Policy (Section 508)">Accessibility</a><a href="https://www.usgs.gov/foia/" title="Freedom of Information Act">FOIA</a><a href="https://www.usgs.gov/privacy.html" title="Privacy policies of the U.S. Geological Survey.">Privacy</a><a href="https://www.usgs.gov/policies_notices.html" title="Policies and notices that govern information posted on USGS Web sites.">Policies and Notices</a></p>\n';
+				newContent += '<p class="usgsfootertext">\n';
+				// newContent += '<a href="https://www.takepride.gov/"><img class="footerimage" src="images/footer_graphic_takePride.jpg" alt="Take Pride in America home page." width="60" height="58" title="Take Pride in America home page." /></a><a href="https://firstgov.gov/"><img class="footerimage" src="images/footer_graphic_firstGov.jpg" alt="FirstGov button" width="90" height="26" title="FirstGov: The U.S. Government Official Web Portal." /></a>\n'; 
+				newContent += '<br /><a href="https://www.doi.gov">U.S. Department of the Interior</a> | <a href="https://www.usgs.gov">U.S. Geological Survey</a> | <a href="https://water.usgs.gov">Water Resources</a><br />\n';
+				newContent += 'URL: ' + location.href + '\n';
+				newContent += '<br />\n';
+				newContent += 'Questions about sites/data should be directed to <a href="https://water.usgs.gov/user_feedback_form.html">Water Webserver Team</a><br />\n';
+				newContent += 'Page Contact Information:&nbsp;<a href="feedback.html">NWIS Mapper Team</a><br />\n';
+				newContent += 'Page Last Modified: ' + document.lastModified + '</p>\n';
+				newContent += '</div>\n';
+				newContent += "</div></table></body>\n</html>";
+			// write HTML to new window document
+			footerWindow.document.write(newContent);
+			footerWindow.document.close( ); // close layout stream       
+			}
+		</script>
+</head>
+
+<body>
+
+	<body class="claro">
+<!-- BEGIN USGS Header Template -->
+		<div id="mainWindow">
+			<div class="siteTitle">
+				<!-- BEGIN USGS Header Template -->
+				<div id="usgscolorband">
+					<div id="usgsbanner">
+						<div id="usgsidentifier">
+							<a href="https://www.usgs.gov/"> <img src="./images/header_graphic_usgsIdentifier_white.jpg" alt="USGS - science for a changing world" title="U.S. Geological Survey Home Page" width="178" height="72" /> </a>
+						</div>
+						<div id="usgsccsabox">
+							<div id="usgsccsa">
+								<br />
+								<a href="https://www.usgs.gov/">USGS Home</a>
+								<br />
+								<a href="https://www.usgs.gov/ask/">Contact USGS</a>
+								<br />
+								<a href="https://search.usgs.gov/">Search USGS</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="usgstitle">
+					<p>
+						National Water Information System: Map View
+					</p>
+				</div>
+				<!-- END USGS Header Template -->
+			</div>
+<!-- END USGS Header Template -->
+
+<p><a href="https://waterdata.usgs.gov/nwis">NWIS HOME</a></p>
+
+<!-- START main body -->
+
+<h1>How To Use the Map View</h1>
+
+This interface provides a map view of the locations of sites found using a search of USGS water data. 
+
+<h2>Site Types and Activity Status</h2>
+
+<table border="0" cellpadding="3" cellspacing="8" summary="">
+<tr>
+  <td>
+								<table class="legendtable">
+									<tr>
+										<th align="left">Site Type</th><th align="center">Active</th><th align="center">Inactive</th>
+									</tr>
+									<tr>
+										<td>Surface-Water</td>
+										<td align="center"><img src="./images/act/sw_act_30.png"/></td>
+
+										<td align="center"><img src="./images/ina/sw_ina_30.png"/></td>
+									</tr>
+									<tr>
+										<td>Groundwater</td>
+										<td align="center"><img src="./images/act/gw_act_30.png"/></td>
+										<td align="center"><img src="./images/ina/gw_ina_30.png"/></td>
+									</tr>
+									<tr>
+
+										<td>Spring</td>
+										<td align="center"><img src="./images/act/sp_act_30.png"/></td>
+										<td align="center"><img src="./images/ina/sp_ina_30.png"/></td>
+									</tr>
+									<tr>
+										<td>Atmospheric</td>
+										<td align="center"><img src="./images/act/at_act_30.png"/></td>
+										<td align="center"><img src="./images/ina/at_ina_30.png"/></td>
+
+									</tr>
+										<td>Other</td>
+										<td align="center"><img src="./images/act/ot_act_30.png"/></td>
+										<td align="center"><img src="./images/ina/ot_ina_30.png"/></td>
+									</tr>
+								</table>  </td>
+  <td>&nbsp;&nbsp;&nbsp;</td>
+  <td>
+The <a href="waterdata.usgs.gov">National Water Information System</a> (NWIS) provides access to data at over 1.5 million sites. There are 56 possible site types used in the NWIS data base, including 14 primary types and 42 secondary types. To simplify mapping of the site locations for most practical applications, the site types are displayed in 5 groups that include the following primary and secondary types. The full list of site types can be found <a href="https://maps.waterdata.usgs.gov/mapper/help/sitetype.html">here</a>.
+
+<p>
+Sites may be active or inactive. The active/inactive status is determined by local USGS Water Science Centers. In most cases, sites designated as active will have current water data, but in some cases a site may also be considered active if it is part of an ongoing occasional data-collection program.</p>
+
+<p>
+Shapes and colors are used to indicate the type of data collected at sites. Black triangles and gray colors represent surface-water sites, black dots and red colors represent groundwater sites, black dots with a tail and purple colors represent springs, black diamonds and blue colors represent atmospheric sites, and open circles and green colors represent all other site types.</p>
+
+  </td>
+</tr>
+</table>
+
+
+<h2>Selecting a Site and Getting Data</h2>
+
+<table border="0" cellpadding="3" cellspacing="8" summary="">
+<tr>
+<td valign="middle"><img src="images/site_label.png"></td>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td>
+<p>Selecting (clicking) the site will identify it by site number and name. A link is also provided to access any available data from the National Water Information System. </p>
+
+</td>
+</tr>
+</table>
+
+<p>&nbsp;</p>
+
+<h3>Viewing a List of Displayed Sites</h3>
+
+<p>
+A list of all sites that are shown in the map view is available in the the information panel to the left of the map. The panel can be made hidden from view by clicking on <img src="images/grid_lower.png">. The list can be exported in several formats, and includes links to access any available data from the National Water Information System. 
+</p>
+
+<p>&nbsp;</p>
+
+<h3>Exporting Site List</h3>
+
+<img src="images/export1.png" alt="Export site information">
+
+<table>
+<tr>
+<td valign="middle"><img src="images/export_menu.png"></td>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td>
+<p>Site information can be exported in the following formats listed below. The Table of Sites will be displayed directly in the web broswer, and all other formats are exported as a zipped data package that contains three files: (1) Readme.txt, which describes the contents of the data package, (2) Metadata.txt, which provides the specifications for the retrieval, such as creation date, time, bounding coordinates, and other information about the map view, (3) NWISMapperExport.<strong>nnn</strong>, which is the actual list of sites in the requested export format, where <strong>nnn</strong> is the file type suffix listed below.</p>
+
+<ul>
+  <li>Table of Sites (.html) - Display in a web browser</li>
+  <li>List of Site Numbers (.txt) - File can be used as input for a data retrieval at 
+      <a href="https://waterdata.usgs.gov">waterdata.usgs.gov</a> </li>
+  <li>Microsoft Excel (.xls) - Spreadsheet</li>
+  <li>Comma Separated (.csv) - Spreadsheet or data base compatible</li>
+  <li>Tab Separated (.rdb) - Spreadsheet or data base compatible</li>
+  <li>Keyhole Markup Language (.kml) - Open using Google Earth or compatible map software</li>    
+  <li>ESRI ShapeFile (.shp) - Open using ArcGIS or compatible GIS software</li>
+</ul>
+
+</td>
+</tr>
+</table>
+
+
+<h2>Map Layers - Background Views</h2>
+
+<img src="images/tab_map_layers.png" alt="Map Layers tab">
+
+<table>
+<tr>
+  <td>
+<h3>Base Maps</h3>
+
+<img src="images/tab_base_maps.png" alt="Base maps">
+
+<ul>
+  <li>Imagery</li>
+  <li>Imagery with Labels</li>
+  <li>Streets</li>
+  <li>USA Topography</li>
+  <li>Hydrography</li>
+  <li>Terrain with Labels</li>
+  <li>Light Gray Canvas</li>
+  <li>National Geographic</li>
+  <li>Oceans</li>
+  <li>Open Street Map</li>
+  <li>Bing Maps Aerial</li>
+  <li>Bing Maps Hybrid</li>
+  <li>Bing Maps Road</li>
+  <li>USGS: The National Map</li>
+</ul>
+  </td>
+  <td>&nbsp;&nbsp;&nbsp;</td>
+  <td>
+The default background view is an ESRI Streets map. Several background map types are available and can be selected using the Base Maps selection under the Map Tools tab. More information on each base map is available at <a href="https://www.esri.com/software/arcgis/arcgis-online-map-and-task-services/map-services.html">ESRI Map Services</a>. All uses of ESRI base maps are subject to their <a href="https://www.esri.com/legal/pdfs/e-800-termsofuse.pdf">Terms of Use</a>. All uses of MicroSoft Bing maps are subject to their <a href="https://www.esri.com/legal/pdfs/e-802-bing-mapsvcs.pdf">Terms of Use</a>. Note that background views are appropriate to and will vary with map scale. Not all views are available at all scales, particularly when zoomed in very close to a location.
+  </td>
+</tr>
+
+<tr>
+  <td>
+<h3>Other Map Layers</h3>
+
+<img src="images/tab_other_map_layers.png" alt="Base maps">
+
+<table cellpadding="3" cellspacing="3" style="border: 1px solid gray;">
+<tr>
+  <td width="22" valign="top"><input type="checkbox" id="chkAct" value="act" checked></td>
+  <td align="left">Watershed Boundary Dataset<br />&nbsp;&nbsp;<img src="./images/WBD.png" alt="Watershed Boundary Dataset line symbol" /> USGS National Hydrography <br />&nbsp;&nbsp;Dataset (NHD)<br />&nbsp;&nbsp;<a href="https://nhd.usgs.gov/" target="_blank">NHD Home Page</a></td>
+</tr>
+
+<tr>
+  <td width="22" valign="top"><input type="checkbox" id="chkIna" value="ina" checked></td>
+  <td align="left">USGS Offices<br />&nbsp;&nbsp;<img src="./images/usgs16green.png" alt="USGS Water Scence Center Office" /> Water Scence Center <br />&nbsp;&nbsp;<img src="./images/usgs16black.png" alt="USGS Water Field Office" /> Field Office </td>
+</tr>
+</table>
+  </td>
+
+  <td>&nbsp;&nbsp;&nbsp;</td>
+
+  <td>
+<p>
+Several additional layers of information are available to complement the display of sites using the Map Layers selection under the Map Layers tab. Note that map layer views are appropriate to and will vary with map scale. </p>
+  </td>
+</tr>
+</table>
+
+
+<h2>Navigating in ESRI Maps</h2>
+
+You can navigate (move your view) in two dimensions in any ESRI Map. To pan (move the map), do one of the following:
+
+<ul>
+  <li>Click and hold the mouse buttons to drag the map</li>
+  <li>Press the up arrow on your keyboard to move north </li>
+  <li>Press the down arrow on your keyboard to move south </li>
+  <li>Press the right arrow on your keyboard to move east </li>
+  <li>Press the left arrow on your keyboard to move west </li>
+</ul>
+
+Additionally, you can zoom in or out by moving the cursor over a location 
+and using the mouse scroll button to zoom in or out on that location. To center 
+and zoom in on a location, you can also double click on the location.
+
+<h2>Using the Navigation Controls </h2>
+
+<table border="0">
+<tr>
+  <td rowspan="2" width="150"><img src="images/maps_nav_controls_zoom.png"
+      alt="Navigation controls" align="left" border="0" height="350" 
+      width="150"></td>
+  <td align="left" valign="top"><p>On-screen zoom controls 
+       are shown on the left. Zoom controls include:</p>
+    <ol>
+      <li><strong>Zoom level indicator</strong>- Zoom level ranges from 1 to 19.
+          Level 4 approximates a view of the lower-48 USA states. Groundwater sites
+          are clickable at level 10 and above, and other sites types are clickable
+          at level 8 and above.</li>
+      <li><strong>Zoom</strong> - Click <img src="images/arrow_up.png"> to zoom in on the center of 
+          the map. Click <img src="images/arrow_down.png"> to zoom out.</li>
+      <li><strong>Zoom slider</strong> - Drag the zoom slider up or 
+          down to zoom in or out incrementally.</li>
+    </ol>
+
+    <p>Additional controls are described below and are provided to set the function 
+    of the cursor and to select map views.</p>
+    
+    <table cellspacing=3, cellpadding=3>
+    <tr>
+      <td><img src="images/control_zoom_in.png"></td>
+      <td>Zoom In - Sets the cursor for zoom-in operation using 2 corners of a box. 
+          The cursor is clicked at one corner of a box and released at the opposite
+          corner for the area to be zoomed.</td>
+    </tr>
+    <tr>
+      <td><img src="images/control_zoom_out.png"></td>
+      <td>Zoom Out - Sets the cursor for zoom-out operation using 2 corners of a box.
+          The cursor is clicked at one corner of a box and released at the opposite corner. 
+          The amount of zooming out will depend on the size of the box, where a large box 
+          will zoom out less and a small box will zoom out more. Note that using this control 
+          takes some practice!</td>
+    </tr>
+    <tr>
+      <td><img src="images/control_pan.png"></td>
+      <td>Pan - Sets the cursor for pan operation. The map extent will move with 
+          the cursor at a fixed zoom level.</td>
+    </tr>
+    <tr>
+      <td><img src="images/control_previous_view.png"></td>
+      <td>Previous View - When selected the map will go back to the previous
+          view in a stack, if one has been created.</td>
+    </tr>
+    <tr>
+      <td><img src="images/control_start_view.png"></td>
+      <td>Initial View - When selected the map will go to the initial view when
+          the browser was opened.</td>
+    </tr>
+    <tr>
+      <td><img src="images/control_next_view.png"></td>
+      <td>Next View - When selected the map will go ahead to the next view in a stack, 
+          if one has been created.</td>
+    </tr>
+    </table>
+  <p></td>
+</tr>
+</table>
+
+<h2><a name="overview" id="overview"></a>Using the Overview Map </h2>
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+  <tr>
+    <td align="right" width="20"><span class="style2">
+       <img src="images/maps_overview_map.png" alt="Overview map" 
+       align="left" height="105" width="217" /></span></td>
+    <td align="right" width="25">&nbsp;</td>
+    <td align="left" valign="top">
+       <p>
+       The overview map (shown left here) 
+       appears in the bottom right corner of the map. It helps to orient 
+       you by showing the location of current map view in the context 
+       of a larger geographical area. The area currently displayed
+       in the map is show as a purple box in the overview map. At any 
+       time, click <img src="images/maps_overview_map_hide.png"
+       alt="Hide overview button" height="15" width="15" /> to hide the 
+       overview map or click 
+       <img src="images/maps_overview_map_show.png" alt="Show overview 
+       map button" height="15" width="15" /> to display it again. </p>
+
+      <p>
+      As you pan or zoom in the map, the overview map view changes
+      accordingly. You can change the existing view in the map by doing 
+      one of the following:</p>
+
+      <ul>
+        <li>Drag and drop the purple box in the overview map.</li>
+        <li>Drag and drop the area outside the purple box to pan the 
+            map.</li>
+     </ul></td>
+  </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<input type=image src="images/page_info.png" title="Page information" onclick="makeFooterWindow( );">
+
+</body>
+</html>

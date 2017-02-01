@@ -1,0 +1,20 @@
+2017-01-31 14:36:32,309 INFO Starting program: 1_getNWISSites.py
+2017-01-31 14:36:32,358 INFO Starting processing sw_act
+2017-01-31 14:46:40,923 INFO Finished processing sw_act. Total sites: 16178
+2017-01-31 14:46:40,944 INFO Starting processing sw_ina
+2017-01-31 15:01:29,321 INFO Finished processing sw_ina. Total sites: 164295
+2017-01-31 15:01:29,336 INFO Starting processing gw_act
+2017-01-31 15:11:15,648 INFO Finished processing gw_act. Total sites: 24664
+2017-01-31 15:11:15,709 INFO Starting processing gw_ina
+2017-01-31 16:07:04,506 INFO Finished processing gw_ina. Total sites: 1360524
+2017-01-31 16:07:04,535 INFO Starting processing sp_act
+2017-01-31 16:15:49,828 INFO Finished processing sp_act. Total sites: 258
+2017-01-31 16:15:49,888 INFO Starting processing sp_ina
+2017-01-31 16:25:39,334 INFO Finished processing sp_ina. Total sites: 28102
+2017-01-31 16:25:39,365 INFO Starting processing at_act
+2017-01-31 16:34:39,148 INFO Finished processing at_act. Total sites: 765
+2017-01-31 16:34:39,211 INFO Starting processing at_ina
+2017-01-31 16:43:35,742 INFO Finished processing at_ina. Total sites: 4539
+2017-01-31 16:43:35,793 INFO Starting processing ot_act
+2017-01-31 16:52:02,581 INFO Finished processing ot_act. Total sites: 413
+2017-01-31 16:52:02,612 INFO Starting processing ot_ina

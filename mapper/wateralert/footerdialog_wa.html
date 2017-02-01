@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "https://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+		<title>Page Information</title>
+		<base href="https://maps.waterdata.usgs.gov/mapper/">
+		<link href="style/msie.css" rel="stylesheet" type="text/css">
+		<link href="style/common.css" rel="stylesheet" type="text/css">
+		<link href="style/custom.css" rel="stylesheet" type="text/css">
+		<link href="style/water.css" rel="stylesheet" type="text/css">
+		
+		<script type="text/javascript">
+			dojo.ready(function(){
+			  var targetNode = dojo.byId("getLastMod");
+			  var xhrArgs = {
+				url: footerURL,
+			  headers: {
+				   'X-Requested-With': null
+			  },
+				handleAs: "text",
+				preventCache: true,
+				handle: function(error, ioargs){
+				  var lastModLocale = new Date(ioargs.xhr.getResponseHeader("Last-Modified")).toLocaleString();
+				  targetNode.innerHTML = "Last Modified: " + lastModLocale;
+				}
+			  }
+			  var deferred = dojo.xhrGet(xhrArgs);
+			});
+		</script>
+	</head>
+
+	<body>
+		<img src="images/usgslogo115x32.png" alt="USGS Logo"/>
+		<h1>WaterAlert Page Information</h1>
+		<div id="usgsfooter">
+			<p id="usgsfooterbar">
+				<a href="https://www.usgs.gov/accessibility.html" title="Accessibility Policy (Section 508)." target="blank">Accessibility</a>
+				<a href="https://www.usgs.gov/foia/" title="Freedom of Information Act." target="blank">FOIA</a>
+				<a href="https://www.usgs.gov/privacy.html" title="Privacy policies of the U.S. Geological Survey." target="blank">Privacy</a>
+				<a href="https://www.usgs.gov/policies_notices.html" title="Policies and notices that govern information posted on USGS Web sites." target="blank">Policies and Notices</a>
+			<p class="usgsfootertext">
+				<a href="https://www.takepride.gov/" target="blank"><img class="footerimage" src="images/footer_graphic_takePride.jpg" alt="Take Pride in America home page." width="60" height="58" title="Take Pride in America home page." ></a>
+				<a href="https://firstgov.gov/" target="blank"><img class="footerimage" src="images/footer_graphic_firstGov.jpg" alt="FirstGov button" width="90" height="26" title="FirstGov: The U.S. Government Official Web Portal." ></a><br>
+				<a href="https://www.doi.gov" title="U.S. Department of the Interior home page." target="blank">U.S. Department of the Interior</a> | 
+				<a href="https://www.usgs.gov" title="U.S. Geological Survey home page." target="blank">U.S. Geological Survey</a> | 
+				<a href="https://water.usgs.gov" title="USGS Water Resources home page." target="blank">Water Resources</a><br>
+				URL: https://maps.waterdata.usgs.gov/mapper/wateralert/<br>
+				Questions about sites/data should be directed to <a href="https://water.usgs.gov/user_feedback_form.html" title="Data feedback form." target="blank">Water Webserver Team</a><br>
+				Page Contact Information:&nbsp;<a href="https://answers.usgs.gov/cgi-bin/gsanswers?pemail=gs-w_wateralert_feedback&cemail=marsmith&subject=WaterAlert%20Mapper%20Support%20Request&viewnote=%3CH1%3EWaterAlert%20Mapper%20Support%20Request%3C/b%3E%3C/p%3E" target="_blank">WaterAlert Mapper Team</a>  
+				<div id='getLastMod'></div><br><br>
+			</p>
+		</div>
+	</body>
+</html>

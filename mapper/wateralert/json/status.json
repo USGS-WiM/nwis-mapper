@@ -1,0 +1,14 @@
+{
+"items":[
+{"grStatusType":"Surface-Water","grStatusStatus":"Active","grStatusSymbol":"act/sw_act_16.png","grStatusVisible":"No","grStatusSelect":"No","grStatusLevel": 8 ,"grStatusNSites": 0},
+{"grStatusType":"Surface-Water","grStatusStatus":"Inactive","grStatusSymbol":"ina/sw_ina_16.png","grStatusVisible":"No","grStatusSelect":"No","grStatusLevel": 8 ,"grStatusNSites": 0},
+{"grStatusType":"Groundwater","grStatusStatus":"Active","grStatusSymbol":"act/gw_act_16.png","grStatusVisible":"No","grStatusSelect":"No","grStatusLevel": 10 ,"grStatusNSites": 0},
+{"grStatusType":"Groundwater","grStatusStatus":"Inactive","grStatusSymbol":"ina/gw_ina_16.png","grStatusVisible":"No","grStatusSelect":"No","grStatusLevel": 10 ,"grStatusNSites": 0},
+{"grStatusType":"Springs","grStatusStatus":"Active","grStatusSymbol":"act/sp_act_16.png","grStatusVisible":"No","grStatusSelect":"No","grStatusLevel": 8 ,"grStatusNSites": 0},
+{"grStatusType":"Springs","grStatusStatus":"Inactive","grStatusSymbol":"ina/sp_ina_16.png","grStatusVisible":"No","grStatusSelect":"No","grStatusLevel": 8 ,"grStatusNSites": 0},
+{"grStatusType":"Atmospheric","grStatusStatus":"Active","grStatusSymbol":"act/at_act_16.png","grStatusVisible":"No","grStatusSelect":"No","grStatusLevel": 8 ,"grStatusNSites": 0},
+{"grStatusType":"Atmospheric","grStatusStatus":"Inactive","grStatusSymbol":"ina/at_ina_16.png","grStatusVisible":"No","grStatusSelect":"No","grStatusLevel": 8 ,"grStatusNSites": 0},
+{"grStatusType":"Other","grStatusStatus":"Active","grStatusSymbol":"act/ot_act_16.png","grStatusVisible":"No","grStatusSelect":"No","grStatusLevel": 8 ,"grStatusNSites": 0},
+{"grStatusType":"Other","grStatusStatus":"Inactive","grStatusSymbol":"ina/ot_ina_16.png","grStatusVisible":"No","grStatusSelect":"No","grStatusLevel": 8 ,"grStatusNSites": 0}
+]
+}

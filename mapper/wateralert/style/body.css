@@ -1,0 +1,79 @@
+.topbox {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	/*font-size: 90%;*/
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: none;
+	border-left-style: solid;
+	border-top-color: #C0DBE9;
+	border-right-color: #C0DBE9;
+	border-bottom-color: #C0DBE9;
+	border-left-color: #C0DBE9;
+        padding-bottom: 0.5em;
+        padding-left: 1.0em;
+        padding-right: 0.5em;
+        padding-top: 0.5em;
+}
+.bottombox {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	/*font-size: 90%;*/
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #C0DBE9;
+	border-right-color: #C0DBE9;
+	border-bottom-color: #C0DBE9;
+	border-left-color: #C0DBE9;
+}
+.middlebox {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 90%;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: none;
+	border-left-style: solid;
+	border-top-color: #C0DBE9;
+	border-right-color: #C0DBE9;
+	border-bottom-color: #C0DBE9;
+	border-left-color: #C0DBE9;
+        padding-bottom: 0.5em;
+        padding-left: 1.0em;
+        padding-right: 0.5em;
+        padding-top: 0.5em;
+}
+.topboxState {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 90%;
+	background-image: url(../images/shreliefmap.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: none;
+	border-left-style: solid;
+	border-top-color: #C0DBE9;
+	border-right-color: #C0DBE9;
+	border-bottom-color: #C0DBE9;
+	border-left-color: #C0DBE9;
+}
+.rightImage {
+	text-align: right;
+	border: 1px solid #000000;
+}

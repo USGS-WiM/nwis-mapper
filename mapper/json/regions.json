@@ -1,0 +1,146 @@
+{
+"identifier":"Region",
+"label":"Region",
+"items":[
+	{
+		"Region": "Alaska Region",
+		"MinX": "-179.0",
+		"MinY": "51.0",
+		"MaxX": "-140.0",
+		"MaxY": "72.0"
+	},
+	{
+		"Region": "Arkansas-White-Red Region",
+		"MinX": "-106.597079",
+		"MinY": "31.202290",
+		"MaxX": "-90.147730",
+		"MaxY": "39.385780"
+	},
+	{
+		"Region": "California Region",
+		"MinX": "-124.411189",
+		"MinY": "32.530429",
+		"MaxX": "-114.637249",
+		"MaxY": "43.334660"
+	},
+	{
+		"Region": "Great Basin Region",
+		"MinX": "-120.454510",
+		"MinY": "35.213860",
+		"MaxX": "-110.595760",
+		"MaxY": "42.833059"
+	},
+	{
+		"Region": "Great Lakes Region",
+		"MinX": "-93.223200",
+		"MinY": "40.406709",
+		"MaxX": "-73.639550",
+		"MaxY": "48.304249"
+	},
+	{
+		"Region": "Hawaii Region",
+		"MinX": "-160.236068",
+		"MinY": "18.915493",
+		"MaxX": "-154.798583",
+		"MaxY": "22.234394"
+	},	
+	{
+		"Region": "Lower Colorado Region",
+		"MinX": "-115.691379",
+		"MinY": "31.329170",
+		"MaxX": "-107.770869",
+		"MaxY": "39.297330"
+	},
+	{
+		"Region": "Lower Mississippi Region",
+		"MinX": "-94.346149",
+		"MinY": "28.918099",
+		"MaxX": "-88.281460",
+		"MaxY": "37.858310"
+	},
+	{
+		"Region": "Mid Atlantic Region",
+		"MinX": "-80.541929",
+		"MinY": "36.673160",
+		"MaxX": "-71.855879",
+		"MaxY": "45.016329"
+	},
+	{
+		"Region": "Missouri Region",
+		"MinX": "-114.077239",
+		"MinY": "37.020440",
+		"MaxX": "-90.127649",
+		"MaxY": "49.001440"
+	},
+	{
+		"Region": "New England Region",
+		"MinX": "-73.735089",
+		"MinY": "40.948259",
+		"MaxX": "-66.954000",
+		"MaxY": "47.461879"
+	},
+	{
+		"Region": "Ohio Region",
+		"MinX": "-89.266429",
+		"MinY": "35.314360",
+		"MaxX": "-77.836760",
+		"MaxY": "42.448429"
+	},
+	{
+		"Region": "Pacific Northwest Region",
+		"MinX": "-124.755790",
+		"MinY": "41.132559",
+		"MaxX": "-109.765399",
+		"MaxY": "49.003590"
+	},
+	{
+		"Region": "Rio Grande Region",
+		"MinX": "-108.777670",
+		"MinY": "25.838020",
+		"MaxX": "-97.147059",
+		"MaxY": "38.454120"
+	},
+	{
+		"Region": "Souris-Red-Rainy Region",
+		"MinX": "-103.890299",
+		"MinY": "45.475509",
+		"MaxX": "-90.556109",
+		"MaxY": "49.385620"
+	},
+	{
+		"Region": "South Atlantic-Gulf Region",
+		"MinX": "-90.595920",
+		"MinY": "24.518319",
+		"MaxX": "-75.459500",
+		"MaxY": "37.525290"
+	},
+	{
+		"Region": "Tennessee Region",
+		"MinX": "-88.685729",
+		"MinY": "34.116799",
+		"MaxX": "-81.273700",
+		"MaxY": "37.242159"
+	},
+	{
+		"Region": "Texas-Gulf Region",
+		"MinX": "-103.851230",
+		"MinY": "25.867249",
+		"MaxX": "-93.163089",
+		"MaxY": "34.691150"
+	},
+	{
+		"Region": "Upper Colorado Region",
+		"MinX": "-112.326280",
+		"MinY": "35.557880",
+		"MaxX": "-105.628330",
+		"MaxY": "43.450149"
+	},
+	{
+		"Region": "Upper Mississippi Region",
+		"MinX": "-97.356120",
+		"MinY": "36.961820",
+		"MaxX": "-85.900990",
+		"MaxY": "47.777070"
+	}
+]
+}

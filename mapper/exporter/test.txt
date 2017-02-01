@@ -1,0 +1,24 @@
+#
+# USGS NWISWeb site number list
+#
+# This file can be used to retrieve data from the
+# USGS NWISWeb internet based retrieval system using
+# the 'File of site Numbers' search criteria.
+#
+# This file can be edited, but the number of columns
+# must be equal for each row, and the 'site_no' column
+# must remain.
+#
+# The columns include:
+#  agency_cd  -- Agency code.  If no value is found, 'USGS' is assumed
+#  site_no    -- USGS site number
+#  station_nm -- USGS site name. This column is include for viewing only,
+#                                it is not used by the nwisweb system.
+#
+agency_cd	site_no	station_nm
+5s	15s	56s
+USGS	375039086381201	STATE OF IND.
+USGS	375111086372901	K A
+USGS	375141086364201	A T
+USGS	375202086384401	A E
+USGS	375328087373301	VA-5 DOGTOWN, IND.

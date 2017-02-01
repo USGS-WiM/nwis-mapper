@@ -1,0 +1,127 @@
+<html>
+	<head>
+		<title>About Site and Data Type</title>
+		<base href="https://maps.waterdata.usgs.gov/mapper/wateralert/">
+		<link href="style/msie.css" rel="stylesheet" type="text/css">
+		<link href="style/common.css" rel="stylesheet" type="text/css">
+		<link href="style/custom.css" rel="stylesheet" type="text/css">
+		<link href="style/water.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<img src=images/usgslogo115x32.png>
+		<h1>NWIS Site and Data Types</h1>
+
+		<p>
+	    WaterAlert provides a subscription to data alerts from a limited number of site and data types in the National Water Information System. No every type of data at every type of site is suitable for a WaterAlert, so selections are fewer than a full query of USGS water data. The types of data provided by WaterAlert are generally divided into "quantity" values, such as water levels or flows; and "quality" values, such as water temperature, salinuty, or chemical concentration. This disctinction is provided solely to make it easier for users to find data of their own particular interest.</p>
+		
+		<p>There are 56 possible site types used in the NWIS data base, including 14 primary types and 42 secondary types. To simplify mapping of the site locations for most practical applications, the site types are displayed in groups that include the primary and secondary types. The full list of site types can be found <a href="Help/sitetype.html" target="_blank">here</a>.</p>
+
+        <p>WaterAlert provides data in four groups of site types, and includes those below.</p>
+
+		<p>
+		The surface-water WaterAlert group includes 5 primary site types.</p>
+
+		<a name="SW"></a>
+		<h2>Group: Surface-Water Sites (<img src="images/act/sw_act_16.png"> <img src="images/ina/sw_ina_16.png"> <img src="images/act/multi_sw_act_16.png">)</h2>
+
+		<table border="1" width="95%">
+		<tr>
+		<th>Site Type<br>Code<br>(site_tp_cd)</th>
+		<th>Site Type Name<br>(site_tp_ln)</th>
+		<th>Site Type Description<br>(site_tp_ds)</th>
+		</tr>
+
+		<tr align="left">
+		<td>ES<BR></td>
+		<td>Estuary<BR></td>
+		<td>A coastal inlet of the sea or ocean; esp. the mouth of a river, where tide water normally mixes with stream water (modified, Webster). Salinity in estuaries typically ranges from 1 to 25 Practical Salinity Units (psu), as compared oceanic values around 35-psu. See also: tidal stream and coastal.<BR></td></tr>
+
+		<tr align="left">
+		<td>LK<BR></td>
+		<td>Lake, Reservoir, Impoundment<BR></td>
+		<td>An inland body of standing fresh or saline water that is generally too deep to permit submerged aquatic vegetation to take root across the entire body (cf: wetland). This site type includes an expanded part of a river, a reservoir behind a dam, and a natural or excavated depression containing a water body without surface-water inlet and/or outlet.<BR></td></tr>
+
+		<tr align="left">
+		<td>OC<BR></td>
+		<td>Ocean<BR></td>
+		<td>Site in the open ocean, gulf, or sea. (See also: Coastal, Estuary, and Tidal stream).<BR></td></tr>
+
+		<tr align="left">
+		<td>ST<BR></td>
+		<td>Stream<BR></td>
+		<td>A body of running water moving under gravity flow in a defined channel. The channel may be entirely natural, or altered by engineering practices through straightening, dredging, and (or) lining. An entirely artificial channel should be qualified with the "canal" or "ditch" secondary site type.<BR></td></tr>
+
+		<tr align="left">
+		<td>WE<BR></td>
+		<td>Wetland<BR></td>
+		<td>Land where saturation with water is the dominant factor determining the nature of soil development and the types of plant and animal communities living in the soil and on its surface (Cowardin, December 1979). Wetlands are found from the tundra to the tropics and on every continent except Antarctica. Wetlands are areas that are inundated or saturated by surface or groundwater at a frequency and duration sufficient to support, and that under normal circumstances do support, a prevalence of vegetation typically adapted for life in saturated soil conditions. Wetlands generally include swamps, marshes, bogs and similar areas. Wetlands may be forested or unforested, and naturally or artificially created.<BR></td></tr>
+
+		</table>		
+
+		<p>
+		The groundwater group includes 2 primary site types.</p>
+
+		<a name="GW"></a>
+		<h2>Group: Groundwater Sites (<img src="images/act/gw_act_16.png"> <img src="images/ina/gw_ina_16.png"> <img src="images/act/multi_gw_act_16.png">)</h2>
+
+		<table border="1" width="95%">
+		<tr>
+		<th>Site Type<br>Code<br>(site_tp_cd)</th>
+		<th>Site Type Name<br>(site_tp_ln)</th>
+		<th>Site Type Description<br>(site_tp_ds)</th>
+		</tr>
+
+		<tr align="left">
+		<td>GW<BR></td>
+		<td>Well<BR></td>
+		<td>A hole or shaft constructed in the earth intended to be used to locate, sample, or develop groundwater, oil, gas, or some other subsurface material. The diameter of a well is typically much smaller than the depth. Wells are also used to artificially recharge groundwater or to pressurize oil and gas production zones.  Additional information about specific kinds of wells should be recorded under the secondary site types or the Use of Site field. Underground waste-disposal wells should be classified as waste-injection wells.<BR></td></tr>
+
+		<tr align="left">
+		<td>SB<BR></td>
+		<td>Subsurface<BR></td>
+		<td>A location below the land surface, but not a well, soil hole, or excavation.<BR></td></tr>
+
+		</table>
+
+		<p>
+		The spring group includes 1 primary site type.</p>
+
+		<a name="SP"></a>
+		<h2>Group: Spring Sites (<img src="images/act/sp_act_16.png"> <img src="images/ina/sp_ina_16.png"> <img src="images/act/multi_sp_act_16.png">)</h2>
+
+		<table border="1" width="95%">
+		<tr>
+		<th>Site Type<br>Code<br>(site_tp_cd)</th>
+		<th>Site Type Name<br>(site_tp_ln)</th>
+		<th>Site Type Description<br>(site_tp_ds)</th>
+		</tr>
+
+		<tr align="left">
+		<td>SP<BR></td>
+		<td>Spring<BR></td>
+		<td>A location at which the water table intersects the land surface, resulting in a natural flow of groundwater to the surface. Springs may be perennial, intermittent, or ephemeral.<BR></td></tr>
+
+		</table>
+
+		<p>
+		The atmospheric group includes 1 primary site type.</p>
+
+		<a name="AT"></a>
+		<h2>Group: Atmospheric Sites (<img src="images/act/at_act_16.png"> <img src="images/ina/at_ina_16.png"> <img src="images/act/multi_at_act_16.png">)</h2>
+
+		<table border="1" width="95%">
+		<tr>
+		<th>Site Type<br>Code<br>(site_tp_cd)</th>
+		<th>Site Type Name<br>(site_tp_ln)</th>
+		<th>Site Type Description<br>(site_tp_ds)</th>
+		</tr>
+
+		<tr align="left">
+		<td>AT<BR></td>
+		<td>Atmosphere<BR></td>
+		<td>A site established primarily to measure meteorological properties or atmospheric deposition.<BR></td></tr>
+
+		</table>
+
+	</body>
+</html>

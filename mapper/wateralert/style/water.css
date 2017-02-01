@@ -1,0 +1,446 @@
+@charset "utf-8";
+/*---------------------------------------------------------------------------------*/
+/*   water.css: Main CSS file for Water Resources; Version: 1/13/2009         */
+/*   Moved left-side nav styles to leftnav.css (1/11/09)          */
+/*-------------------------------------------------------------------------------- */
+/*   Main body styles                                                                      */
+/*   The content pane has an ID of mainbody                              */
+/*---------------------------------------------------------------------------------*/
+
+/* BASIC PAGE LAYOUT ELEMENTS */
+body {
+	margin: 8px;
+	padding: 0;
+	text-align: left;
+	}
+	
+#container {
+	width: 100%;
+	text-align: left;
+	margin: 0;
+	background: #FFF url('/images/leftsidebackground225.gif') repeat-y 0px 0px;
+	}
+	
+#mainbody { margin: 10px 0px 0px 240px;	}
+	
+#content {
+	width: 100%;
+	float: left;	
+	}
+	
+/* Lefthalf and righthalf are used to produce two equal width columns, for a 2-column layout */
+#lefthalf {
+	float: left;
+	width: 47%;
+	margin-right: 3%;
+	}
+	
+#righthalf {
+	float: right;
+	width: 47%;
+	}
+
+/* Leftside and rightside are used to produce two columns (widths would be specified in HTML file), for a 2-column layout */
+#leftside{
+	float: left;
+	margin-right: 3%;
+	}
+	
+#rightside { float: right; }
+
+/* Leftthird, middlethird, and rightthrid are used to produce three equal width columns, for a 3-column layout */
+#leftthird {
+	float: left;
+	width: 33%;
+	padding-right: 3%;
+	position: absolute;
+	}
+	
+#middlethird {
+	float: left;
+	width: 33%;
+	padding-right: 3%;
+	margin-left: 34%;
+	}
+	
+#rightthird {
+	float: left;
+	width: 33%;
+	padding-right: 3%;
+	margin-left: 65%;
+	}
+	
+	
+/* To produce a page with no left side, use a new style to override a couple styles above from Container and Content */
+#containersingle {
+	width: 100%;
+	text-align: left;
+	margin: 0;
+	background: #fff;
+	}
+	
+#usgsfooter { background: #fff;	}
+	
+/* END BASIC PAGE LAYOUT ELEMENTS */
+
+/* CLASSES */
+.clear { clear: both; }
+
+ /* Clear borders on all images, so you don't need to do it in the HTML code */
+img { border: none; }
+
+/*----  Use class=picleft/picright to float an image inside of a text paragraph (apply style to image) or DIV element (apply style to DIV). Use DIV if you want to include a caption with the image ----*/
+.picleft  {
+	float: left;
+	margin-right: 12px;
+	margin-bottom: 5px;
+	}
+
+.picright {
+	float: right;
+	margin-left: 12px;
+	margin-bottom: 5px;
+	}
+
+/*----  Add a faint border around any element  ----*/
+.addborders {
+    border-top: 1px solid #d9e0e6;
+	border-right: 1px solid #c8cdd2;
+	border-bottom: 1px solid #c8cdd2;
+	border-left: 1px solid #d9e0e6;
+   	padding: 4px; 
+	}
+	
+/* Styles to format the Feature Boxes (usually narrow boxes to the right side...grey colored  */
+.titlefeature {
+	background-color: #000000;
+	background-image: url(/images/icons/gd_black_gray.gif);
+	background-repeat: repeat-x;
+	font-weight: bold;
+	color: #ffffff;
+	border: 1px solid #999999;
+	padding-left: 7px;
+	display: block;
+	padding-top: 3px;
+	padding-bottom: 4px;
+}
+
+.featurebox {
+	border: 1px solid #aaaaaa;
+	margin-top: 0px;
+	padding-top: 0px;
+	padding-right: 5px;
+	padding-left: 5px;
+	background-color: #e5e5e5;
+	-moz-border-radius-bottomright: 8px;
+	-moz-border-radius-bottomleft: 8px;
+	margin-bottom: 10px;
+}
+
+.featureboxState {
+	border: 1px solid #aaaaaa;
+	background-image: url(/images/shreliefmap.gif);
+	-moz-border-radius-bottomright: 8px;
+	-moz-border-radius-bottomleft: 8px;
+	background-repeat: no-repeat;
+	position: absolute;
+	width: 400px;
+	height: 221px;
+	text-align: center;
+}
+
+/*   Text styles  (using EM instead of percentages)  */
+.smaller  { font-size: .9em; }
+.larger  { font-size: 1.2em; }
+.bold { font-weight: bold; font-size: .9em;}
+.italics { font-style: italic; }
+.underline { text-decoration:underline; }
+.alignleft { text-align: left; }
+.alignright { text-align: right; }
+.center { text-align: center; }
+.middle { vertical-align: middle; }
+
+/*----  Center an object horizontally, on its own line  (block) ----*/
+.centerthis {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	}
+
+/* Default bold text can look too big, so this style bolds text but set it to .9 em in size  */
+.boldsmaller {
+	 	font-weight: bold;
+		font-size: .9em;
+	}
+
+/*----  Use this to center, using text-align. Normally for text   ----*/
+.centertext { text-align: center; }
+
+/* Colors, mainly for text. "Waterblue" is the default blue being used in the page title and heading boxes */
+.white { color: #fff; }
+.black { color: #000; }
+.blue {	color: #004499; }
+.waterblue {color: #416ab1; }
+.greymed { color: #666666; }
+.greydark { color: #414141; }
+.red { color: #992255; }
+.green { color: #229922; }
+.brown { color: #7c4f3f; }
+.palegreen { color: #2a3e19; }
+.purple { color: #722072; }
+
+/*----  Heading styles, generally for content pane of the page (not left side). H1 is blue, others are slightly grey.  ----*/
+#mainbody h1 {
+	color: #004499;
+	font-size: 1.4em;
+}
+
+#mainbody h2 {
+	color: #004499;
+	font-size: 1.1em;
+	margin-bottom: 10px;
+	margin-top: 16px;
+}
+
+#mainbody h3 {
+	color: #004499;
+	font-size: .95em;
+	margin-bottom: 8px;
+	margin-top: 12px;
+}
+
+#mainbody h4 {
+	color: #004499;
+	font-size: .95em;
+	margin-bottom: 5px;
+	margin-top: 12px;
+}
+
+#mainbody h5 {
+	color: #004499;
+	font-size: .8em;
+	margin-bottom: 3px;
+	margin-top: 10px;
+}
+
+#mainbody h6 {
+	color: #004499;
+	font-size: .8em;
+	margin-bottom: 3px;
+	margin-top: 10px;
+}
+
+#mainbody p {
+	margin-top: 0;
+	}
+	
+#mainbody #content p + ul {
+	margin-top: -15px;
+	}
+	
+#mainbody #content ul, #mainbody #content ol {
+	margin: -10px 0 10px 0;
+	padding: 2px 0 0 30px;
+}
+
+#mainbody #content li {
+	margin: 0;
+	padding: 0px 3px 0px 2px;
+}
+
+#mainbody #content ul li ul{
+	margin: 0 0 10px 0;
+	padding: 0 0 0 30px;
+}
+
+#mainbody #content ul li ul li{
+	margin: 0 0 -10px 0;
+	padding: 0 0 10px 0;
+}
+
+#mainbody #content ul li ol {
+	margin: 0 0 5px 0;
+	padding: 10px 0 0 40px;
+}
+
+/*------------------------------------------------------------------------------------------------------
+Heading styles: Limited number of styles to style headings.
+-----------------------------------------------------------------------------------------------------*/
+.headingblue {	background-color: #416ab1; padding: 4px; color: #fff; }
+.headingbluelight { background-color: #b8c9e5; padding: 4px; }		
+.headingtan { background-color: #e5d4b8; padding: 4px; color: #222222; }	
+.headinggrey { background-color: #cccccc; padding: 4px; }	
+.headinggreylight { background-color: #eeeeee; padding: 4px; }	
+.headingblueasleft { background-color: #f5f6fb; padding: 4px; }	
+
+/*------------------------------------------------------------------------------------------------------
+Other sytles, mainly for applying to headings
+-----------------------------------------------------------------------------------------------------*/	
+.underlinewrap { 
+	margin-bottom: -5px; 
+	border-left: 1px solid #555; 
+	border-bottom: 1px solid #555; 
+	padding: 3px;  
+}
+
+.headingunderline { 
+	margin-bottom: 5px; /*why doesn't this work? */
+	border-bottom: 1px solid #004499; 
+	padding-top: 2px; 
+	padding-bottom: 4px; 
+}
+
+/*--------------------------------------------------------------------------------------*/
+/* ----- Styles to format list item bullets  --------  */
+.listdotblue {
+	list-style-image: url('/images/icons/dotblue7.gif');
+}
+.listdotgreen {
+	list-style-image: url('/images/icons/dotgreen7.gif');
+}
+.listdotbrown {
+	list-style-image: url('/images/icons/dotbrown7.gif');
+}
+.listdotcyan {
+	list-style-image: url('/images/icons/dotcyan7.gif');
+}
+.listdotyellow {
+	list-style-image: url('/images/icons/dotyellow7.gif');
+}
+
+/*------------------------------------------------------------------------------------------------------*/
+/*   Footer style                                                                                       */
+/*------------------------------------------------------------------------------------------------------*/
+
+#linksfooterbar {
+	width: 100%;
+	background-color: #cccccc;
+	padding-top: 2px;
+	padding-bottom: 3px;
+	clear: both;
+	margin-bottom: 0px;
+}
+
+#linksfooterbar a:link, #linksfooterbar a:visited {
+	margin-left: 4px;
+	margin-right: 32px;
+	color: #111111;
+	text-decoration: none;
+}
+
+#linksfooterbar a:hover {
+	margin-left: 4px;
+	margin-right: 32px;
+	color: #ffffff;
+	text-decoration: underline;
+}
+
+#linksfooterbar a:active {
+	margin-left: 4px;
+	margin-right: 32px;
+	color: #111111;
+	text-decoration: none;
+}
+/*------------------------------------------------------------------------------------------------------*/
+/*   Index page styles                                                                                       */
+/*------------------------------------------------------------------------------------------------------*/
+#mainbody #content #indextop {
+	float: left;
+	width: 100%;
+}
+
+#mainbody #content #indexmiddle {
+	float: left;
+	width: 100%;
+	padding-top: 10px;
+}
+
+#mainbody #content #indexmiddle h2 {
+	color: #004499;
+	font-size: .95em;
+	font-weight: bold;
+	padding: 0.3em;
+	margin: 0;
+	background: #D1CAB1;
+	border-top: 1px solid #004499;
+	border-bottom: 1px solid #004499;
+}
+#mainbody #content #indexmiddle p {
+	padding: 0 0.3em;
+}
+
+#mainbody #content #indexlefthalf {
+	float: left;
+	width: 47%;
+	margin-right: 3%;
+	border-bottom: 1px solid #004499;
+	border-right: 1px solid #004499;
+	border-left: 1px solid #004499;
+	}
+#mainbody #content #indexrighthalf {
+	float: right;
+	width: 47%;
+	border-bottom: 1px solid #004499;
+	border-right: 1px solid #004499;
+	border-left: 1px solid #004499;
+	}
+#mainbody #content #indexrighthalf div{
+	padding: 5px;
+	}
+#mainbody #content #indexrighthalf #leftcolumn{
+	float: left;
+	width: 47%;
+	margin-right: 1%;
+		
+	}
+#mainbody #content #indexrighthalf #rightcolumn{
+	float: right;
+	width: 45%;
+		}
+#mainbody #content #indexrighthalf ul {
+	margin: 0;
+	padding: 0 0 0 30px;
+}
+
+#mainbody #content #indexrighthalf li {
+	margin: 0;
+	padding: 0px 3px 0px 2px;
+	font-size: .87em;
+}
+
+
+/*------------------------------------------------------------------------------------------------------*/
+/*   Boxheading styles:                                                                                  */
+/*------------------------------------------------------------------------------------------------------*/
+
+.boxheading {
+	background-color:#d0d5eb;
+	border-bottom: 1px solid #cccccc;
+	padding: 3px 5px 3px 10px; 
+}
+
+.boxsection {
+	background-color:#FAFBFF;
+	width: 98%;
+	border: 1px solid #cccccc;
+	padding-bottom: 10px; 
+	margin-bottom: 30px;
+	margin-top: 20px;
+}
+
+.boxsection p {
+	padding-left: 10px;
+}
+.boxsection ul li {
+	padding-bottom: 3px;
+	padding-right: 10px;
+}
+
+.boxsection ul li ul li{
+	margin-left: -15px;
+}
+
+.boxsection ul li ul li ul li{
+	margin-left: -15px;
+}
+

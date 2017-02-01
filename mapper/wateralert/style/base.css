@@ -1,0 +1,273 @@
+h2 {
+	font-family: 
+Verdana, Arial, Helvetica, sans-serif;
+	font-size: medium;
+: medium;
+}
+
+.centerTable {
+	border: thin dashed #C0DBE9;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 100%;
+
+}
+p {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 100%;
+}
+.imageBorder {
+	border: 1em double #F79B64;
+
+
+
+}
+.imageBorder2 {
+	border: 1em double #EFD389;
+}
+li {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 90%;
+	list-style-type: square;
+}
+.navLink {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 90%;
+	color: #FFFFFF;
+	font-weight: bold;
+	padding-left: 5px;
+
+
+}
+a:link {
+	color: #006699;
+
+
+     }
+
+a:visited {
+     color: #CC6633;
+
+     }
+
+a:hover {
+     color: #FF9900;
+
+     }
+
+a:active {
+     color: #3B84Ac;
+
+     }
+#text a:link {
+	color: #FFFFFF;
+	font-weight: bold;
+
+
+     }
+
+#text a:visited {
+	color: #FFFFCC;
+	font-weight: bold;
+
+
+     }
+
+#text a:hover {
+	color: #FFCC66;
+	font-weight: bold;
+
+
+     }
+
+#text a:active {
+	color: #99CC33;
+	font-weight: bold;
+
+
+     }
+#nav a:link {
+	color: #C0DBE9;
+	background-color: transparent;
+	text-decoration: none;
+
+     }
+
+#nav a:visited {
+     color: #C0DBE9;
+	 background-color: transparent;
+     text-decoration: none;
+     }
+
+#nav a:hover {
+     color: #ffffff;
+     }
+
+#nav a:active {
+     color: #C0DBE9;
+}
+.navTable {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 70%;
+	font-style: normal;
+	background-color: #C0DBE9;
+	border: thin solid #FFFFFF;
+	text-align: center;
+}
+.navPad {
+	padding-left: 1em;
+}
+.navIndent {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 80%;
+	font-style: italic;
+	padding-left:1em;
+}
+.info {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 90%;
+}
+.text {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 50%;
+	color: #C0DBE9;
+}
+.imageborderGreen {
+	border: 1em double #96CB96;
+}
+h3 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 85%;
+}
+.footer {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 75%;
+}
+
+h1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: medium;
+	padding-left: 5px;
+
+}
+.solidNav {
+	background-color: #3B84AC;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+
+}
+#bread a:link {
+	color: #FFFFFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 80%;
+	text-decoration: none;
+
+     }
+
+#bread a:visited {
+	color: #FFFFFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 80%;
+	text-decoration: none;
+     }
+
+#bread a:hover {
+	color: #FFFFFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 80%;
+	text-decoration: none;
+     }
+
+#bread a:active {
+	color: #FFFFFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 80%;
+	text-decoration: none;
+}
+.head {
+	background-color: #C0DBE9;
+}
+.bluebg {
+	background-color: #C0DBE9;
+	text-align: center;
+}
+.search {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 80%;
+	background-color: #3B84AC;
+	text-align: right;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+.breadcrumb {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 80%;
+	background-color: #3B84AC;
+	text-align: left;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+.banner {
+	background-image: url(../images/banners/banner1_bg.jpg);
+	background-repeat: repeat;
+}
+.banner2 {
+	background-image: url(../images/banners/banner2_bg.jpg);
+	background-repeat: repeat;
+}
+.banner3 {
+	background-image: url(../images/banners/banner3_bg.jpg);
+	background-repeat: repeat;
+}
+.banner4 {
+	background-image: url(../images/banners/banner4_bg.jpg);
+	background-repeat: repeat;
+}
+.banner5 {
+	background-image: url(../images/banners/banner5_bg.jpg);
+	background-repeat: repeat;
+}
+.banner6 {
+	background-image: url(../images/banners/banner6_bg.jpg);
+	background-repeat: repeat;
+}
+.banner7 {
+	background-image: url(../images/banners/banner7_bg.gif);
+	background-repeat: repeat;
+}
+.pageTitle {
+	background-color: #DEECF3;
+	border: 1px solid #569EC5;
+	padding-left: 10px;
+	vertical-align: middle;
+	text-align: left;
+
+
+
+}
+.bodytext {
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #3B84AC;
+	border-right-color: #3B84AC;
+	border-bottom-color: #3B84AC;
+	border-left-color: #3B84AC;
+	padding-left: 10px;
+
+}
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.h2spacer {
+	padding: 5px;
+	width: auto;
+	border: 1px none #6DACCD;
+
+
+
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "https://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=7,IE=9">
+<meta name="publisher" content="USGS - U.S. Geological Survey, Water Resources">
+<title>List of Sites on Map</title>
+</head>
+<body>
+<a href="https://www.usgs.gov/"> <img src="https://107.21.119.135/mapper/images/header_graphic_usgsIdentifier_white.jpg" alt="USGS - science for a changing world" title="U.S. Geological Survey Home Page" width="178" height="72" /> </a>
+<h1>List of Sites from NWIS Mapper</h1>
+<hr>
+${meta}
+<hr>
+<table cellspacing=2 cellpadding=2>
+	<tr bgcolor="grey">
+		<th>Site Number</th>
+		<th>Site Name</th>
+		<th>Agency</th>
+		<th>Link to Data</th>
+	</tr>
+
+% for site in sites:
+<%
+		site_no = site[0]
+		site_name = site[1]
+		site_cat = site[2]
+		site_agc = site[3]
+		site_url = site[6]
+%>
+		<tr>
+			<td>${site_no}</td>
+			<td>${site_name}</td>
+			<td>${site_agc}</td>
+			<td><a href="${site_url}" target="_blank">Access Data</a></td>
+		</tr>
+% endfor
+</table>
+
+</body>
+</html>

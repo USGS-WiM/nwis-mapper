@@ -1,0 +1,344 @@
+html, body {
+	height:100%;
+	width:100%;
+	margin:0;
+	padding:0;
+}
+body {
+	background-color:white;
+	overflow:hidden;
+	font-family:"Kimberley", sans-serif;
+}
+#mainWindow {
+	width:100%;
+	height:100%;
+}
+#mapWindow {
+	width:100%;
+	height:100%;
+	border:solid 2px #416AB1;
+	padding:0;
+	margin:0;
+}
+#header {
+	-moz-border-radius:5px;
+	border-radius:5px;
+	margin:2px;
+	padding-top:4px;
+	padding-right:15px;
+	background-color:#929761;
+	color:#421b14;
+	font-size:16pt;
+	text-align:right;
+	font-weight:bold;
+	border:solid 2px #3A0095;
+	height:55px;
+}
+#subheader {
+	font-size:small;
+	color:#cfcfcf;
+	text-align:right;
+	padding-right:20px;
+}
+#footer {
+	margin:2px;
+	padding:2px;
+	background-color:white;
+	color:#2a3537;
+	border:solid 2px #416AB1;
+	font-size:10pt;
+	text-align:left;
+	height:15%;
+}
+#mapBottomPane {
+	margin:1px;
+	padding:1px;
+	background-color:white;
+	color:#2a3537;
+	border-style:none;
+	font-size:8pt;
+	text-align:left;
+	height:15%;
+}
+#rightPane {
+	margin:2px;
+	padding:1px;
+	background-color:white;
+	color:#421b14;
+	border-style:none;
+	width:30px;
+}
+#leftPane {
+	margin:0px;
+	padding:0px;
+	width:250px;
+	color:black;
+	background-color:white;
+	border:solid 2px #416AB1;
+}
+#map {
+	margin:0px;
+	border-style:none;
+}
+#mapGrid {
+	height:100%;
+	width:100%;
+}
+.shadow {
+	-o-border-radius:6px;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	box-shadow:8px 8px 16px #323834;
+	-webkit-box-shadow:8px 8px 16px #323834;
+	-moz-box-shadow:8px 8px 16px #323834;
+	-o-box-shadow:8px 8px 16px #323834;
+}
+.claro .dijitAccordionText {
+	margin-left:12px;
+	margin-right:4px;
+	color:#416AB1;
+}
+.claro .dijitAccordianTitle {
+	background-image:url(images/HelpSystem16.png);
+	width:16px;
+	height:16px;
+	position:absolute;
+	right:5px;
+}
+.TitleMenu_0 {
+	background-color:white;
+	visibility:hidden;
+	display:none;
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+.TitleMenu_1 {
+	color:white;
+	font-size:8pt;
+	font-weight:bold;
+	text-decoration:none;
+}
+.TitleMenu_2 {
+	color:white;
+	background-color:transparent;
+	font-size:8pt;
+	font-weight:bold;
+}
+.TitleMenu_3 {
+}
+.TitleMenu_4 {
+}
+.treeLevel1 {
+	position:relative;
+	left:2px;
+}
+.treeLevel2 {
+	position:relative;
+	left:4px;
+}
+.treeLevel3 {
+	position:relative;
+	left:8px;
+}
+.treeLevel3dis {
+	position:relative;
+	left:8px;
+	color:#D3D3D3;
+}
+.legendIcon {
+	background-image:url(images/nav_zoomin.png);
+	width:16px;
+	height:16px;
+	position:absolute;
+	left:80%;
+}
+.claro .dijitButtonText {
+	padding:0;
+}
+.dojoxGrid .gridMasterHeader {
+	font-size:6pt;
+}
+.zoominIcon {
+	background-image:url(images/nav_zoomin_box.png);
+	width:16px;
+	height:16px;
+}
+.zoomoutIcon {
+	background-image:url(images/nav_zoomout.png);
+	width:16px;
+	height:16px;
+}
+.zoomfullextIcon {
+	background-image:url(images/nav_fullextent.png);
+	width:16px;
+	height:16px;
+}
+.zoomprevIcon {
+	background-image:url(images/nav_previous.png);
+	width:16px;
+	height:16px;
+}
+.zoomnextIcon {
+	background-image:url(images/nav_next.png);
+	width:16px;
+	height:16px;
+}
+.panIcon {
+	background-image:url(images/nav_pan.png);
+	width:16px;
+	height:16px;
+}
+.deactivateIcon {
+	background-image:url(images/nav_decline.png);
+	width:16px;
+	height:16px;
+}
+.basemap_icon {
+	background-image:url(images/Map16.png);
+	width:16px;
+	height:16px;
+	position:absolute;
+	left:5px;
+}
+.maplayers_icon {
+	background-image:url(images/Basemap16.png);
+	width:16px;
+	height:16px;
+	position:absolute;
+	left:5px;
+}
+.status_icon {
+	background-image:url(images/IdentifyWindowShow16.png);
+	width:16px;
+	height:16px;
+	position:absolute;
+	left:2px;
+}
+.maptools_icon {
+	background-image:url(images/nav_zoomin.png);
+	width:16px;
+	height:16px;
+	position:absolute;
+	left:5px;
+}
+.resources_icon {
+	background-image:url(images/HyperlinkTool16.png);
+	width:16px;
+	height:16px;
+	position:absolute;
+	left:2px;
+}
+.search_icon {
+	background-image:url(images/GenericGreenRightArrow16.png);
+	width:16px;
+	height:16px;
+}
+.datatools_icon {
+	background-image:url(images/TableQuery16.png);
+	width:16px;
+	height:16px;
+	position:absolute;
+	left:5px;
+}
+.ovmap_icon {
+	background-image:url(images/ScreenPositionBottomRight16.png);
+	width:16px;
+	height:16px;
+	position:absolute;
+	left:5px;
+}
+.sw_acc_icon {
+	background-image:url(images/act/sw_act.png);
+	width:28px;
+	height:16px;
+	position:absolute;
+	left:2px;
+}
+.gw_acc_icon {
+	background-image:url(images/act/gw_act.png);
+	width:28px;
+	height:16px;
+	position:absolute;
+	left:2px;
+}
+.sp_acc_icon {
+	background-image:url(images/act/sp_act.png);
+	width:28px;
+	height:16px;
+	position:absolute;
+	left:2px;
+}
+.at_acc_icon {
+	background-image:url(images/act/at_act.png);
+	width:28px;
+	height:16px;
+	position:absolute;
+	left:2px;
+}
+.ot_acc_icon {
+	background-image:url(images/act/ot_act.png);
+	width:28px;
+	height:16px;
+	position:absolute;
+	left:2px;
+}
+.tabStatus {
+	background-image:url(images/IdentifyWindowShow16.png);
+	width:16px;
+	height:16px;
+}
+.tabSites {
+	background-image:url(images/LocationsSymbolized_A16.png);
+	width:16px;
+	height:16px;
+}
+.tabMapTools {
+	background-image:url(images/MapAnalyze16.png);
+	width:16px;
+	height:16px;
+}
+.tabDataTools {
+	background-image:url(images/TableQuery16.png);
+	width:16px;
+	height:16px;
+}
+.searchHelp {
+	background-image:url(images/HelpSystem_B_16.png);
+	width:16px;
+	height:16px;
+}
+.srchBox {
+	margin:0px;
+	padding-bottom:20px;
+	color:black;
+	background-color:white;
+}
+.dojoxGrid th{
+	border-bottom:#416AB1 solid thin !important;
+	border-top:#416AB1 solid thin !important;
+	border-left:none!important;
+	border-right:none!important;
+	font-size:smaller!important;
+}
+.dojoxGrid td{
+	border-left:none!important;
+	border-right:none!important;
+	font-size:smaller!important;
+}
+#zoomLevelIcon {
+	background-image:url(images/zoomlevels/zoom0.png);
+	width:16px;
+	height:16px;
+	position:absolute;
+	top:20px;
+	left:17px;
+	z-index:99;
+}
+#swSitesLoading {
+	width:31px;
+	height:31px;
+	position:absolute;
+	top:270px;
+	left:17px;				
+}

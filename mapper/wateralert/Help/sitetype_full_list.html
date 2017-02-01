@@ -1,0 +1,379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" >
+<head>
+<title>USGS Site Type Codes (site_tp_cd)</title>
+
+<script language="JavaScript" type="text/javascript">
+//<![CDATA[
+<!--
+function helph(foo)
+ {
+ if (document.images)
+  {
+  helpon=new Image(12, 12);
+  helpon.src="/images/helph.gif";
+  document[foo].src= helpon.src;
+  }
+ }
+function helpn(foo)
+ {
+ if (document.images)
+  {
+  helpoff=new Image(12, 12);
+  helpoff.src="/images/help.gif";
+  document[foo].src= helpoff.src;
+  }
+ }
+function popup(link)
+ {
+  if (! window.focus)return true;
+  var href;
+  if (typeof(link) == 'string')
+     href=link;
+  else
+     href=link.href;
+  window.open(href, ',type=fullWindow,fullscreen,scrollbars=yes');
+  return false;
+ }
+
+// -->
+//]]>
+</script>
+
+</head>
+
+<body>
+
+<img src=/images/80x22_green.jpg>
+
+<h1>NWIS Site Types</h1>
+
+<p>
+There are 56 possible site types used in the NWIS data base, including 14 primary types and 42 secondary types. To simplify mapping of the site locations for most practical applications, the site types are displayed in 5 groups that include the following primary and secondary types.</p>
+
+<p>
+Each site type is identified by a 2 to 7 character code. The first 2 characters identify the primary site type, and the remaining characters identify the secondary type. Most sites are one of the principal site types.<p>
+
+<h2>Site Type Groups and Associated Site Type Codes</h2>
+
+<dl>
+  <dt><img src="/images/sw_only.png" align="middle"> <b>Surface-Water Sites</b>
+    <dd>Stream (ST and codes beginning with ST)</dd>
+    <dd>Lake (LK)</dd>
+    <dd>Wetland (WE)</dd>
+    <dd>Estuary (ES)</dd>
+    <dd>Ocean (OC, OC-CO)</dd>
+    <dd><br></dd>
+  </dt>
+  <dt><img src="/images/gw_only.png" align="middle"> <b>Groundwater Sites</b>
+    <dd>Well (GW and codes beginning with GW)</dd>
+    <dd>Subsurface (SB and codes beginning with SB)</dd>
+    <dd><br></dd>
+  </dt>
+  <dt><img src="/images/sp_only.png" align="middle"> <b>Spring Sites</b>
+    <dd>Spring (SP)</dd>
+    <dd><br></dd>
+  </dt>
+  <dt><img src="/images/clim_only.png" align="middle"> <b>Atmospheric Sites</b>
+    <dd>Atmosphere (AT)</dd>
+    <dd><br></dd>
+  </dt>
+  <dt><img src="/images/ot_only.png" align="middle"> <b>Other Sites</b>
+    <dd>Facility (Codes beginning with FA)</dd>
+    <dd>Land (LA and codes beginning with LA)</dd>
+    <dd>Glacier (GL)</dd>
+    <dd>Water Use (AG, AS, AW)</dd>
+  </dl>
+</dl> 
+
+<h2>Full List and Descriptions of Site Types</h2>
+
+<table border="1" width="95%">
+<tr>
+<th>Site Type<br>Code<br>(site_tp_cd)</th>
+<th>Site Type Name<br>(site_tp_ln)</th>
+<th>Site Type Description<br>(site_tp_ds)</th>
+</tr>
+
+<tr align="left">
+<td>AG<BR></td>
+<td>Aggregate groundwater use<BR></td>
+<td>An Aggregate Groundwater Withdrawal/Return site represents an aggregate of specific sites whe groundwater is withdrawn or returned which is defined by a geographic area or some other common characteristic. An aggregate groundwatergroundwater site type is used when it is not possible or practical to describe the specific sites as springs or as any type of well including 'multiple wells', or when water-use information is only available for the aggregate. Aggregate sites that span multiple counties should be coded with 000 as the county code, or an aggregate site can be created for each county.<BR></td></tr>
+
+<tr align="left">
+<td>AS<BR></td>
+<td>Aggregate surface-water-use<BR></td>
+<td>An Aggregate Surface-Water Diversion/Return site represents an aggregate of specific sites where surface water is diverted or returned which is defined by a geographic area or some other common characteristic. An aggregate surface-water site type is used when it is not possible or practical to describe the specific sites as diversions, outfalls, or land application sites, or when water-use information is only available for the aggregate. Aggregate sites that span multiple counties should be coded with 000 as the county code, or an aggregate site can be created for each county.<BR></td></tr>
+
+<tr align="left">
+<td>AW<BR></td>
+<td>Aggregate water-use establishment<BR></td>
+<td>An Aggregate Water-Use Establishment represents an aggregate class of water-using establishments or individuals that are associated with a specific geographic location and water-use category, such as all the industrial users located within a county or all self-supplied domestic users in a county. The aggregate class of water-using establishments is identified using the national water-use category code and optionally classified using the Standard Industrial Classification System Code (SIC code) or North American Classification System Code (NAICS code). An aggregate water-use establishment site type is used when specific information needed to create sites for the individual facilities or users is not available or when it is not desirable to store the site-specific information in the database. Data entry rules that apply to water-use establishments also apply to aggregate water-use establishments. Aggregate sites that span multiple counties should be coded with 000 as the county code, or an aggregate site can be created for each county.<BR></td></tr>
+
+<tr align="left">
+<td>AT<BR></td>
+<td>Atmosphere<BR></td>
+<td>A site established primarily to measure meteorological properties or atmospheric deposition.<BR></td></tr>
+
+<tr align="left">
+<td>ES<BR></td>
+<td>Estuary<BR></td>
+<td>A coastal inlet of the sea or ocean; esp. the mouth of a river, where tide water normally mixes with stream water (modified, Webster). Salinity in estuaries typically ranges from 1 to 25 Practical Salinity Units (psu), as compared oceanic values around 35-psu. See also: tidal stream and coastal.<BR></td></tr>
+
+<tr align="left">
+<td>FA*<BR></td>
+<td>Facility<BR></td>
+<td>A non-ambient location where environmental measurements are expected to be strongly influenced by current or previous activities of humans.<br> *Sites identified with a "facility" primary site type must be further classified with one of the applicable secondary site types.<BR></td></tr>
+
+<tr align="left">
+<td>FA-AWL<BR></td>
+<td>Animal waste lagoon<BR></td>
+<td>A facility for storage and/or biological treatment of wastes from livestock operations. Animal-waste lagoons are earthen structures ranging from pits to large ponds, and contain manure which has been diluted with building washwater, rainfall, and surface runoff. In treatment lagoons, the waste becomes partially liquefied and stabilized by bacterial action before the waste is disposed of on the land and the water is discharged or re-used.<BR></td></tr>
+
+<tr align="left">
+<td>FA-CI<BR></td>
+<td>Cistern<BR></td>
+<td>An artificial, non-pressurized reservoir filled by gravity flow and used for water storage. The reservoir may be located above, at, or below ground level. The water may be supplied from diversion of precipitation, surface, or groundwater sources.<BR></td></tr>
+
+<tr align="left">
+<td>FA-CS<BR></td>
+<td>Combined sewer<BR></td>
+<td>An underground conduit created to convey storm drainage and waste products into a wastewater-treatment plant, stream, reservoir, or disposal site.<BR></td></tr>
+
+<tr align="left">
+<td>FA-DV<BR></td>
+<td>Diversion<BR></td>
+<td>A site where water is withdrawn or diverted from a surface-water body (e.g. the point where the upstream end of a canal intersects a stream, or point where water is withdrawn from a reservoir). Includes sites where water is pumped for use elsewhere.<BR></td></tr>
+
+<tr align="left">
+<td>FA-FON<BR></td>
+<td>Field, Pasture, Orchard, or Nursery<BR></td>
+<td>A water-using facility characterized by an area where plants are grown for transplanting, for use as stocks for budding and grafting, or for sale. Irrigation water may or may not be applied.<BR></td></tr>
+
+<tr align="left">
+<td>FA-GC<BR></td>
+<td>Golf course<BR></td>
+<td>A place-of-use, either public or private, where the game of golf is played. A golf course typically uses water for irrigation purposes. Should not be used if the site is a specific hydrologic feature or facility; but can be used especially for the water-use sites.<BR></td></tr>
+
+<tr align="left">
+<td>FA-HP<BR></td>
+<td>Hydroelectric plant<BR></td>
+<td>A facility that generates electric power by converting potential energy of water into kinetic energy. Typically, turbine generators are turned by falling water.<BR></td></tr>
+
+<tr align="left">
+<td>FA-LF<BR></td>
+<td>Landfill<BR></td>
+<td>A typically dry location on the surface of the land where primarily solid waste products are currently, or previously have been, aggregated and sometimes covered with a veneer of soil. See also: Wastewater disposal and waste-injection well.<BR></td></tr>
+
+<tr align="left">
+<td>FA-OF<BR></td>
+<td>Outfall<BR></td>
+<td>A site where water or wastewater is returned to a surface-water body, e.g. the point where wastewater is returned to a stream. Typically, the discharge end of an effluent pipe.<BR></td></tr>
+
+<tr align="left">
+<td>FA-PV<BR></td>
+<td>Pavement<BR></td>
+<td>A surface site where the land surface is covered by a relatively impermeable material, such as concrete or asphalt.  Pavement sites are typically part of transportation infrastructure, such as roadways, parking lots, or runways.<BR></td></tr>
+
+<tr align="left">
+<td>FA-QC<BR></td>
+<td>Laboratory or sample-preparation area<BR></td>
+<td>A site where some types of quality-control samples are collected, and where equipment and supplies for environmental sampling are prepared. Equipment blank samples are commonly collected at this site type, as are samples of locally produced deionized water. This site type is typically used when the data are either not associated with a unique environmental data-collection site, or where blank water supplies are designated by Center offices with unique station IDs.<BR></td></tr>
+
+<tr align="left">
+<td>FA-SEW<BR></td>
+<td>Wastewater sewer<BR></td>
+<td>An underground conduit created to convey liquid and semisolid domestic, commercial, or industrial waste into a treatment plant, stream, reservoir, or disposal site. If the sewer also conveys storm water, then the "combined sewer" secondary site type should be used.<BR></td></tr>
+
+<tr align="left">
+<td>FA-SPS<BR></td>
+<td>Septic system<BR></td>
+<td>A site within or in close proximity to a subsurface sewage disposal system that generally consists of: (1) a septic tank where settling of solid material occurs, (2) a distribution system that transfers fluid from the tank to (3) a leaching system that disperses the effluent into the ground.<BR></td></tr>
+
+<tr align="left">
+<td>FA-STS<BR></td>
+<td>Storm sewer<BR></td>
+<td>An underground conduit created to convey storm drainage into a stream channel or reservoir. If the sewer also conveys liquid waste products, then the "combined sewer" secondary site type should be used.<BR></td></tr>
+
+<tr align="left">
+<td>FA-TEP<BR></td>
+<td>Thermoelectric plant<BR></td>
+<td>A facility that uses water in the generation of electricity from heat. Typically turbine generators are driven by steam. The heat may be caused by various means, including combustion, nuclear reactions, and geothermal processes.<BR></td></tr>
+
+<tr align="left">
+<td>FA-WDS<BR></td>
+<td>Water-distribution system<BR></td>
+<td>A site located somewhere on a networked infrastructure that distributes treated or untreated water to multiple domestic, industrial, institutional, and (or) commercial users. May be owned by a municipality or community, a water district, or a private concern.<BR></td></tr>
+
+<tr align="left">
+<td>FA-WIW<BR></td>
+<td>Waste injection well<BR></td>
+<td>A facility used to convey industrial waste, domestic sewage, brine, mine drainage, radioactive waste, or other fluid into an underground zone. An oil-test or deep-water well converted to waste disposal should be in this category. A well where fresh water is injected to artificially recharge thegroundwaterr supply or to pressurize an oil or gas production zone by injecting a fluid should be classified as a well (not an injection-well facility), with additional information recorded under Use of Site.<BR></td></tr>
+
+<tr align="left">
+<td>FA-WTP<BR></td>
+<td>Water-supply treatment plant<BR></td>
+<td>A facility where water is treated prior to use for consumption or other purpose.<BR></td></tr>
+
+<tr align="left">
+<td>FA-WWD<BR></td>
+<td>Wastewater land application<BR></td>
+<td>A site where the disposal of waste water on land occurs. Use "waste-injection well" for underground waste-disposal sites.<BR></td></tr>
+
+<tr align="left">
+<td>FA-WWTP<BR></td>
+<td>Wastewater-treatment plant<BR></td>
+<td>A facility where wastewater is treated to reduce concentrations of dissolved and (or) suspended materials prior to discharge or reuse.<BR></td></tr>
+
+<tr align="left">
+<td>FA-WU<BR></td>
+<td>Water-use establishment<BR></td>
+<td>A place-of-use (a water using facility that is associated with a specific geographical point location, such as a business or industrial user) that cannot be specified with any other facility secondary type. Water-use place-of-use sites are establishments such as a factory, mill, store, warehouse, farm, ranch, or bank. A place-of-use site is further classified using the national water-use category code (C39) and optionally classified using the Standard Industrial Classification System Code (SIC code) or North American Classification System Code (NAICS code). See also: Aggregate water-use-establishment.<BR></td></tr>
+
+<tr align="left">
+<td>GL<BR></td>
+<td>Glacier<BR></td>
+<td>Body of land ice that consists of recrystallized snow accumulated on the surface of the ground and moves slowly downslope (WSP-1541A) over a period of years or centuries.  Since glacial sites move, the lat-long precision for these sites is usually coarse.<BR></td></tr>
+
+<tr align="left">
+<td>GW<BR></td>
+<td>Well<BR></td>
+<td>A hole or shaft constructed in the earth intended to be used to locate, sample, or develop groundwater, oil, gas, or some other subsurface material. The diameter of a well is typically much smaller than the depth. Wells are also used to artificially recharge groundwater or to pressurize oil and gas production zones.  Additional information about specific kinds of wells should be recorded under the secondary site types or the Use of Site field. Underground waste-disposal wells should be classified as waste-injection wells.<BR></td></tr>
+
+<tr align="left">
+<td>GW-CR<BR></td>
+<td>Collector or Ranney type well<BR></td>
+<td>An infiltration gallery consisting of one or more underground laterals through which groundwater is collected and a vertical caisson from which groundwater is removed.  Also known as a "horizontal well". These wells produce large yield with small drawdown.<BR></td></tr>
+
+<tr align="left">
+<td>GW-EX<BR></td>
+<td>Extensometer well<BR></td>
+<td>A well equipped to measure small changes in the thickness of the penetrated sediments, such as those caused by groundwater withdrawal or recharge.<BR></td></tr><tr align="left"><td>GW-HZ<BR></td><td>Hyporheic-zone well<BR></td><td>A permanent well, drive point, or other device intended to sample a saturated zone in close proximity to a stream.<BR></td></tr>
+
+<tr align="left">
+<td>GW-IW<BR></td>
+<td>Interconnected wells<BR></td>
+<td>Collector or drainage wells connected by an underground lateral.<BR></td></tr><tr align="left"><td>GW-MW<BR></td><td>Multiple wells<BR></td><td>A group of wells that are pumped through a single header and for which little or no data about the individual wells are available.<BR></td></tr>
+
+<tr align="left">
+<td>GW-TH<BR></td>
+<td>Test hole not completed as a well<BR></td>
+<td>An uncased hole (or one cased only temporarily) that was drilled for water, or for geologic or hydrogeologic testing. It may be equipped temporarily with a pump in order to make a pumping test, but if the hole is destroyed after testing is completed, it is still a test hole. A core hole drilled as a part of mining or quarrying exploration work should be in this class.<BR></td></tr>
+
+<tr align="left">
+<td>LA<BR></td>
+<td>Land<BR></td>
+<td>A location on the surface of the earth that is not normally saturated with water. Land sites are appropriate for sampling vegetation, overland flow of water, or measuring land-surface properties such as temperature.  (See also: Wetland).<BR></td></tr>
+
+<tr align="left">
+<td>LA-EX<BR></td>
+<td>Excavation<BR></td>
+<td>An artificially constructed cavity in the earth that is deeper than the soil (see soil hole), larger than a well bore (see well and test hole), and substantially open to the atmosphere. The diameter of an excavation is typically similar or larger than the depth. Excavations include building-foundation diggings, roadway cuts, and surface mines.<BR></td></tr>
+
+<tr align="left">
+<td>LA-OU<BR></td>
+<td>Outcrop<BR></td>
+<td>The part of a rock formation that appears at the surface of the surrounding land.<BR></td></tr>
+
+<tr align="left">
+<td>LA-PLY<BR></td>
+<td>Playa<BR></td>
+<td>A dried-up, vegetation-free, flat-floored area composed of thin, evenly stratified sheets of fine clay, silt or sand, and represents the bottom part of a shallow, completely closed or undrained desert lake basin in which water accumulates and is quickly evaporated, usually leaving deposits of soluble salts.<BR></td></tr>
+
+<tr align="left">
+<td>LA-SH<BR></td>
+<td>Soil hole<BR></td>
+<td>A small excavation into soil at the top few meters of earth surface. Soil generally includes some organic matter derived from plants. Soil holes are created to measure soil composition and properties. Sometimes electronic probes are inserted into soil holes to measure physical properties, and (or) the extracted soil is analyzed.<BR></td></tr>
+
+<tr align="left">
+<td>LA-SNK<BR></td>
+<td>Sinkhole<BR></td>
+<td>A crater formed when the roof of a cavern collapses; usually found in limestone areas. Surface water and precipitation that enters a sinkhole usually evaporates or infiltrates into the ground, rather than draining into a stream.<BR></td></tr>
+
+<tr align="left">
+<td>LA-SR<BR></td>
+<td>Shore<BR></td>
+<td>The land along the edge of the sea, a lake, or a wide river where the investigator considers the proximity of the water body to be important. Land adjacent to a reservoir, lake, impoundment, or oceanic site type is considered part of the shore when it includes a beach or bank between the high and low water marks.<BR></td></tr>
+
+<tr align="left">
+<td>LA-VOL<BR></td>
+<td>Volcanic vent<BR></td>
+<td>Vent from which volcanic gases escape to the atmosphere. Also known as fumarole.<BR></td></tr>
+
+<tr align="left">
+<td>LK<BR></td>
+<td>Lake, Reservoir, Impoundment<BR></td>
+<td>An inland body of standing fresh or saline water that is generally too deep to permit submerged aquatic vegetation to take root across the entire body (cf: wetland). This site type includes an expanded part of a river, a reservoir behind a dam, and a natural or excavated depression containing a water body without surface-water inlet and/or outlet.<BR></td></tr>
+
+<tr align="left">
+<td>OC<BR></td>
+<td>Ocean<BR></td>
+<td>Site in the open ocean, gulf, or sea. (See also: Coastal, Estuary, and Tidal stream).<BR></td></tr>
+
+<tr align="left">
+<td>OC-CO<BR></td>
+<td>Coastal<BR></td>
+<td>An oceanic site that is located off-shore beyond the tidal mixing zone (estuary) but close enough to the shore that the investigator considers the presence of the coast to be important. Coastal sites typically are within three nautical miles of the shore.<BR></td></tr>
+
+<tr align="left">
+<td>SB<BR></td>
+<td>Subsurface<BR></td>
+<td>A location below the land surface, but not a well, soil hole, or excavation.<BR></td></tr>
+
+<tr align="left">
+<td>SB-CV<BR></td>
+<td>Cave<BR></td>
+<td>A natural open space within a rock formation large enough to accommodate a human. A cave may have an opening to the outside, is always underground, and sometimes submerged. Caves commonly occur by the dissolution of soluble rocks, generally limestone, but may also be created within the voids of large-rock aggregations, in openings along seismic faults, and in lava formations.<BR></td></tr>
+
+<tr align="left">
+<td>SB-GWD<BR></td>
+<td>Groundwater drain<BR></td>
+<td>An underground pipe or tunnel through which groundwater is artificially diverted to surface water for the purpose of reducing erosion or lowering the water table.  A drain is typically open to the atmosphere at the lowest elevation, in contrast to a well which is open at the highest point.<BR></td></tr>
+
+<tr align="left">
+<td>SB-TSM<BR></td>
+<td>Tunnel, shaft, or mine<BR></td>
+<td>A constructed subsurface open space large enough to accommodate a human that is not substantially open to the atmosphere and is not a well. The excavation may have been for minerals, transportation, or other purposes. See also: Excavation.<BR></td></tr>
+
+<tr align="left">
+<td>SB-UZ<BR></td>
+<td>Unsaturated zone<BR></td>
+<td>A site equipped to measure conditions in the subsurface deeper than a soil hole, but above the water table or other zone of saturation.<BR></td></tr>
+
+<tr align="left">
+<td>SP<BR></td>
+<td>Spring<BR></td>
+<td>A location at which the water table intersects the land surface, resulting in a natural flow of groundwater to the surface. Springs may be perennial, intermittent, or ephemeral.<BR></td></tr>
+
+<tr align="left">
+<td>ST<BR></td>
+<td>Stream<BR></td>
+<td>A body of running water moving under gravity flow in a defined channel. The channel may be entirely natural, or altered by engineering practices through straightening, dredging, and (or) lining. An entirely artificial channel should be qualified with the "canal" or "ditch" secondary site type.<BR></td></tr>
+
+<tr align="left">
+<td>ST-CA<BR></td>
+<td>Canal<BR></td>
+<td>An artificial watercourse designed for navigation, drainage, or irrigation by connecting two or more bodies of water; it is larger than a ditch.<BR></td></tr>
+
+<tr align="left">
+<td>ST-DCH<BR></td>
+<td>Ditch<BR></td>
+<td>An excavation artificially dug in the ground, either lined or unlined, for conveying water for drainage or irrigation; it is smaller than a canal.<BR></td></tr>
+
+<tr align="left">
+<td>ST-TS<BR></td>
+<td>Tidal stream<BR></td>
+<td>A stream reach where the flow is influenced by the tide, but where the water chemistry is not normally influenced. A site where ocean water typically mixes with stream water should be coded as an estuary.<BR></td></tr>
+
+<tr align="left">
+<td>WE<BR></td>
+<td>Wetland<BR></td>
+<td>Land where saturation with water is the dominant factor determining the nature of soil development and the types of plant and animal communities living in the soil and on its surface (Cowardin, December 1979). Wetlands are found from the tundra to the tropics and on every continent except Antarctica. Wetlands are areas that are inundated or saturated by surface or groundwater at a frequency and duration sufficient to support, and that under normal circumstances do support, a prevalence of vegetation typically adapted for life in saturated soil conditions. Wetlands generally include swamps, marshes, bogs and similar areas. Wetlands may be forested or unforested, and naturally or artificially created.<BR></td></tr>
+
+</table>
+
+<hr />
+
+</body>
+</html>
+

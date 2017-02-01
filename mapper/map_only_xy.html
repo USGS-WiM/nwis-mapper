@@ -1,0 +1,325 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "https://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+		<meta http-equiv="X-UA-Compatible" content="IE=8, IE=9">
+		<!--The viewport meta tag is used to improve the presentation and behavior of the samples on iOS devices-->
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+		<meta name="publisher" content="USGS - U.S. Geological Survey, Water Resources">
+		<meta name="expires" content="never">
+		<title>Water Resources of the United States&mdash;National Water Information System (NWIS) Mapper</title>
+		<link rel="stylesheet" href="https://js.arcgis.com/3.13/dijit/themes/claro/claro.css">
+		<link rel="stylesheet" href="https://js.arcgis.com/3.13/esri/css/esri.css">
+
+		<style type="text/css">
+			html, body {height:100%;width:100%;margin:0;padding:0;}
+			body {background-color:white;overflow:hidden;font-family: Verdana, Arial, Helvetica, sans-serif;font-size:8pt;}
+			#mainWindow {width:100%;height:100%;}
+			#mapWindow {width:100%;height:100%;border:solid 2px #416AB1;padding:0;margin:0;}
+			#map {margin:0px;border-style:none;}
+		</style>
+
+		<script type="text/javascript">var dojoConfig = {parseOnLoad:true};</script>
+		<script src="https://js.arcgis.com/3.13/"></script>
+		<script type="text/javascript">
+			dojo.addOnLoad( function() {
+				init();
+			});
+		</script>
+
+		<script type="text/javascript">
+			dojo.require("dijit.dijit");
+			dojo.require("dijit.layout.BorderContainer");
+			dojo.require("dijit.layout.ContentPane");
+			dojo.require("esri.map");
+			dojo.require("esri.layers.graphics");
+			dojo.require("esri.dijit.Scalebar");
+			dojo.require("esri.dijit.OverviewMap");
+			dojo.require("dijit.TitlePane");
+			dojo.require("esri.dijit.BasemapGallery");
+			dojo.require("esri.dijit.Popup");
+			dojo.require("dojox.xml.parser");
+			dojo.require("dojox.xml.DomParser");
+			dojo.require("dojox.json.query");
+		</script>
+
+		<script type="text/javascript">
+
+			//config variables
+			var waterdataURL = 'https://waterdata.usgs.gov';
+
+			// global map variables
+			var map, popup;
+
+			// URL parameters
+			var MapX, MapY;
+			var MapZoom = 10;			
+			var MapZoomConnect;
+			var MapShowOv;
+			var siteNo, agencyCode;
+			var getDef, zoomDef;
+
+			function init() {
+
+				// sliderbar
+				esri.config.defaults.map.slider = {position:"absolute", left:"10px", top:"30px", height:"200px"};
+
+				// set default map extent
+				var initialExtent = new esri.geometry.Extent({
+					"xmin":-14353065.00,
+					"ymin":2251027.00,
+					"xmax":-7179935.00,
+					"ymax":6580283.00,
+					"spatialReference":{
+						"wkid":102100
+					}
+				});
+
+				// create popup instance
+				popup = new esri.dijit.Popup({}, dojo.create("div"));
+
+				// create map instance
+				map = new esri.Map("map", {
+					extent:initialExtent,
+					wrapAround180:true,
+					infoWindow:popup
+				});
+				
+				//create basemap gallery
+				createBasemapGallery();
+				
+				// place popup window on the map div nodes
+				dojo.place(popup.domNode, map.root);
+
+				// scalebar
+				var scalebar = new esri.dijit.Scalebar({
+					map:map,
+					scalebarUnit:'english'
+				});
+
+				// standard ESRI listener for resizing map
+				//dojo.connect(map, 'onLoad', function() {
+				//	dojo.connect(dijit.byId('map'), 'resize', map, map.resize);
+				//});
+
+				// define and add basemap
+				var url = "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer";
+				var tiledLayer = new esri.layers.ArcGISTiledMapServiceLayer(url);
+				map.addLayer(tiledLayer);
+				
+				// add a graphic layer to hold the site
+				var layerObj = new esri.layers.GraphicsLayer({
+					id:"siteLayer",
+					visible:true
+				});
+				map.addLayer(layerObj);
+
+				// get the URL parameters
+				getURLParameters();
+
+				// create a dojo.defer so that zooming waits until drawSite finishes
+				getDef = new dojo.Deferred();
+				
+				// getDef is "resolved" in drawSite, so zoomSite gets called
+				drawSite();
+				
+				// zoomSite will wait for getDef to be resolved in drawSite()
+				getDef.then(function() {
+					zoomSite();							
+				});
+			}
+			
+			//create basemap gallery
+			function createBasemapGallery() {
+
+				var basemaps= [];
+
+				//add hydro basemap
+				var HydroBasemapLayer = new esri.dijit.BasemapLayer({
+				  url:"https://hydrology.esri.com/arcgis/rest/services/WorldHydroReferenceOverlay/MapServer"
+				});
+				var TerrainBasemapLayer = new esri.dijit.BasemapLayer({
+				  url:"https://server.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer"
+				});
+				
+				var hydroBasemap = new esri.dijit.Basemap({
+				  layers:[TerrainBasemapLayer, HydroBasemapLayer],
+				  thumbnailUrl:"images/hydroThumb.png",
+				  title:"World Hydro Basemap"
+				});
+				basemaps.push(hydroBasemap);
+
+				// create a basemap Gallery
+				var basemapGallery = new esri.dijit.BasemapGallery({
+					showArcGISBasemaps:true,
+					basemaps:basemaps,
+					map:map
+				}, "basemapGallery");
+				basemapGallery.startup();
+			}
+
+			function zoomSite() {
+				var geometry = new esri.geometry.Point(MapX, MapY,new esri.SpatialReference({wkid:4326}));
+				geometry = esri.geometry.geographicToWebMercator(geometry);
+				map.setLevel(MapZoom);				
+				map.centerAt(geometry);
+			}
+			
+			function getURLParameters() {		
+			
+				// get all the URL parameters
+				var url = window.location.href.toLowerCase();
+				var params = url.substring(url.indexOf("?") + 1, url.length);
+				var urlKeyPairs = dojo.queryToObject(params);
+			
+				// site number and agency code
+				siteNo = dojox.json.query("$.site_no", urlKeyPairs);
+				agencyCode = dojox.json.query("$.agency_cd", urlKeyPairs);	
+				
+				// not having values for these is pretty meaningless, but we 
+				// check and display a message
+				if (!siteNo) siteNo = "00000000";
+				if (!agencyCode) agencyCode = "USGS";
+			}
+			
+			function drawSite() {
+			
+				var nwisWebURL = "./nwis/site/?";
+				//var nwisWebURL = "https://waterservices.usgs.gov/nwis/site/?";
+			
+				// set the site number
+				nwisWebURL += "sites=" + siteNo;
+			
+				// set the agency code
+				nwisWebURL += "&agencyCd=" + agencyCode;
+			
+				// set the format
+				nwisWebURL += "&format=mapper,1.0";
+			
+				// set the xhrGet properties
+				var urlObj = esri.urlToObject(nwisWebURL);
+			
+				var siteFileRequest = {
+					url: urlObj.path,
+					headers: {
+						'X-Requested-With': null
+					},
+					handleAs: "xml",
+					content: urlObj.query,
+					load: setMarkers
+				}
+				// AJAX call to fetch sites
+				var deferred = dojo.xhrGet(siteFileRequest);
+				
+			}
+			
+			function setMarkers(xml, ioargs) {
+			
+				var markers;
+				var siteTemplate = new esri.InfoTemplate("Site Information",
+					"<b>Site Number: </b>${site_no}<br /><b>Site Name: </b> ${site_name}<br /><b>Site Type: </b> ${siteTypeText}<br /><b>Agency: </b>${agency}<br /><a href=" + waterdataURL + "/nwis/inventory?agency_code=${agency}&site_no=${site_no} target='_blank'>Access Data</a><br/><a href=./index.html?MapCenterX=${lng}&MapCenterY=${lat}&MapZoom=${MapZoom}&SiteGroups=${siteType},act,${siteType},ina target='_blank'>Open in NWIS Mapper</a>");
+			
+				var single_sites = xml.getElementsByTagName("sites");
+			
+				if (single_sites.length == 0)return;
+			
+				// if there are any single sites
+				if (single_sites.length == 1) { markers = single_sites[0].getElementsByTagName("site"); }
+				if (markers.length == 0) return;
+			
+				var nmarkers = 0;
+				var site_no = "";var site_name = "";var cat_code = "";var agency = "";var siteType = "";
+				var glayer = map.getLayer("siteLayer");
+				var point; marker;
+			
+				while( nmarkers < markers.length) {
+			
+					// get attributes
+					site_no = markers[nmarkers].getAttribute("sno");
+					site_name = markers[nmarkers].getAttribute("sna");
+					cat_code = markers[nmarkers].getAttribute("cat");
+					agency =  markers[nmarkers].getAttribute("agc");
+					MapX = parseFloat(markers[nmarkers].getAttribute("lng"));
+					MapY = parseFloat(markers[nmarkers].getAttribute("lat"));
+					siteType = getSiteTypeText(cat_code)[1];
+					siteTypeText = getSiteTypeText(cat_code)[0];
+			
+					// get icon from cat_code
+					var icon = new esri.symbol.PictureMarkerSymbol("./images/act/" + siteType + "_act_30.png", 22, 30);
+							
+					// build the symbol				
+					point = new esri.geometry.Point(MapX, MapY);
+					point = esri.geometry.geographicToWebMercator(point);
+					var attr = {"site_no":site_no, "site_name":site_name, "agency":agency, "lat":MapY.toFixed(2), "lng":MapX.toFixed(2), "siteType":siteType, "siteTypeText":siteTypeText, "MapZoom":MapZoom };
+					var marker = new esri.Graphic(point, icon, attr, siteTemplate);
+					glayer.add(marker);
+					
+					// increment the marker counter
+					nmarkers++;
+				}
+			
+				// tell the callback function we are done
+				getDef.resolve({called:true});
+			}
+			
+			function getSiteTypeText(cat_code) {
+				//get first two letters
+				var cat_code2dig = cat_code.substring(0,2).toUpperCase();
+
+				//get site type for each site
+				switch(cat_code2dig)
+					{
+						//SW SITES
+						case "ES": return ["Estuary","sw"]; break;
+						case "LK": return ["Lake","sw"]; break;
+						case "OC": return ["Ocean","sw"]; break;
+						case "ST": return ["Stream","sw"];	break;
+						case "WE": return ["Wetland","sw"]; break;
+						//GW SITES
+						case "GW": return ["Well","gw"]; break;
+						case "SB": return ["Subsurface","gw"]; break;
+						//SP SITES
+						case "SP": return ["Spring","sp"]; break;
+						//AT SITES
+						case "AT": return ["Atmospheric","at"]; break;
+						//OT SITES
+						case "AG": return ["Aggregate groundwater use","ot"]; break;
+						case "AS": return ["Aggregate surface-water-use","ot"]; break;
+						case "AW": return ["Aggregate water-use establishment","ot"]; break;
+						case "FA": return ["Facility","ot"]; break;
+						case "GL": return ["Glacier","ot"]; break;
+						case "LA": return ["Land","ot"]; break;
+					}
+			}
+			
+		</script>
+		
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-61219868-8', 'auto');
+			ga('send', 'pageview');
+		</script>
+	</head>
+
+	<body class="claro">
+		<div id="mapWindow" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'center'">
+			<div id="mapLayout" data-dojo-type="dijit.layout.BorderContainer" data-dojo-props="design:'headline', gutters:'false'">
+				<div id="map" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'center'">
+					<div id="siteLoader"></div>
+					<div style="position:absolute; right:20px; top:20px; z-Index:999;">
+					  <div id="basemapPane" data-dojo-type="dijit.TitlePane" data-dojo-props="title:'Switch Basemap', closable:false,  open:false">
+						<div data-dojo-type="dijit.layout.ContentPane" style="width:380px; height:280px; overflow:auto;">
+							<div id="basemapGallery" ></div>
+						</div>
+					  </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,20 @@
+/* This is "print.css" - the style sheet to format printed pages for the Water Resources of the United States home page.*/ 
+
+.noprint {
+	display: none;
+	}
+
+body { 
+  color : #000000; 
+  background : #ffffff; 
+  font-family: Georgia,"Times New Roman", Times, serif;
+  font-size : 12pt; 
+}
+a { 
+  text-decoration : underline; 
+  color : #0000ff; 
+}
+#navigation, #footer, #chooseatopic { 
+  display : none; 
+
+	

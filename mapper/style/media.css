@@ -1,0 +1,44 @@
+/*------------------------------------------------------------------------------------------------------*/
+/*   Water Media Style Sheet: Mainly for print  -- Jan. 29, 2009                                    */
+/*  ?? Set a point size (11pt?). Or let it default?  */
+/*  LOOK AT: (1) Text column width is not all the way across the page. (2) MSIE Preview footer is bad  */
+/*------------------------------------------------------------------------------------------------------*/
+
+/*  Generic style a developer can apply to a section to prevent printing   */
+.noprint { display: none; }
+
+/*  Turn off printing of certain areas of the page   */
+#leftbar, #topnav, #subnav, #linksfooterbar {   
+	display: none;  
+}
+#container {
+	background: none;
+}
+#mainbody { margin: 10px 0px 0px 10px;	}
+	
+
+/*  Attempt to use a serif font face for all text on page. Put white background on page and use black for text (H1 still retains blue) */
+body { 
+	font-family: Georgia,"Times New Roman", Times, serif; 
+  	color : #000000; 
+	background : #ffffff; 
+}
+
+/* Gets rid of color background to title bar and makes text black  */
+#usgstitle {
+	background : #ffffff; 
+  	color : #000000; 
+}
+
+/*  Underline all links so the printed page shows the links. Turn links blue, if users has a color printer   */
+a { 
+  	text-decoration : underline; 
+  	color : #000099; 
+}
+
+/*   Put a line above the footer  */
+#usgsfooter {
+	margin-top: 10px;
+	border-top: thin solid #999999;
+}
+ 

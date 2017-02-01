@@ -1,0 +1,114 @@
+@charset "utf-8";
+/*---------------------------------------------------------------------------------------------------------------------------------------*/
+/*   leftnav.css: Main CSS file for left side naviagation for Water Resources Version: 1/13/2009              */
+/*-------------------------------------------------------------------------------- */
+
+/*------------------------------------------------------------------------------------------------------
+LEFT BAR NAVIGATION: Generally sets all links (in all states) to a blue and 
+non-underlined, except in Hover state. The main section headings are given
+a blue box background with white text. 
+-----------------------------------------------------------------------------------------------------*/
+
+#leftbar {
+	float: left;
+	width: 215px; 
+	font-size: .9em;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 20px;
+	padding-top: 0px;
+	margin-top: 0px;
+	}
+	
+#leftbar p {
+	margin-top:.5em;
+ 	margin-right: 10px;
+	margin-bottom:.5em;
+	font-size: 95%;
+}
+
+/*For the search USGS label line */
+#leftbar label { 
+	font-weight: bold;
+	color: #004499;
+	font-size: .9em;	
+	display: block;
+	padding-bottom: 3px;
+}
+
+#leftbar h2 {
+	padding: 0.4em 0.7em;
+	display: block;
+	color: #fff;
+	font-weight: bold; 
+	font-size: .92em;  
+	background-color: #416ab1;
+	margin-left: -5px;
+	margin-right: 8px;
+}
+#leftbar h2 a:link{
+	color: #fff;
+	font-weight: bold; 
+	font-size: 1em; 
+	padding: 0;
+	background-image: none;
+}
+/*Section Styles*/
+#leftbar .section h3{
+	font-size: 1em;
+	font-weight: bold;
+	color: #004499;
+	padding: 0.3em 0em 0.3 0em;
+}
+#leftbar .section a {
+	display: block;  /* Shannon, can we take this out?  */
+	padding: 0;
+	text-decoration: none;
+}
+#leftbar .section p {
+	margin-top:.5em;
+	margin-bottom: 0;
+	padding: 0;
+	font-size: 95%;
+	list-style: none;
+}
+/* end section styles*/
+
+#leftbar ul {
+	margin: 0;
+	padding-left: 10px;
+	list-style: none;
+}
+#leftbar li {
+	margin: 0px;
+	padding: 0px 3px 3px 13px;
+	background: url(/images/icons/dotcyan7.gif) no-repeat 0 3px;
+}
+
+#leftbar a:link {
+	text-decoration: none;
+	color: #0044aa;
+}
+#leftbar h3 {
+	font-size: 1em;
+	padding: 0px;
+	font-weight: bold;
+	color: #004499;
+	margin-top: 10px;
+	margin-bottom: 4px;
+}
+#leftbar img {
+	margin: 5px;
+	padding: 0;
+	}
+#leftbar a:visited  {
+		text-decoration: none;
+		color: #0044aa;
+}	
+#leftbar a:hover, #leftbar  a:active,  li a:hover {
+		text-decoration: underline;
+}
+#noscript {
+	font-size: .9em;
+	margin-right: 10px;
+}
