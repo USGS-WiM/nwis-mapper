@@ -61,11 +61,11 @@ if __name__ == "__main__":
 		print "Step 1 -- Done..."
 
 		print "Step 2 -- Removing empty PNG files from cache..."
-		subprocess.call(["python",scriptPath + "/2a_removeEmptyPNG.py", siteCachePath])
+		#subprocess.call(["python",scriptPath + "/2a_removeEmptyPNG.py", siteCachePath])
 		print "Step 2 -- Done..."
 
 		print "Step 3 -- Removing empty folders from cache..."
-		subprocess.call(["python",scriptPath + "/2b_removeEmptyDirs.py", siteCachePath])
+		#subprocess.call(["python",scriptPath + "/2b_removeEmptyDirs.py", siteCachePath])
 		print "Step 3 -- Done..."
 
 		print "Step 4 -- Converting to TMS cache..."

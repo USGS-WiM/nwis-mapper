@@ -419,6 +419,7 @@ function getIVdata(siteGroup) {
 							case "63160": parm_unit=" ft"; parm_nm = "Water-surface elevation above NAVD 1988"; break;
 							case "72020": parm_unit=" ft"; parm_nm = "Elevation above NGVD 1929"; break;
 							case "72147": parm_unit=" ft"; parm_nm = "Depth of sensor below water surface"; break;
+							case "62610": parm_unit=" ft"; parm_nm = "Water level above NGVD 1929"; break;
 							case "62611": parm_unit=" ft"; parm_nm = "Water level above NAVD 1988"; break;
 							case "72019": parm_unit=" ft"; parm_nm = "Depth to water level"; break;
 							case "72150": parm_unit=" ft, MSL"; parm_nm = "Water level above MSL"; break;
