@@ -1,7 +1,3 @@
-## Routine site updates/ bug fixes
-
-This site is set up for automated deployment via deployhq and will deploy at any new Pull Request to USGS-WiM/nwis-mapper
-
 ## Server setup
 
 #### 1.  Deploy instance on AWS
