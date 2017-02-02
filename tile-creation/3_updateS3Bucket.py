@@ -17,6 +17,8 @@
 
 import arcpy, time, glob, os, sys, subprocess
 
+cachePath = 'D:/cache/no_cleanup'
+destinationBucket = 's3://nwismapper'
 if len(sys.argv) >= 3:
 	cachePath = sys.argv[1]
 	destinationBucket = sys.argv[2]
@@ -40,7 +42,7 @@ if __name__ == "__main__":
 		print "       ...Done..."
 
 		print "Step 2 -- Copying cache to s3..."
-		subprocess.call(["aws", "s3", "cp", cachePath + "/" + cacheName + "/NWIS/_alllayers", destinationBucket + "/" + cacheName, "--recursive", "--profile", "CHS"])
+		subprocess.call(["aws", "s3", "cp", cachePath + "/" + cacheName + "/NWIS/_alllayers", destinationBucket + "/" + cacheName, "--recursive", "--profile", "WIM"])
 		print "       ...Done..."
 
 		#pause loop for testing
