@@ -5,6 +5,8 @@
 # Requirements:  Amazon AWS CLI tools with a profile configured using 
 # access ID and secret key, in this case "WIM", see:
 # https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html
+# http://docs.aws.amazon.com/cli/latest/topic/config-vars.html
+# On windows 7, location is: C:\Users\marsmith\.aws\credentials
 #
 # USAGE: pass in tile cache path
 # python 3_updateS3Bucket.py D:/cache s3://nwismapper
@@ -34,7 +36,7 @@ if __name__ == "__main__":
 		print "Working on: " + cacheName
 
 		print "Step 1 -- Deleting existing folder..."
-		subprocess.call(["aws", "s3", "rm", destinationBucket + "/" + cacheName, "--recursive", "--profile", "CHS"])
+		subprocess.call(["aws", "s3", "rm", destinationBucket + "/" + cacheName, "--recursive", "--profile", "WIM"])
 		print "       ...Done..."
 
 		print "Step 2 -- Copying cache to s3..."
