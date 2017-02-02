@@ -3,7 +3,7 @@
 # Description: Generates tiles cache, then cleans up redudant files 
 # and optionally converts to TMS tile cache
 #    
-# Requirements:  ArcGIS (arcpy)
+# Requirements:  ArcGIS 10.4.1
 #
 # Notes: pass in desired output cache location as sole argument:
 #
@@ -58,19 +58,19 @@ if __name__ == "__main__":
 
 		print "Step 1 -- Creating tile cache..."
 		arcpy.ManageTileCache_management(in_cache_location=cachePath, manage_mode="RECREATE_ALL_TILES", in_cache_name=siteType, in_datasource=mxd, tiling_scheme="IMPORT_SCHEME", import_tiling_scheme=tilingScheme, scales=scaleList, area_of_interest="", max_cell_size="", min_cached_scale=scaleList[0], max_cached_scale=scaleList[-1])        
-		print "Step 1 -- Done..."
+		print "       ...Done..."
 
 		print "Step 2 -- Removing empty PNG files from cache..."
-		#subprocess.call(["python",scriptPath + "/2a_removeEmptyPNG.py", siteCachePath])
-		print "Step 2 -- Done..."
+		subprocess.call(["python",scriptPath + "/2a_removeEmptyPNG.py", siteCachePath])
+		print "       ...Done..."
 
 		print "Step 3 -- Removing empty folders from cache..."
-		#subprocess.call(["python",scriptPath + "/2b_removeEmptyDirs.py", siteCachePath])
-		print "Step 3 -- Done..."
+		subprocess.call(["python",scriptPath + "/2b_removeEmptyDirs.py", siteCachePath])
+		print "       ...Done..."
 
 		print "Step 4 -- Converting to TMS cache..."
 		subprocess.call(["python",scriptPath + "/2c_esri2tms.py", "--cache", siteCachePath, "--ext", "png"])
-		print "Step 4 -- Done..."
+		print "       ...Done..."
 
 		print('----------------------')   
 
