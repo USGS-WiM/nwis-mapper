@@ -2843,14 +2843,14 @@ function doSearchSites(siteNoOrName){
 	}
 
 	// build the web services request URL
-	var nwisWebURL = "./nwissitesmapper/nwis/inventory?format=sitefile_output"
-	+ "&sitefile_output_format=xml&column_name=site_no"
-	+ "&column_name=dec_long_va&column_name=dec_lat_va"
-	+ "&column_name=site_active_fg&column_name=site_tp_cd&column_name=station_nm"
-	// var nwisWebURL = "https://nwis.waterdata.usgs.gov/nwis/inventory?format=sitefile_output"
+	// var nwisWebURL = "./nwissitesmapper/nwis/inventory?format=sitefile_output"
 	// + "&sitefile_output_format=xml&column_name=site_no"
 	// + "&column_name=dec_long_va&column_name=dec_lat_va"
 	// + "&column_name=site_active_fg&column_name=site_tp_cd&column_name=station_nm"
+	var nwisWebURL = "https://nwis.waterdata.usgs.gov/nwis/inventory?format=sitefile_output"
+	+ "&sitefile_output_format=xml&column_name=site_no"
+	+ "&column_name=dec_long_va&column_name=dec_lat_va"
+	+ "&column_name=site_active_fg&column_name=site_tp_cd&column_name=station_nm"
 
 	if (siteNoOrName == "site_num") {
 		nwisWebURL += "&site_no=" + srchText;
