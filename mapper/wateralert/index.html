@@ -162,9 +162,6 @@
 		
 			var layersRequest = esri.request({
 			  url: '../../s3bucket.json',
-			  headers: {
-				'X-Requested-With': null
-			  },
 			  content: { f: "json" },
 			  handleAs: "json",
 			  callbackParamName: "callback"

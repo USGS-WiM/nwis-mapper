@@ -50,9 +50,6 @@ function getQuery() {
 		var xmlLoadCounter = 
 		{
 			url: counterURL,
-			headers: {
-				'X-Requested-With': null
-			},
 			handleAs: "text",
 			load: siteCounter,
 			error: errGet_NWISweb
@@ -67,9 +64,6 @@ function getQuery() {
 		var xmlLoadCounter = 
 		{
 			url: counterURL,
-			headers: {
-				'X-Requested-With': null
-			},
 			handleAs: "text",
 			load: siteCounter,
 			error: errGet_NWISweb
@@ -83,9 +77,6 @@ function getQuery() {
 		{
 			url: nwisWebURL,
 			handleAs: "xml",
-			headers: {
-				'X-Requested-With': null
-			},
 			load: draw_NWISweb_sites,
 			error: errGet_NWISweb
 		}
@@ -135,9 +126,6 @@ function load_NWISweb_sites() {
 	{
 		url: nwisWebURL,	
 		handleAs: "xml",
-		headers: {
-			'X-Requested-With': null
-		},
 		load: draw_NWISweb_sites,
 		error: errGet_NWISweb
 	}
