@@ -2864,6 +2864,9 @@ function doSearchSites(siteNoOrName){
 	var siteFileRequest = {
 		url: urlObj.path,
 		handleAs: "xml",
+		headers: {
+            "X-Requested-With": null
+        },
 		content: urlObj.query,
 		load: zoomToSites,
 		error: errZoomToSites
