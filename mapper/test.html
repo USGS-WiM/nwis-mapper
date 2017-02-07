@@ -13,10 +13,6 @@
 			var siteFileRequest = {
 			  url: url,
 			  handleAs: "xml",
-			  headers: {
-				'X-Requested-With': null,
-				'Content-Type': 'text/plain'
-			  },
 			  load: function(xml, ioargs) {
 				
 				var single_sites = xml.getElementsByTagName("sites");

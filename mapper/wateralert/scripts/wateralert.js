@@ -12,7 +12,6 @@ function getLocation() {
 	var request = esri.request({
 	  // Location of the data
 	  url: "https://freegeoip.net/json/",
-	  headers: { "Origin": "https://maps.waterdata.usgs.gov" }, 
 	  // Data format
 	  handleAs: "json",
 	  timeout: 3000,
@@ -718,9 +717,6 @@ function drawSitesByType(siteType) {
 
 	var siteFileRequest = {
 		url: urlObj.path,
-		headers: {
-			'X-Requested-With': null
-		},
 		handleAs: "xml",
 		content: urlObj.query,
 		load: loadFuncName,
@@ -1936,9 +1932,6 @@ function doSearchSites(siteNoOrName){
 
 	var siteFileRequest = {
 		url: urlObj.path,
-		headers: {
-			'X-Requested-With': null
-		},
 		handleAs: "xml",
 		content: urlObj.query,
 		load: zoomToSites,
@@ -2447,9 +2440,6 @@ function getAquifer(mapPoint) {
 
 	var aquiferRequest = {
 		url: urlObj.path,
-		headers: {
-			'X-Requested-With': null
-		},
 		handleAs: "xml",
 		content: urlObj.query,
 		load: showAquifer,

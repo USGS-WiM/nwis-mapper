@@ -8,8 +8,8 @@ LIST_OF_MAIN_APPS="python python-dev python-pip git libgeos-dev libjpeg-dev zlib
 LIST_OF_PYTHON_APPS="Mako cherrypy xlwt shapely pillow"
 
 #install cert
-wget https://raw.githubusercontent.com/USGS-OWI/nwis-mapper/master/server-config/DOIRootCA2.cer --no-check-certificate
-cp DOIRootCA2.cer /usr/local/share/ca-certificates/DOIRootCA2.crt
+wget http://blockpage.doi.gov/images/DOIRootCA.crt --no-check-certificate
+cp DOIRootCA.crt /usr/local/share/ca-certificates/DOIRootCA.crt
 update-ca-certificates
 
 #install apps
