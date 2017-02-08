@@ -17,19 +17,18 @@
 
 			function getSites() {
 				$("#loading").show();
-				var url = "./nwis/site/?bBox=-110.255%2C37.84%2C-104.811%2C39.576&format=mapper%2C1.0&siteStatus=active&siteType=ES%2CGL%2CLK%2COC%2CST%2CWE&hasDataTypeCd=all";
+				var url = "http://nwis.waterdata.usgs.gov/nwis/inventory?format=sitefile_output&sitefile_output_format=xml&column_name=site_no&column_name=dec_long_va&column_name=dec_lat_va&column_name=site_active&column_name=site_tp_cd&column_name=station_nm&site_no=01312000"
 
 				$.ajax({
 					type: "GET",
 					url: url,
 					dataType: "xml",
-					crossDomain: true,
+					//crossDomain: true,
 					success: function(xml){
-					
+						
 						document.getElementById("status").innerHTML = 'sites loaded successfully';
-					
 						$(xml).find('site').each(function(){
-							var site_no = $(this).attr('sno');		
+							var site_no = $(this).find('site_no').text();	
 							$("#siteList").append("<li>" + site_no + "</li>");
 						});
 					},
