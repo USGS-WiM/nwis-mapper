@@ -2847,7 +2847,7 @@ function doSearchSites(siteNoOrName){
 	// + "&sitefile_output_format=xml&column_name=site_no"
 	// + "&column_name=dec_long_va&column_name=dec_lat_va"
 	// + "&column_name=site_active_fg&column_name=site_tp_cd&column_name=station_nm"
-	var nwisWebURL = "https://staging.waterdata.usgs.gov/nwis/inventory?format=sitefile_output"
+	var nwisWebURL = "https://nwis.waterdata.usgs.gov/nwis/inventory?format=sitefile_output"
 	+ "&sitefile_output_format=xml&column_name=site_no"
 	+ "&column_name=dec_long_va&column_name=dec_lat_va"
 	+ "&column_name=site_active_fg&column_name=site_tp_cd&column_name=station_nm"
