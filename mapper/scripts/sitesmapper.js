@@ -126,6 +126,10 @@ function load_NWISweb_sites() {
 	{
 		url: nwisWebURL,	
 		handleAs: "xml",
+		headers: {
+			"X-Requested-With": null,
+			'Content-Type': 'text/plain'
+		},
 		load: draw_NWISweb_sites,
 		error: errGet_NWISweb
 	}
