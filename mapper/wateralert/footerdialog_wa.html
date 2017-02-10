@@ -15,6 +15,10 @@
 			  var xhrArgs = {
 				url: footerURL,
 				handleAs: "text",
+				headers: {
+					"X-Requested-With": null,
+					'Content-Type': 'text/plain'
+				},
 				preventCache: true,
 				handle: function(error, ioargs){
 				  var lastModLocale = new Date(ioargs.xhr.getResponseHeader("Last-Modified")).toLocaleString();
