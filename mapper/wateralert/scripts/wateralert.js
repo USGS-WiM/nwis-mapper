@@ -433,7 +433,8 @@ function getIVdata(siteGroup) {
 							case "00665": parm_unit=" mg/L"; parm_nm = "Phosphorus"; break;
 							case "63680": parm_unit=" FNU"; parm_nm = "Turbidity"; break;
 							case "99133": parm_unit=" mg/L as N"; parm_nm = "Nitrate + nitrite"; break;
-							case "99064": parm_unit=" ft"; parm_nm = "Observed elevation difference"; break;
+							case "99064": parm_unit=" ft"; parm_nm = "Water surface elevation difference between two locations"; break;
+							case "99067": parm_unit=" ft"; parm_nm = "Difference between observed and predicted water surface elevation"; break;
 							
 						  }
 
