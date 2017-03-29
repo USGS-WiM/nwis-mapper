@@ -432,7 +432,7 @@ def sendKML(siteRecords, NWISqueryURL, NWISqueryURL_proxy):
 		"""Create the overall KML document."""
 		doc = xml.dom.minidom.Document()
 		kml = doc.createElement('kml')
-		kml.setAttribute('xmlns', 'https://www.opengis.net/kml/2.2')
+		kml.setAttribute('xmlns', 'http://www.opengis.net/kml/2.2')
 		doc.appendChild(kml)
 		document = doc.createElement('Document')
 		kml.appendChild(document)
