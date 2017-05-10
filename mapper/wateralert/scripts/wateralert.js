@@ -1973,7 +1973,7 @@ function zoomToSites(xml, ioargs) {
 		var longDD = parseFloat(search_sites[nsites].getElementsByTagName("dec_long_va")[0].firstChild.nodeValue);
 		var latDD = parseFloat(search_sites[nsites].getElementsByTagName("dec_lat_va")[0].firstChild.nodeValue);
 		var cat_code = search_sites[nsites].getElementsByTagName("site_tp_cd")[0].firstChild.nodeValue;
-		var agc_code = search_sites[nsites].getElementsByTagName("agency_use_cd")[0].firstChild.nodeValue;
+		var agc_code = search_sites[nsites].getElementsByTagName("site_active_fg")[0].firstChild.nodeValue;
 		var point = new esri.geometry.Point(longDD,latDD, new esri.SpatialReference({ wkid: 4326 }));
 
 		// build a set of key pairs for each site type and status
