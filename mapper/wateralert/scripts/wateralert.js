@@ -1920,7 +1920,7 @@ function doSearchSites(siteNoOrName){
 	var nwisWebURL = "https://nwis.waterdata.usgs.gov/nwis/inventory?format=sitefile_output"
 	+ "&sitefile_output_format=xml&column_name=site_no"
 	+ "&column_name=dec_long_va&column_name=dec_lat_va"
-	+ "&column_name=agency_use_cd&column_name=site_tp_cd&column_name=station_nm"
+	+ "&column_name=site_active_fg&column_name=site_tp_cd&column_name=station_nm"
 
 	if (siteNoOrName == "site_num") {
 		nwisWebURL += "&site_no=" + srchText;
@@ -1934,6 +1934,10 @@ function doSearchSites(siteNoOrName){
 	var siteFileRequest = {
 		url: urlObj.path,
 		handleAs: "xml",
+		headers: {
+			"X-Requested-With": null,
+			'Content-Type': 'text/plain'
+		},
 		content: urlObj.query,
 		load: zoomToSites,
 		error: errZoomToSites
