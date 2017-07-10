@@ -2026,26 +2026,27 @@ function createMultiMarker(point, htmls, labels, cat_code, nlabels, siteType, si
 }
 
 // error callbacks
-function errGet_chkSWAct(error, ioargs) {updateStatus("None", 0);swActStandby.hide();}
-function errGet_chkSWIna(error, ioargs) {updateStatus("None", 1);swInaStandby.hide();}
-function errGet_chkGWAct(error, ioargs) {updateStatus("None", 2);gwActStandby.hide();}
-function errGet_chkGWIna(error, ioargs) {updateStatus("None", 3);gwInaStandby.hide();}
-function errGet_chkSPAct(error, ioargs) {updateStatus("None", 4);spActStandby.hide();}
-function errGet_chkSPIna(error, ioargs) {updateStatus("None", 5);spInaStandby.hide();}
-function errGet_chkATAct(error, ioargs) {updateStatus("None", 6);atActStandby.hide();}
-function errGet_chkATIna(error, ioargs) {updateStatus("None", 7);atInaStandby.hide();}
-function errGet_chkOTAct(error, ioargs) {updateStatus("None", 8);otActStandby.hide();}
-function errGet_chkOTIna(error, ioargs) {updateStatus("None", 9);otInaStandby.hide();}
-// function errGet_chkSWAct(error, ioargs) {alert((error.xhr && typeof error.xhr.statusText === 'string') ? "There was an error retrieving sites:\r\n\r\n" + error.xhr.statusText : "There was an error retrieving sites");console.log(error);updateStatus("None", 1);swActStandby.hide();}
-// function errGet_chkSWIna(error, ioargs) {alert((error.xhr && typeof error.xhr.statusText === 'string') ? "There was an error retrieving sites:\r\n\r\n" + error.xhr.statusText : "There was an error retrieving sites");console.log(error);updateStatus("None", 1);swInaStandby.hide();}
-// function errGet_chkGWAct(error, ioargs) {alert((error.xhr && typeof error.xhr.statusText === 'string') ? "There was an error retrieving sites:\r\n\r\n" + error.xhr.statusText : "There was an error retrieving sites");console.log(error);updateStatus("None", 2);gwActStandby.hide();}
-// function errGet_chkGWIna(error, ioargs) {alert((error.xhr && typeof error.xhr.statusText === 'string') ? "There was an error retrieving sites:\r\n\r\n" + error.xhr.statusText : "There was an error retrieving sites");console.log(error);updateStatus("None", 3);gwInaStandby.hide();}
-// function errGet_chkSPAct(error, ioargs) {alert((error.xhr && typeof error.xhr.statusText === 'string') ? "There was an error retrieving sites:\r\n\r\n" + error.xhr.statusText : "There was an error retrieving sites");console.log(error);updateStatus("None", 4);spActStandby.hide();}
-// function errGet_chkSPIna(error, ioargs) {alert((error.xhr && typeof error.xhr.statusText === 'string') ? "There was an error retrieving sites:\r\n\r\n" + error.xhr.statusText : "There was an error retrieving sites");console.log(error);updateStatus("None", 5);spInaStandby.hide();}
-// function errGet_chkATAct(error, ioargs) {alert((error.xhr && typeof error.xhr.statusText === 'string') ? "There was an error retrieving sites:\r\n\r\n" + error.xhr.statusText : "There was an error retrieving sites");console.log(error);updateStatus("None", 6);atActStandby.hide();}
-// function errGet_chkATIna(error, ioargs) {alert((error.xhr && typeof error.xhr.statusText === 'string') ? "There was an error retrieving sites:\r\n\r\n" + error.xhr.statusText : "There was an error retrieving sites");console.log(error);updateStatus("None", 7);atInaStandby.hide();}
-// function errGet_chkOTAct(error, ioargs) {alert((error.xhr && typeof error.xhr.statusText === 'string') ? "There was an error retrieving sites:\r\n\r\n" + error.xhr.statusText : "There was an error retrieving sites");console.log(error);updateStatus("None", 8);otActStandby.hide();}
-// function errGet_chkOTIna(error, ioargs) {alert((error.xhr && typeof error.xhr.statusText === 'string') ? "There was an error retrieving sites:\r\n\r\n" + error.xhr.statusText : "There was an error retrieving sites");console.log(error);updateStatus("None", 9);otInaStandby.hide();}
+// function errGet_chkSWAct(error, ioargs) {updateStatus("None", 0);swActStandby.hide();}
+// function errGet_chkSWIna(error, ioargs) {updateStatus("None", 1);swInaStandby.hide();}
+// function errGet_chkGWAct(error, ioargs) {updateStatus("None", 2);gwActStandby.hide();}
+// function errGet_chkGWIna(error, ioargs) {updateStatus("None", 3);gwInaStandby.hide();}
+// function errGet_chkSPAct(error, ioargs) {updateStatus("None", 4);spActStandby.hide();}
+// function errGet_chkSPIna(error, ioargs) {updateStatus("None", 5);spInaStandby.hide();}
+// function errGet_chkATAct(error, ioargs) {updateStatus("None", 6);atActStandby.hide();}
+// function errGet_chkATIna(error, ioargs) {updateStatus("None", 7);atInaStandby.hide();}
+// function errGet_chkOTAct(error, ioargs) {updateStatus("None", 8);otActStandby.hide();}
+// function errGet_chkOTIna(error, ioargs) {updateStatus("None", 9);otInaStandby.hide();}
+
+function errGet_chkSWAct(error, ioargs) {alert((error.xhr && typeof error.xhr.statusText === 'string') ? "There was an error retrieving sites:\r\n\r\n" + error.xhr.statusText : "There was an error retrieving sites");console.log(error);updateStatus("None", 1);swActStandby.hide();}
+function errGet_chkSWIna(error, ioargs) {alert((error.xhr && typeof error.xhr.statusText === 'string') ? "There was an error retrieving sites:\r\n\r\n" + error.xhr.statusText : "There was an error retrieving sites");console.log(error);updateStatus("None", 1);swInaStandby.hide();}
+function errGet_chkGWAct(error, ioargs) {alert((error.xhr && typeof error.xhr.statusText === 'string') ? "There was an error retrieving sites:\r\n\r\n" + error.xhr.statusText : "There was an error retrieving sites");console.log(error);updateStatus("None", 2);gwActStandby.hide();}
+function errGet_chkGWIna(error, ioargs) {alert((error.xhr && typeof error.xhr.statusText === 'string') ? "There was an error retrieving sites:\r\n\r\n" + error.xhr.statusText : "There was an error retrieving sites");console.log(error);updateStatus("None", 3);gwInaStandby.hide();}
+function errGet_chkSPAct(error, ioargs) {alert((error.xhr && typeof error.xhr.statusText === 'string') ? "There was an error retrieving sites:\r\n\r\n" + error.xhr.statusText : "There was an error retrieving sites");console.log(error);updateStatus("None", 4);spActStandby.hide();}
+function errGet_chkSPIna(error, ioargs) {alert((error.xhr && typeof error.xhr.statusText === 'string') ? "There was an error retrieving sites:\r\n\r\n" + error.xhr.statusText : "There was an error retrieving sites");console.log(error);updateStatus("None", 5);spInaStandby.hide();}
+function errGet_chkATAct(error, ioargs) {alert((error.xhr && typeof error.xhr.statusText === 'string') ? "There was an error retrieving sites:\r\n\r\n" + error.xhr.statusText : "There was an error retrieving sites");console.log(error);updateStatus("None", 6);atActStandby.hide();}
+function errGet_chkATIna(error, ioargs) {alert((error.xhr && typeof error.xhr.statusText === 'string') ? "There was an error retrieving sites:\r\n\r\n" + error.xhr.statusText : "There was an error retrieving sites");console.log(error);updateStatus("None", 7);atInaStandby.hide();}
+function errGet_chkOTAct(error, ioargs) {alert((error.xhr && typeof error.xhr.statusText === 'string') ? "There was an error retrieving sites:\r\n\r\n" + error.xhr.statusText : "There was an error retrieving sites");console.log(error);updateStatus("None", 8);otActStandby.hide();}
+function errGet_chkOTIna(error, ioargs) {alert((error.xhr && typeof error.xhr.statusText === 'string') ? "There was an error retrieving sites:\r\n\r\n" + error.xhr.statusText : "There was an error retrieving sites");console.log(error);updateStatus("None", 9);otInaStandby.hide();}
 
 function updateStatus(nSites, gridIndex) {
 	var item = statusGrid.getItem(gridIndex);
