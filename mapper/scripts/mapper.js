@@ -2038,9 +2038,7 @@ function createMultiMarker(point, htmls, labels, cat_code, nlabels, siteType, si
 // function errGet_chkOTIna(error, ioargs) {updateStatus("None", 9);otInaStandby.hide();}
 
 function errGet_chkSWAct(error, ioargs) {
-	//alert((error.xhr && typeof error.xhr.statusText === 'string') ? "There was an error retrieving sites:\r\n" + error.xhr.statusText : "There was an error retrieving sites");
-	console.log(error);
-	console.log(error.xhr.statusText.indexOf("Bounding Box"))
+	if (error.xhr.statusText.indexOf("Bounding Box") != -1) alert((error.xhr && typeof error.xhr.statusText === 'string') ? "There was an error retrieving sites:\r\n" + error.xhr.statusText : "There was an error retrieving sites");
 	updateStatus("None", 0);
 	swActStandby.hide();
 }
