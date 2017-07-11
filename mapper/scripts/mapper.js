@@ -2037,7 +2037,14 @@ function createMultiMarker(point, htmls, labels, cat_code, nlabels, siteType, si
 // function errGet_chkOTAct(error, ioargs) {updateStatus("None", 8);otActStandby.hide();}
 // function errGet_chkOTIna(error, ioargs) {updateStatus("None", 9);otInaStandby.hide();}
 
-function errGet_chkSWAct(error, ioargs) {alert((error.xhr && typeof error.xhr.statusText === 'string') ? "There was an error retrieving sites:\r\n\r\n" + error.xhr.statusText : "There was an error retrieving sites");console.log(error);updateStatus("None", 1);swActStandby.hide();}
+function errGet_chkSWAct(error, ioargs) {
+	//alert((error.xhr && typeof error.xhr.statusText === 'string') ? "There was an error retrieving sites:\r\n" + error.xhr.statusText : "There was an error retrieving sites");
+	console.log(error);
+	console.log(error.xhr.statusText.indexOf("Bounding Box"))
+	updateStatus("None", 0);
+	swActStandby.hide();
+}
+
 function errGet_chkSWIna(error, ioargs) {alert((error.xhr && typeof error.xhr.statusText === 'string') ? "There was an error retrieving sites:\r\n\r\n" + error.xhr.statusText : "There was an error retrieving sites");console.log(error);updateStatus("None", 1);swInaStandby.hide();}
 function errGet_chkGWAct(error, ioargs) {alert((error.xhr && typeof error.xhr.statusText === 'string') ? "There was an error retrieving sites:\r\n\r\n" + error.xhr.statusText : "There was an error retrieving sites");console.log(error);updateStatus("None", 2);gwActStandby.hide();}
 function errGet_chkGWIna(error, ioargs) {alert((error.xhr && typeof error.xhr.statusText === 'string') ? "There was an error retrieving sites:\r\n\r\n" + error.xhr.statusText : "There was an error retrieving sites");console.log(error);updateStatus("None", 3);gwInaStandby.hide();}
