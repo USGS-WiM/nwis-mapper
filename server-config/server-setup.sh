@@ -8,7 +8,7 @@ LIST_OF_MAIN_APPS="python python-dev python-pip git libgeos-dev libjpeg-dev zlib
 LIST_OF_PYTHON_APPS="Mako cherrypy xlwt shapely pillow"
 
 #install cert
-wget http://blockpage.doi.gov/images/DOIRootCA.crt --no-check-certificate
+wget http://sslhelp.doi.net/docs/DOIRootCA2.cer --no-check-certificate
 cp DOIRootCA.crt /usr/local/share/ca-certificates/DOIRootCA.crt
 update-ca-certificates
 
