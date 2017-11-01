@@ -422,6 +422,7 @@ function getIVdata(siteGroup) {
 							case "62611": parm_unit=" ft"; parm_nm = "Water level above NAVD 1988"; break;
 							case "72019": parm_unit=" ft"; parm_nm = "Depth to water level"; break;
 							case "72150": parm_unit=" ft, MSL"; parm_nm = "Water level above MSL"; break;
+							case "72279": parm_unit=" ft"; parm_nm = "Tidal elevation, NOS-averaged, NAVD 1988"; break;
 							case "00045": parm_unit=" in."; parm_nm = "Precipitation"; break;
 							case "00010": parm_unit=" &deg;C"; parm_nm = "Water temperature"; break;
 							case "00011": parm_unit=" &deg;F"; parm_nm = "Water temperature"; break;
@@ -531,6 +532,7 @@ function getIVdata_singlesite(siteNo, siteGroup) {
 						case "62611": parm_unit=" ft"; parm_nm = "Water level above NAVD 1988"; break;
 						case "72019": parm_unit=" ft"; parm_nm = "Depth to water level"; break;
 						case "72150": parm_unit=" ft, MSL"; parm_nm = "Water level above MSL"; break;
+						case "72279": parm_unit=" ft"; parm_nm = "Tidal elevation, NOS-averaged, NAVD 1988"; break;
 						case "00045": parm_unit=" in."; parm_nm = "Precipitation"; break;
 						case "00010": parm_unit=" &deg;C"; parm_nm = "Water temperature"; break;
 						case "00011": parm_unit=" &deg;F"; parm_nm = "Water temperature"; break;
