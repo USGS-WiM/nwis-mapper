@@ -1,9 +1,0 @@
-2017-02-01 09:06:37,825 INFO Starting program: 1_getNWISSites.py
-2017-02-01 09:06:37,846 INFO Starting processing sw_act
-2017-02-01 09:17:22,303 INFO Finished processing sw_act. Total sites: 16188
-2017-02-01 09:17:22,334 INFO Starting processing sw_ina
-2017-02-01 09:33:13,345 INFO Finished processing sw_ina. Total sites: 164286
-2017-02-01 09:33:13,375 INFO Starting processing gw_act
-2017-02-01 09:43:55,473 INFO Finished processing gw_act. Total sites: 24670
-2017-02-01 09:43:55,526 INFO Starting processing gw_ina
-2017-02-01 10:33:10,506 ERROR Socket Error [10054] retrying url: https://waterservices.usgs.gov/nwis/site/?
