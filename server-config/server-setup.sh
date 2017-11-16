@@ -2,7 +2,7 @@
 
 #args
 USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
-APP_PATH="/src"
+APP_PATH="/srv"
 USER=$SUDO_USER
 LIST_OF_MAIN_APPS="python python-dev python-pip git libgeos-dev libjpeg-dev zlib1g-dev apache2"
 LIST_OF_PYTHON_APPS="Mako cherrypy xlwt shapely pillow"
@@ -20,10 +20,10 @@ pip install $LIST_OF_PYTHON_APPS
 #get repo from github
 GIT_SSL_NO_VERIFY=true git clone https://github.com/USGS-WiM/nwis-mapper.git ${APP_PATH}/nwis-mapper
 
-#copy bucket info file (should have been placed by cloud formation)
+#copy bucket info file if exists (should have been placed by cloud formation)
 if [ -f /tmp/s3bucket.json ]; then
   cp /tmp/s3bucket.json ${APP_PATH}/nwis-mapper/mapper/s3bucket.json
-fi  
+fi
 
 #set proper permissions on nwis mapper folder
 chown ${SUDO_USER} -R ${APP_PATH}/nwis-mapper
