@@ -685,5 +685,5 @@ def getHTMLMetaData(nSites, queryURL):
 
 	return metaData
 
-cherrypy.server.socket_port = 8081
+cherrypy.server.socket_port = 8089
 cherrypy.quickstart(root())

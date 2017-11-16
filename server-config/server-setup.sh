@@ -51,10 +51,13 @@ fi
 
 #install mod-proxy
 a2enmod proxy_http
+a2enmod rewrite
+a2enmod ssl
 
 #add new virtual site
 cp ${APP_PATH}/nwis-mapper/server-config/nwis-mapper.conf /etc/apache2/sites-available/nwis-mapper.conf
 cp ${APP_PATH}/nwis-mapper/server-config/nwis-mapper-ssl.conf /etc/apache2/sites-available/nwis-mapper-ssl.conf
 a2dissite 000-default
 a2ensite nwis-mapper
+a2ensite nwis-mapper-ssl
 service apache2 restart
