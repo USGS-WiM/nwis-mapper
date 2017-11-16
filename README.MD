@@ -12,7 +12,7 @@
 
 copy server setup script from github
 ```bash
-wget https://raw.githubusercontent.com/USGS-OWI/nwis-mapper/master/server-config/server-setup.sh --no-check-certificate
+wget https://raw.githubusercontent.com/USGS-WiM/nwis-mapper/master/server-config/server-setup.sh --no-check-certificate
 ```
 
 run server setup script

@@ -2,13 +2,13 @@
 
 #args
 USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
-APP_PATH="/srv"
+APP_PATH="/src"
 USER=$SUDO_USER
 LIST_OF_MAIN_APPS="python python-dev python-pip git libgeos-dev libjpeg-dev zlib1g-dev apache2"
 LIST_OF_PYTHON_APPS="Mako cherrypy xlwt shapely pillow"
 
 #install cert
-wget http://sslhelp.doi.net/docs/DOIRootCA2.cer --no-check-certificate
+wget https://raw.githubusercontent.com/USGS-WiM/nwis-mapper/master/server-config/DOIRootCA.crt --no-check-certificate
 cp DOIRootCA.crt /usr/local/share/ca-certificates/DOIRootCA.crt
 update-ca-certificates
 
@@ -18,7 +18,7 @@ apt-get install -y $LIST_OF_MAIN_APPS
 pip install $LIST_OF_PYTHON_APPS
 
 #get repo from github
-GIT_SSL_NO_VERIFY=true git clone https://github.com/USGS-OWI/nwis-mapper.git ${APP_PATH}/nwis-mapper
+GIT_SSL_NO_VERIFY=true git clone https://github.com/USGS-WiM/nwis-mapper.git ${APP_PATH}/nwis-mapper
 
 #copy bucket info file (should have been placed by cloud formation)
 if [ -f /tmp/s3bucket.json ]; then
@@ -34,7 +34,7 @@ chmod +x ${APP_PATH}/nwis-mapper/server-config/chkCherry.sh
 ln -s ${APP_PATH}/nwis-mapper/mapper /var/www/mapper
 
 #start up cherrypy services
-sh ${APP_PATH}/nwis-mapper/server-config/PythonAppServers.sh
+sh ${APP_PATH}/nwis-mapper/server-config/chkCherry.sh
 
 #setup up cron jobs
 (crontab -u ${USER} -l; echo "*/5 * * * * ${APP_PATH}/nwis-mapper/server-config/chkCherry.sh" ) | crontab -u ${USER} -
