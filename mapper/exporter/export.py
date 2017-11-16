@@ -777,4 +777,5 @@ def formatAgency(agency):
 
 	return "USGS "
 
+cherrypy.server.socket_port = 8087
 cherrypy.quickstart(root())
