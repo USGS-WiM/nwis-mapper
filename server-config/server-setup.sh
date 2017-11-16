@@ -60,4 +60,10 @@ cp ${APP_PATH}/nwis-mapper/server-config/nwis-mapper-ssl.conf /etc/apache2/sites
 a2dissite 000-default
 a2ensite nwis-mapper
 a2ensite nwis-mapper-ssl
-service apache2 restart
+#service apache2 reload
+
+echo "\nNow you need to copy certificates in order to enable SSL\n"
+echo "Please copy server.crt to: /etc/ssl/certs/server.crt"
+echo "Please copy server.key to: /etc/ssl/private/server.key"
+echo "Please copy DigiCertCA.crt to: /etc/ssl/certs/DigiCertCA.crt\n"
+echo "Then restart apache: 'sudo service apache2 reload'\n"
