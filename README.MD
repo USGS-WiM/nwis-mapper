@@ -20,6 +20,18 @@ run server setup script
 sudo sh server-setup.sh
 ```
 
+copy keys for SSL (HTTPS)
+```bash
+sudo cp [path to key]/server.crt /etc/ssl/certs/server.crt
+sudo cp [path to key]/server.key /etc/ssl/private/server.key
+sudo cp [path to key]/DigiCertCA.crt /etc/ssl/certs/DigiCertCA.crt
+```
+
+restart apache
+```bash
+sudo service apache2 restart
+```
+
 the nwis mapper application should now be running @ localhost
 
 ## Generate new NWIS mapper tile cache
