@@ -7,7 +7,6 @@ USER=$SUDO_USER
 LIST_OF_MAIN_APPS="python python-dev python-pip git libgeos-dev libjpeg-dev zlib1g-dev apache2"
 LIST_OF_PYTHON_APPS="Mako cherrypy xlwt shapely pillow"
 
-#install cert
 wget https://raw.githubusercontent.com/USGS-WiM/nwis-mapper/master/server-config/DOIRootCA.crt --no-check-certificate
 cp DOIRootCA.crt /usr/local/share/ca-certificates/DOIRootCA.crt
 update-ca-certificates
@@ -60,14 +59,10 @@ cp ${APP_PATH}/nwis-mapper/server-config/nwis-mapper-ssl.conf /etc/apache2/sites
 a2dissite 000-default
 a2ensite nwis-mapper
 a2ensite nwis-mapper-ssl
-#service apache2 restart
 
 echo "\nNow you need to copy certificates in order to enable SSL\n"
-echo "Please copy server.crt to: /etc/ssl/certs/server.crt:"
-echo "'sudo cp /mnt/c/NYBackup/GitHub/nwis-mapper/server-config/server.crt /etc/ssl/certs/server.crt'\n"
-echo "Please copy server.key to: /etc/ssl/private/server.key:"
-echo "'sudo cp /mnt/c/NYBackup/GitHub/nwis-mapper/server-config/server.key /etc/ssl/private/server.key'\n"
-echo "Please copy DigiCertCA.crt to: /etc/ssl/certs/DigiCertCA.crt:"
-echo "'sudo cp /mnt/c/NYBackup/GitHub/nwis-mapper/server-config/DigiCertCA.crt /etc/ssl/certs/DigiCertCA.crt'\n"
+echo "Please copy server.crt to: /etc/ssl/certs/server.crt"
+echo "Please copy server.key to: /etc/ssl/private/server.key"
+echo "Please copy DigiCertCA.crt to: /etc/ssl/certs/DigiCertCA.crt\n"
 echo "Then restart apache:"
 echo "'sudo service apache2 restart'\n"
