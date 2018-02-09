@@ -1,0 +1,47 @@
+[
+  {
+    "name": "nwis-mapper",
+    "organization": "U.S. Geological Survey",
+    "description": "Mapper interface for the USGS NWIS Waterdata",
+    "version": "v0.0.0",
+    "status": "Production"
+
+    "permissions": {
+      "usageType": "openSource",
+      "licenses": [
+        {
+          "name": "Public Domain",
+          "URL": "https://github.com/USGS-WiM/nwis-mapper/blob/master/LICENSE.md"
+        }
+      ]
+    },
+
+    "homepageURL": "https://maps.waterdata.usgs.gov/mapper/index.html",
+    "downloadURL": "https://github.com/USGS-WiM/nwis-mapper/archive/master.zip",
+    "disclaimerURL": "https://github.com/USGS-WiM/nwis-mapper/blob/master/LICENSE.md",
+    "repositoryUrl": "https://github.com/USGS-WiM/nwis-mapper",
+    "vcs": "git",
+
+    "laborHours": null,
+
+    "tags": [
+      "nwis",
+      "wateruse",
+      "mapper"
+    ],
+
+    "languages": [
+      "javascript",
+      "python"
+    ],
+
+    "contact": {
+      "name": "Martyn Smith",
+      "email": "marsmith@usgs.gov"
+    },
+
+    "date": {
+      "metadataLastUpdated": "2018-02-09"
+    }
+  }
+]
