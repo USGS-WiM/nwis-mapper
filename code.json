@@ -18,7 +18,7 @@
 
     "homepageURL": "https://maps.waterdata.usgs.gov/mapper/index.html",
     "downloadURL": "https://github.com/USGS-WiM/nwis-mapper/archive/master.zip",
-    "disclaimerURL": "https://github.com/USGS-WiM/nwis-mapper/blob/master/LICENSE.md",
+    "disclaimerURL": "https://github.com/USGS-WiM/nwis-mapper/blob/master/DISCLAIMER.md",
     "repositoryUrl": "https://github.com/USGS-WiM/nwis-mapper",
     "vcs": "git",
 
