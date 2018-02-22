@@ -4,7 +4,7 @@
     "organization": "U.S. Geological Survey",
     "description": "Mapper interface for the USGS NWIS Waterdata",
     "version": "v0.0.0",
-    "status": "Production"
+    "status": "Production",
 
     "permissions": {
       "usageType": "openSource",
