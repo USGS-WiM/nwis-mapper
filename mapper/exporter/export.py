@@ -249,7 +249,7 @@ def sendExcel(bbox, scodes, siteRecords):
 	# create an excel workbook
 	fpBook = xlwt.Workbook()
 	# create a worksheet in the workbook
-	nwisSheet = fpBook.add_sheet("NWIS Mappper Export Sheet")
+	nwisSheet = fpBook.add_sheet("NWIS Mapper Export Sheet")
 
 	# write a header for the data, start with row 2
 	nwisSheet.write(1, 0, "SiteNumber")
