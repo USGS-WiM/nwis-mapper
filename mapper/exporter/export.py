@@ -44,7 +44,7 @@ class root:
 		# reasonably well formed
 
 		# build base url
-		web_query_url = "https://waterservices.usgs.gov/nwis/site?"
+		web_query_url = "https://waterservices.usgs.gov/nwis/site/?"
 
 		# add the bouunding box parameters
 		web_query_url = web_query_url + "bBox=" + bbox
