@@ -1,0 +1,2 @@
+2019-06-21 12:40:32,053 INFO Starting program: 1_getNWISSites.py
+2019-06-21 12:40:32,084 INFO Starting processing sw_act

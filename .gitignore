@@ -1,4 +1,5 @@
 
 tile-creation/data/NWISSites.gdb
+tile-creation/cache/*
 server-config/server.key
 server-config/server.crt
