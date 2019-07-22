@@ -3837,7 +3837,8 @@ function getAquifer(mapPoint) {
 
 	// build web service URL
 	//aqURL = "./aquifers/?ptInfo=" +
-	aqURL = "./tileRGB/?ptInfo=" +	map.getLevel() + "," + aqMapX + "," + aqMapY +
+	aqURL = "./tileRGB/" + 
+	"?ptInfo=" +	map.getLevel() + "," + aqMapX + "," + aqMapY +
 	"&tileURL=" + s3bucket + "s3.amazonaws.com/pr_aq" + 
 	"&cacheInfo=aquifers,TMS,png"
 
