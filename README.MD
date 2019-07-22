@@ -45,27 +45,21 @@ the nwis mapper application should now be running @ localhost
 #### 1.  Run script to pull NWIS sites from USGS waterservices (tile-creation/1_getNWISSites.py)
 
 ```bash
-python 1_getNWISSites.py
+python generateTileCache.py
 ```
 
-- takes about 90 minutes to run (with 16GB RAM Intel Core i7-3720QM)
+- takes about 3 hours minutes to run
 - queries NWIS site service for sites, adds them to a fileGDB
 - fileGDB feature classes are referenced within MXDs for each site type
-
-#### 2.  Run script to create new tile cache (tile-creation/2_generateTileCache.py)
-
-```bash
-python 2_generateTileCache.py D:/
-```
-
-- takes about 70 minutes to run (with 16GB RAM Intel Core i7-3720QM)
 - this is a wrapper script that generates an ESRI tile cache, cleans it up then converts to TMS tiles
 - output can be uploaded directly to s3
 
-#### 3.  Upload to amazon S3 (tile-creation/3_updateS3Bucket.py)
+#### 2.  Upload to amazon S3 (tile-creation/3_updateS3Bucket.py)
+
+- check to make sure paths are correct
 
 ```bash
-python 3_updateS3Bucket.py d:/cache s3://nwismapper
+python updateS3Bucket.py
 ```
 
 - takes about 8 minutes to run

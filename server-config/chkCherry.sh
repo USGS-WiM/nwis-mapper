@@ -27,7 +27,7 @@ exportStatus() {
  # check RGBFinder service 
   isExp=`ps -ef|grep aquifers.py|grep python`
   if [  -z "$isExp" ] ; then
-        /usr/bin/nohup python /var/www/mapper/exporter/aquifers.py > /dev/null 2>&1 &
+        /usr/bin/nohup python /var/www/mapper/RGBFinder/getTileRGB.py > /dev/null 2>&1 &
   fi
 
 }
