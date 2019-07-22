@@ -92,6 +92,7 @@
 		var navToolBar;
 		var popup;
 		var ovMap;
+		var s3bucket;
 
 		//get url for footerdialog
 		var footerURL = window.location.href;
@@ -179,7 +180,8 @@
 			});
 			layersRequest.then(
 			  function(response) {
-				addS3layers(response.s3bucket);
+				s3bucket = response.s3bucket;
+				addS3layers();
 				console.log("Success: ", response);
 			}, function(error) {
 				console.log("There was a problem requesting the bucket name: ", error);
@@ -330,7 +332,7 @@
 			// ============================================================
 
 			// add the s3 layers
-			function addS3layers(s3bucket) {
+			function addS3layers() {
 				// hucs
 				var hucs = new esri.layers.WebTiledLayer("https://" + s3bucket + ".s3.amazonaws.com/hucs/${level}/${row}/${col}.png", {"id": "hucs", opacity: 0.3, visible: false});  
 				map.addLayer(hucs);
