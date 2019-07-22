@@ -3870,12 +3870,6 @@ function showAquifer(xml, ioargs){
 	//
 	var aquifer = aquifers[0].getElementsByTagName("aquifer");
 	var aqName = aquifer[0].getAttribute("name");
-	var aqRed = aquifer[0].getAttribute("red");
-	var aqGreen = aquifer[0].getAttribute("green");
-	var aqBlue =  aquifer[0].getAttribute("blue");
-
-	var aqDivStyle = '<span style="display:inline-block; width:20px; height:20px; background-color:rgb(' +
-		aqRed + ',' + aqGreen + ',' + aqBlue + ');"></span>';
 
 	var aqHTML = '<table border="0" width="290">' +
 					'<thead>' +
