@@ -3867,9 +3867,9 @@ function showAquifer(xml, ioargs){
 	var aquifers = xml.getElementsByTagName("aquifers");
 	if (aquifers.length == 0) {return;}
 
-	//
-	var aquifer = aquifers[0].getElementsByTagName("aquifer");
-	var aqName = aquifer[0].getAttribute("name");
+	console.log('aquifer',aquifers)
+	var aquifer = aquifers.getElementsByTagName("feature");
+	var aqName = aquifer.getAttribute("name");
 
 	var aqHTML = '<table border="0" width="290">' +
 					'<thead>' +
