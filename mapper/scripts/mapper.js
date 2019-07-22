@@ -3836,8 +3836,10 @@ function getAquifer(mapPoint) {
 	aqMapY = mapPoint.y.toFixed(1);
 
 	// build web service URL
-	aqURL = "./aquifers/?ptInfo=" +
-	map.getLevel() + "," + aqMapX + "," + aqMapY
+	//aqURL = "./aquifers/?ptInfo=" +
+	aqURL = "./tileRGB/?ptInfo=" +	map.getLevel() + "," + aqMapX + "," + aqMapY +
+	"&tileURL=" + s3bucket + "s3.amazonaws.com/pr_aq" + 
+	"&cacheInfo=aquifers,TMS,png"
 
 	// set the xhrGet properties
 	var urlObj = esri.urlToObject(aqURL);

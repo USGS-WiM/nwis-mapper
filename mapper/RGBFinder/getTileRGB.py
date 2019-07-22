@@ -258,6 +258,7 @@ class root:
 		# clicked. Now we get the image, get the RGB value at that point and map the values back
 		# to the attributes using an SQLite database. We need to see if the tile file actually exists
 		# and, if so, can we retrieve it successfully. 
+		print 'TILEFILE:',tileFile
 		tile = urllib.urlretrieve(tileFile)
 	
 		if tile[0] == "":
