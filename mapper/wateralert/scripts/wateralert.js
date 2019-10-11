@@ -436,6 +436,8 @@ function getIVdata(siteGroup) {
 							case "99133": parm_unit=" mg/L as N"; parm_nm = "Nitrate + nitrite"; break;
 							case "99064": parm_unit=" ft"; parm_nm = "Water surface elevation difference between two locations"; break;
 							case "99067": parm_unit=" ft"; parm_nm = "Difference between observed and predicted water surface elevation"; break;
+							case "32319": parm_unit=" &micro;g/l"; parm_nm = "Phycocyanins, in situ, fluorometric method, excitation at 590 +-15 nm, emission at 685 +-20 nm"; break;
+							case "32321": parm_unit=" RFU"; parm_nm = "Phycocyanins, in situ, fluorometric method, excitation at 590 +-15 nm, emission at 685 +-20 nm"; break;
 							
 						  }
 
