@@ -1,0 +1,12 @@
+Metadata for NWIS Sites exported from NWIS Mapper
+(Exporter Version 1.1.0)
+Time and Date data were exported: 2021-09-27 16:30
+Request Number: 959640b0-d839-4e74-8dd6-773357aab130
+Number of sites in request: 433
+Site type: Site Inventory
+
+Unique NWIS query arguments: county_cd=48361
+
+NWIS request URL as XML:
+https://waterdata.usgs.gov/tx/nwis/inventory?county_cd=48361&format=station_list&station_list_format=xml&column_name=agency_cd&column_name=site_no&column_name=station_nm&list_of_search_criteria=county_cd&column_name=site_tp_cd&column_name=dec_lat_va&column_name=dec_long_va&column_name=agency_use_cd
+

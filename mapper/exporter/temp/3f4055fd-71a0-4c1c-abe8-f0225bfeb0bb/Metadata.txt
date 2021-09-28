@@ -1,0 +1,13 @@
+Metadata for NWIS Sites exported from NWIS Mapper
+(Exporter Version 1.1.0)
+Time and Date data were exported: 2021-09-28 14:08
+Request Number: 3f4055fd-71a0-4c1c-abe8-f0225bfeb0bb
+Number of sites in request: 43
+Longitude and Latitude extent of request:
+	West: -87.576
+	South: 41.545
+	East: -87.034
+	North: 41.715
+Sites Type: Surface-Water
+Sites Status: Active
+</br><b>Requested type of data for sites:</b>&nbsp;&nbsp;All Data

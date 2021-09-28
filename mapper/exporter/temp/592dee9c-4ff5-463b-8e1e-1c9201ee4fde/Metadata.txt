@@ -1,0 +1,12 @@
+Metadata for NWIS Sites exported from NWIS Mapper
+(Exporter Version 1.1.0)
+Time and Date data were exported: 2021-09-26 20:36
+Request Number: 592dee9c-4ff5-463b-8e1e-1c9201ee4fde
+Number of sites in request: 160
+Site type: Current Values
+
+Unique NWIS query arguments: type=flow
+
+NWIS request URL as XML:
+https://waterdata.usgs.gov/ma/nwis/current?type=flow&format=station_list&station_list_format=xml&column_name=agency_cd&column_name=site_no&column_name=station_nm&column_name=site_tp_cd&column_name=dec_lat_va&column_name=dec_long_va&column_name=agency_use_cd
+

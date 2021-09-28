@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
+		<title>Waterservices IE11 Test</title>	
+		<script>var dojoConfig = {parseOnLoad: true};</script>
+		<script src="https://js.arcgis.com/3.19/"></script>
+		
+		<script>
+			var url = "https://waterservices.usgs.gov/nwis/site/?bBox=-110.255%2C37.84%2C-104.811%2C39.576&format=mapper%2C1.0&siteStatus=active&siteType=ES%2CGL%2CLK%2COC%2CST%2CWE&hasDataTypeCd=all"
+
+			var siteFileRequest = esri.request({
+			  url: url,
+			  handleAs: "xml",
+			  headers: {
+				'X-Requested-With': null,
+				'Content-Type': 'text/plain'
+			  });
+			  siteFileRequest.then(
+				function(xml) {
+				
+					var single_sites = xml.getElementsByTagName("sites");
+					var markers = single_sites[0].getElementsByTagName("site");
+					console.log('count:',markers.length);
+					document.getElementById("status").innerHTML = markers.length + ' sites loaded successfully';
+				
+					var nmarkers = 0;
+					while( nmarkers < markers.length) {
+					
+						var site_no = markers[nmarkers].getAttribute("sno");				
+						var node = document.createElement("LI");                 // Create a <li> node
+						var textnode = document.createTextNode(site_no);         // Create a text node
+						node.appendChild(textnode);                              // Append the text to <li>
+						document.getElementById("siteList").appendChild(node);  
+						nmarkers +=1;
+					}		
+			  	},
+				function(error) {
+
+					document.getElementById("status").innerHTML = error.description;
+					console.error(error)
+			  },
+			  handle: function() {
+			
+			}
+
+			function getSites() {
+				var loading = document.getElementById("loading")
+				loading.style.display = "block";
+				// AJAX call to fetch sites
+				var deferred = dojo.xhrGet(siteFileRequest);
+			}
+			</script>	
+	</head>
+	<body>
+		<h3>Waterservices IE11 test</h3>
+		<input id="clickMe" type="button" value="Get Sites" onclick="getSites();" />
+		<span id="loading" style="display:none;">loading...</span>
+		<p id="status"></p>
+		<ul id="siteList"></ul>
+	</body>
+</html>
+
+

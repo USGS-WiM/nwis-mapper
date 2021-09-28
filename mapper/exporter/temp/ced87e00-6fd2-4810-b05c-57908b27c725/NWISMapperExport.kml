@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:ns2="http://www.w3.org/2005/Atom" xmlns:ns3="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+    <Document>
+        <Placemark id="14036600">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.4356062,45.7484605</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>14036600</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;14036600&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;ROCK CREEK NEAR ROOSEVELT, WA&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=14036600"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="14111400">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-121.102295,45.962345</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>14111400</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;14111400&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;KLICKITAT RIVER BL SUMMIT CREEK NEAR GLENWOOD, WA&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=14111400"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="14113000">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-121.2100714,45.75651098</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>14113000</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;14113000&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;KLICKITAT RIVER NEAR PITT, WA&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=14113000"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="454249120423500">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.710893,45.7134579</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>454249120423500</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;454249120423500&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;COLUMBIA RIVER, RIGHT BANK, NEAR CLIFFS, WA&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=454249120423500"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="454314120413701">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.6947814,45.7204025</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>454314120413701</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;454314120413701&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;COLUMBIA RIVER AT JOHN DAY DAM NAVIGATION LOCK, WA&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=454314120413701"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Style id="sw">
+            <IconStyle>
+                <color>FFFFFFFF</color>
+                <colorMode>normal</colorMode>
+                <scale>0.55</scale>
+                <Icon>
+                    <href>http://waterservices.usgs.gov/mapper_icons/sw_kml.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+    </Document>
+</kml>

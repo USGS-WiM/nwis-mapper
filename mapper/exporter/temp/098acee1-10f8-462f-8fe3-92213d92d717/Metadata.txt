@@ -1,0 +1,12 @@
+Metadata for NWIS Sites exported from NWIS Mapper
+(Exporter Version 1.1.0)
+Time and Date data were exported: 2021-09-27 18:28
+Request Number: 098acee1-10f8-462f-8fe3-92213d92d717
+Number of sites in request: 36
+Site type: Site Inventory
+
+Unique NWIS query arguments: search_station_nm=Eagle River, search_station_nm_match_type=beginning, state_cd=co
+
+NWIS request URL as XML:
+https://waterdata.usgs.gov/usa/nwis/inventory?search_station_nm=Eagle River&search_station_nm_match_type=beginning&state_cd=co&format=station_list&station_list_format=xml&column_name=agency_cd&column_name=site_no&column_name=station_nm&list_of_search_criteria=state_cd,search_station_nm&column_name=site_tp_cd&column_name=dec_lat_va&column_name=dec_long_va&column_name=agency_use_cd
+

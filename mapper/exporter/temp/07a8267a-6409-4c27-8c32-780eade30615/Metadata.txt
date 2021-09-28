@@ -1,0 +1,12 @@
+Metadata for NWIS Sites exported from NWIS Mapper
+(Exporter Version 1.1.0)
+Time and Date data were exported: 2021-09-27 14:21
+Request Number: 07a8267a-6409-4c27-8c32-780eade30615
+Number of sites in request: 376
+Site type: Current Values
+
+Unique NWIS query arguments: type=precip, group_key=basin_cd
+
+NWIS request URL as XML:
+https://waterdata.usgs.gov/tx/nwis/current?type=precip&group_key=basin_cd&format=station_list&station_list_format=xml&column_name=agency_cd&column_name=site_no&column_name=station_nm&column_name=site_tp_cd&column_name=dec_lat_va&column_name=dec_long_va&column_name=agency_use_cd
+

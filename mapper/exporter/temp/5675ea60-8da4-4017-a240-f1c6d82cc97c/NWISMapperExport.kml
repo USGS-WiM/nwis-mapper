@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:ns2="http://www.w3.org/2005/Atom" xmlns:ns3="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+    <Document>
+        <Placemark id="12507594">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.682841,46.01651457</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>12507594</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;12507594&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;SATUS CREEK AB WILSON-CHARLEY CYN NR TOPPENISH, WA&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=12507594"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="12507595">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.6499261,46.0166759</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>12507595</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;12507595&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;SATUS CREEK ABOVE SHINANDO CREEK NR TOPPENISH, WA&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=12507595"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="12507600">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.6433952,46.00457036</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>12507600</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;12507600&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;SHINANDO CREEK TRIBUTARY NEAR GOLDENDALE, WA&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=12507600"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="12507650">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.6317284,46.01929276</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>12507650</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;12507650&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;SHINANDO CREEK NEAR GOLDENDALE, WA&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=12507650"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="14034320">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-119.9092022,45.91985415</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>14034320</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;14034320&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;DEAD CANYON TRIB NEAR ALDERDALE, WA&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=14034320"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="14034325">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.2764388,45.9967955</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>14034325</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;14034325&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;ALDER CREEK NEAR BICKLETON, WA&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=14034325"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="14034350">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-119.9261464,45.84152055</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>14034350</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;14034350&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;ALDER CREEK AT ALDERDALE, WA&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=14034350"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="14035500">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.0344819,45.7109641</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>14035500</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;14035500&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;WILLOW CR AB EIGHTMILE CANYON NR ARLINGTON,OREG.&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=14035500"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="14036000">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.0108706,45.7531865</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>14036000</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;14036000&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;WILLOW CREEK NR ARLINGTON, OREG.&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=14036000"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="14036500">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.5039427,45.80262665</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>14036500</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;14036500&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;ROCK CREEK NEAR GOLDENDALE, WA&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=14036500"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="14048250">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.7550278,45.6942222</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>14048250</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;14048250&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;COLUMBIA RIVER AT RUFUS, OR&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=14048250"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="14048330">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.8358965,45.6767904</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>14048330</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;14048330&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;COLUMBIA RIVER AT BIGGS JUNCTION, OREG.&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=14048330"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="14110700">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-121.3047988,45.9462333</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>14110700</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;14110700&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;MEDLEY CANYON CREEK NEAR GLENWOOD, WA&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=14110700"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="14110720">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-121.2089645,46.0167894</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>14110720</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;14110720&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;OUTLET CREEK NEAR GLENWOOD, WA&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=14110720"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="14110800">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-121.1503522,46.0131783</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>14110800</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;14110800&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;WHITE CREEK NEAR GLENWOOD, WA&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=14110800"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="14111100">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-121.125907,45.9862339</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>14111100</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;14111100&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;SUMMIT CREEK NEAR GLENWOOD, WA&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=14111100"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="14111500">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-121.1186839,45.93678938</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>14111500</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;14111500&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;KLICKITAT RIVER BELOW GLENWOOD, WA&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=14111500"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="14111700">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.7058958,45.91290288</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>14111700</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;14111700&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;BUTLER CREEK NEAR GOLDENDALE, WA&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=14111700"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="14111800">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.7208965,45.9248472</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>14111800</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;14111800&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;WEST PRONG LITTLE KLICKITAT R NR GOLDENDALE, WA&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=14111800"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="14112000">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.7961753,45.8442908</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>14112000</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;14112000&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;LITTLE KLICKITAT RIVER NEAR GOLDENDALE, WA&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=14112000"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="14112200">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.7983975,45.8373463</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>14112200</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;14112200&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;LITTLE KLICKITAT RIVER TRIB NEAR GOLDENDALE, WA&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=14112200"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="14112300">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.9053448,45.84012338</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>14112300</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;14112300&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;SPRING CREEK NEAR BLOCKHOUSE, WA&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=14112300"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="14112400">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.964791,45.85928967</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>14112400</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;14112400&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;MILL CREEK NEAR BLOCKHOUSE, WA&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=14112400"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="14112490">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-121.0420147,45.84873377</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>14112490</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;14112490&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;BOWMAN CREEK NEAR WAHKIAKUS, WA&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=14112490"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="14112500">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-121.0600705,45.8437337</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>14112500</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;14112500&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;LITTLE KLICKITAT RIVER NEAR WAHKIACUS, WA&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=14112500"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="14113210">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-121.3805833,45.66330556</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>14113210</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;14113210&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;MOSIER CREEK ABOVE DRY CREEK, NEAR MOSIER, OR&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=OR004&amp;site_no=14113210"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="453922121223000">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-121.376184,45.65595258</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>453922121223000</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;453922121223000&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;MOSIER CREEK AT 1820 MOSIER CREEK RD NR MOSIER, OR&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=453922121223000"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="453940121224200">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-121.3795173,45.6609526</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>453940121224200</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;453940121224200&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;MOSIER CREEK ABOVE TANAWASHER SPRING NR MOSIER, OR&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=453940121224200"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="453951121224600">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-121.3806284,45.6640082</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>453951121224600</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;453951121224600&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;MOSIER CREEK BELOW TANAWASHER SPRING NR MOSIER, OR&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=453951121224600"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="454014121225200">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-121.382295,45.6703972</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>454014121225200</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;454014121225200&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;MOSIER CREEK ABOVE DAM NEAR MOSIER, OR&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=454014121225200"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="454015120494500">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.8291667,45.6708333</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>454015120494500</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;454015120494500&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;SPANISH HOLLOW AT BIGGS, OR&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=454015120494500"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="454041121184800">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-121.3145169,45.67789789</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>454041121184800</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;454041121184800&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;ROWENA CREEK AT HIGHWAY 30 NEAR ROWENA, OR&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=454041121184800"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="454041121230300">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-121.3853506,45.67789729</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>454041121230300</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;454041121230300&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;MOSIER CREEK ABOVE DRY CREEK NEAR MOSIER, OR(MISC)&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=454041121230300"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="454042121230200">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-121.3850728,45.67817508</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>454042121230200</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;454042121230200&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;DRY CREEK AT MOUTH NEAR MOSIER, OR&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=454042121230200"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="454045121242800">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-121.4089618,45.6790082</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>454045121242800</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;454045121242800&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;ROCK CREEK NEAR EAST TUNNEL PORTAL NEAR MOSIER, OR&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=454045121242800"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="454050121230600">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-121.3861839,45.6803973</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>454050121230600</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;454050121230600&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;MOSIER CREEK BELOW DRY CREEK NEAR MOSIER, OR&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=454050121230600"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="454105121233600">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-121.3945172,45.68456399</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>454105121233600</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;454105121233600&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;MOSIER CR AT MOUTH BET I-84 &amp; HWY 30 AT MOSIER, OR&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=454105121233600"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="454145120100500">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.1680556,45.6958333</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>454145120100500</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;454145120100500&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;CHINA CREEK AT ARLINGTON, OR&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=454145120100500"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="454257120413000">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.6928368,45.7156803</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>454257120413000</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;454257120413000&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;COLUMBIA RIVER AT JOHN DAY DAM FOREBAY, WA&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=454257120413000"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="4543171204203">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.7020039,45.72123578</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>4543171204203</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;4543171204203&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;COLUMBIA RIVER, JOHN DAY DAM, FOREBAY NO. 2&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=4543171204203"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="460001120000100">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.0014285,46.0001315</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>460001120000100</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;460001120000100&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;YAKIMA R AT HARRISON RD BR&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=460001120000100"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="460002120000200">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.0017062,46.0004093</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>460002120000200</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;460002120000200&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;UNNAMED DRAIN AT WALTERS RD EAST OF MOXEE CITY&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=460002120000200"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="460003120000300">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.001984,46.00068708</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>460003120000300</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;460003120000300&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;WIDE HOLLOW CR AT UNION GAP, WA&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=460003120000300"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="460004120000400">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.0022618,46.00096486</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>460004120000400</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;460004120000400&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;YAKIMA R AT BRIDGE AVE AT GRANGER, WA&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=460004120000400"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="460005120000500">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.0025396,46.0012426</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>460005120000500</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;460005120000500&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;WANITY SLOUGH AT FIRST EAST STREET NEAR WAPATO, WA&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=460005120000500"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="460006120000600">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.0028174,46.0015204</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>460006120000600</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;460006120000600&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;UNNAMED DRAIN NR MARION DRAIN&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=460006120000600"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="460007120000700">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.0030952,46.00179818</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>460007120000700</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;460007120000700&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;UNNAMED RD AT HOFFER RD NR WAPATO, WA&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=460007120000700"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="460008120000800">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.003373,46.00207596</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>460008120000800</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;460008120000800&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;UNNAMED CREEK AT TECUMSEH RD NR WHITE SWAN, WA&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=460008120000800"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="460010120001000">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.0039286,46.0026315</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>460010120001000</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;460010120001000&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;UNNAMED DRAIN AT HARRAH, WA&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=460010120001000"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="460011120001100">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.0042064,46.00290928</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>460011120001100</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;460011120001100&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;UNNAMED DRAIN NR PROGRESSIVE RD&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=460011120001100"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="460012120001200">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.0044842,46.00318706</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>460012120001200</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;460012120001200&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;DRAIN NR EVANS RD NR MT VIEW SCH NR WHITE SWAN, WA&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=460012120001200"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="460013120001300">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.0047619,46.0034648</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>460013120001300</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;460013120001300&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;UNNAMED DRAIN AT LATERIAL RD AND RIGGS RD&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=460013120001300"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="460014120001400">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.0050397,46.0037426</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>460014120001400</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;460014120001400&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;SATUS CR AT GAGE AT SATUS, WA&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=460014120001400"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="460015120001500">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.0053175,46.00402038</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>460015120001500</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;460015120001500&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;DRAIN UPS SUNNSIDE STP DWS OF SULPHUR CR&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=460015120001500"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="460016120001600">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.0055953,46.00429816</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>460016120001600</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;460016120001600&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;YAKIMA R BETWEEN RM 83 AND 68&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=460016120001600"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="460017120001700">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.005873,46.0045759</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>460017120001700</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;460017120001700&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;YAKIMA R BLW BR GAGE AND BLW STP AND WW PONDS&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=460017120001700"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="460018120001800">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.0061509,46.0048537</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>460018120001800</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;460018120001800&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;YAKIMA R ABV HORN RAPIDS DAM NR RICHLAND, WA&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=460018120001800"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="460019120001900">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.0064287,46.00513148</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>460019120001900</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;460019120001900&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;YAKIMA R AT I-28 BRIDGE&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=460019120001900"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="460022120002200">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.007262,46.0059648</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>460022120002200</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;460022120002200&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;YAKIMA R AT PARKER BR&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=460022120002200"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Placemark id="460023120002300">
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-120.0075398,46.00624258</coordinates>
+            </Point>
+            <styleUrl>#sw</styleUrl>
+            <name>460023120002300</name>
+            <description>&lt;TABLE&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site:&lt;/B&gt;460023120002300&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD NOWRAP&gt;&lt;B&gt;Site Name:&lt;/B&gt;YAKIMA R NR HOSKO RD&lt;/TD&gt;&lt;/TR&gt;&lt;TR&gt;&lt;TD&gt;&lt;A HREF="http://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&amp;site_no=460023120002300"&gt;Access Data&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</description>
+        </Placemark>
+        <Style id="sw">
+            <IconStyle>
+                <color>FFFFFFFF</color>
+                <colorMode>normal</colorMode>
+                <scale>0.55</scale>
+                <Icon>
+                    <href>http://waterservices.usgs.gov/mapper_icons/sw_kml.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+    </Document>
+</kml>

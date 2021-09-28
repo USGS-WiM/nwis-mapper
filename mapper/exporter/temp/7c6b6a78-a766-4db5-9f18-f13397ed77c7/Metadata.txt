@@ -1,0 +1,12 @@
+Metadata for NWIS Sites exported from NWIS Mapper
+(Exporter Version 1.1.0)
+Time and Date data were exported: 2021-09-27 16:33
+Request Number: 7c6b6a78-a766-4db5-9f18-f13397ed77c7
+Number of sites in request: 416
+Site type: Site Inventory
+
+Unique NWIS query arguments: county_cd=22023
+
+NWIS request URL as XML:
+https://waterdata.usgs.gov/la/nwis/inventory?county_cd=22023&format=station_list&station_list_format=xml&column_name=agency_cd&column_name=site_no&column_name=station_nm&list_of_search_criteria=county_cd&column_name=site_tp_cd&column_name=dec_lat_va&column_name=dec_long_va&column_name=agency_use_cd
+

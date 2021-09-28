@@ -1,0 +1,12 @@
+Metadata for NWIS Sites exported from NWIS Mapper
+(Exporter Version 1.1.0)
+Time and Date data were exported: 2021-09-27 18:58
+Request Number: 0227c2ec-26f8-4b5c-be2c-0037f6ba11cc
+Number of sites in request: 1351
+Site type: Unknown
+
+Unique NWIS query arguments: referred_module=gw, state_cd=mi, state_cd=mq, state_cd=mn, state_cd=ms, state_cd=mo, state_cd=mt, state_cd=ne, state_cd=nv, state_cd=nh, state_cd=nj, state_cd=nm, state_cd=ny, state_cd=nc, state_cd=nd, index_pmcode_61055=1, index_pmcode_00010=1, index_pmcode_00011=1, index_pmcode_00096=1, index_pmcode_00020=1, index_pmcode_00021=1
+
+NWIS request URL as XML:
+https://waterdata.usgs.gov/usa/nwis/annual?referred_module=gw&state_cd=mi&state_cd=mq&state_cd=mn&state_cd=ms&state_cd=mo&state_cd=mt&state_cd=ne&state_cd=nv&state_cd=nh&state_cd=nj&state_cd=nm&state_cd=ny&state_cd=nc&state_cd=nd&index_pmcode_61055=1&index_pmcode_00010=1&index_pmcode_00011=1&index_pmcode_00096=1&index_pmcode_00020=1&index_pmcode_00021=1&format=station_list&station_list_format=xml&column_name=agency_cd&column_name=site_no&column_name=station_nm&list_of_search_criteria=state_cd,realtime_parameter_selection&column_name=site_tp_cd&column_name=dec_lat_va&column_name=dec_long_va&column_name=agency_use_cd
+

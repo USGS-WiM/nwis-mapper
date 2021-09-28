@@ -1,0 +1,12 @@
+Metadata for NWIS Sites exported from NWIS Mapper
+(Exporter Version 1.1.0)
+Time and Date data were exported: 2021-09-27 13:12
+Request Number: 2961d249-726c-4ad0-ada3-67ddf3bcfc27
+Number of sites in request: 280
+Site type: Current Values
+
+Unique NWIS query arguments: type=flow, group_key=basin_cd
+
+NWIS request URL as XML:
+https://waterdata.usgs.gov/la/nwis/current?type=flow&group_key=basin_cd&format=station_list&station_list_format=xml&column_name=agency_cd&column_name=site_no&column_name=station_nm&column_name=site_tp_cd&column_name=dec_lat_va&column_name=dec_long_va&column_name=agency_use_cd
+

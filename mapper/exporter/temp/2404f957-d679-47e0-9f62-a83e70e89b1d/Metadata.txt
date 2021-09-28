@@ -1,0 +1,12 @@
+Metadata for NWIS Sites exported from NWIS Mapper
+(Exporter Version 1.1.0)
+Time and Date data were exported: 2021-09-27 18:11
+Request Number: 2404f957-d679-47e0-9f62-a83e70e89b1d
+Number of sites in request: 354
+Site type: Daily Values
+
+Unique NWIS query arguments: referred_module=qw, state_cd=fl, index_pmcode_00094=1, index_pmcode_00095=1, index_pmcode_00096=1, index_pmcode_00480=1, index_pmcode_00930=1, index_pmcode_83564=1, index_pmcode_90860=1
+
+NWIS request URL as XML:
+https://waterdata.usgs.gov/usa/nwis/dv?referred_module=qw&state_cd=fl&index_pmcode_00094=1&index_pmcode_00095=1&index_pmcode_00096=1&index_pmcode_00480=1&index_pmcode_00930=1&index_pmcode_83564=1&index_pmcode_90860=1&format=station_list&station_list_format=xml&column_name=agency_cd&column_name=site_no&column_name=station_nm&range_selection=date_range&begin_date=2015-01-01&end_date=2021-09-28&date_format=YYYY-MM-DD&rdb_compression=file&list_of_search_criteria=state_cd,realtime_parameter_selection&column_name=site_tp_cd&column_name=dec_lat_va&column_name=dec_long_va&column_name=agency_use_cd
+

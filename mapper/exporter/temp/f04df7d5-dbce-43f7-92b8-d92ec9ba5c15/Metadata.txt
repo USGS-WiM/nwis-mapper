@@ -1,0 +1,12 @@
+Metadata for NWIS Sites exported from NWIS Mapper
+(Exporter Version 1.1.0)
+Time and Date data were exported: 2021-09-26 17:58
+Request Number: f04df7d5-dbce-43f7-92b8-d92ec9ba5c15
+Number of sites in request: 6
+Site type: Unit Values
+
+Unique NWIS query arguments: multiple_site_no=371210076441004,371210076441005,371211076441002,371241076455501,371240076455604,371239076455707, index_pmcode_72019=1, index_pmcode_00010=1, index_pmcode_00095=1
+
+NWIS request URL as XML:
+https://waterdata.usgs.gov/va/nwis/uv?multiple_site_no=371210076441004,371210076441005,371211076441002,371241076455501,371240076455604,371239076455707&index_pmcode_72019=1&index_pmcode_00010=1&index_pmcode_00095=1&format=station_list&station_list_format=xml&column_name=agency_cd&column_name=site_no&column_name=station_nm&range_selection=days&period=7&begin_date=2020-09-30&end_date=2020-10-07&date_format=YYYY-MM-DD&rdb_compression=file&list_of_search_criteria=multiple_site_no,realtime_parameter_selection&column_name=site_tp_cd&column_name=dec_lat_va&column_name=dec_long_va&column_name=agency_use_cd
+
